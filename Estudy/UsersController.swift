@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-var serverResponse:JSON = []
+var serverResponse:[User] = []
 let textCellIdentifier = "TextCell"
 
 class UsersController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -23,20 +23,20 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         Alamofire.request(.GET, "http://localhost:3000/api/v0/users")
             .responseJSON { response in
                 var jsonData = JSON(response.result.value!)
-                serverResponse = jsonData["users"]
+                for user in jsonData["users"]{
+                    let newUser = User(parameters: user.1)
+                    serverResponse.append(newUser)
+                }
                 self.tableView.reloadData()
                 
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        
         let row = indexPath.row
-        let element = serverResponse[row]
-        cell.textLabel?.text = element["email"].stringValue
-        
+        let user = serverResponse[row]
+        cell.textLabel?.text = user.email
         return cell
     }
     
@@ -50,7 +50,6 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
