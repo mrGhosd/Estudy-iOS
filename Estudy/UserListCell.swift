@@ -27,8 +27,12 @@ class UserListCell: UITableViewCell {
         self.userEmail.text = user.email
         if let avatarUrl = user.avatarUrl{
             Alamofire.request(.GET, avatarUrl).responseImage{ response in
-                self.userAvatar.image = response.result.value
+                if let image = response.result.value {
+                    self.userAvatar.image = image
+                }
             }
+        } else {
+            self.userAvatar.image = UIImage(named: "empty-user.png")
         }
     }
 }
