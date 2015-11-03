@@ -8,16 +8,13 @@
 
 import UIKit
 import Alamofire
+
 class UsersController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Alamofire.request(.GET, "http://localhost:3000/api/v0/users")
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
                 let JSON = response.result.value
                 if (JSON != nil) {
                     print("JSON: \(JSON)")

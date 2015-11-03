@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		1E859032D285BDEEB88D09EA /* Pods-Estudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Estudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Estudy/Pods-Estudy.release.xcconfig"; sourceTree = "<group>"; };
 		32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Estudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6485548E1BE938F900D940F6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		64876C481BE92254005D80AA /* Estudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64876C4B1BE92254005D80AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64876C501BE92254005D80AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				64876C521BE92254005D80AA /* Assets.xcassets */,
 				64876C541BE92254005D80AA /* LaunchScreen.storyboard */,
 				64876C571BE92254005D80AA /* Info.plist */,
+				6485548E1BE938F900D940F6 /* MyPlayground.playground */,
 			);
 			path = Estudy;
 			sourceTree = "<group>";
