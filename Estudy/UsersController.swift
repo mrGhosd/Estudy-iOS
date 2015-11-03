@@ -18,6 +18,7 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
         tableView.delegate = self
         tableView.dataSource = self
         Alamofire.request(.GET, "http://localhost:3000/api/v0/users")
@@ -33,11 +34,11 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UserListCell
         let row = indexPath.row
         let user = serverResponse[row]
-        cell.textLabel?.text = user.email
-        return cell
+        cell.userEmail.text = user.email
+        return cell as UITableViewCell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
