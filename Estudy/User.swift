@@ -14,9 +14,12 @@ class User : NSObject {
     var secondName = ""
     var middleName = ""
     var email: String = ""
-    var avatarUrl: String = ""
+    var avatarUrl: String? = nil
     
     init(parameters: JSON){
         self.email = parameters["email"].stringValue
+        if parameters["image"] != nil{
+            self.avatarUrl = "http://localhost:3000\(parameters["image"]["file"]["url"])"
+        }
     }
 }

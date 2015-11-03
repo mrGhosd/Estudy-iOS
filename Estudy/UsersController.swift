@@ -37,7 +37,7 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UserListCell
         let row = indexPath.row
         let user = serverResponse[row]
-        cell.userEmail.text = user.email
+        cell.setUserData(user)
         return cell as UITableViewCell
     }
     
