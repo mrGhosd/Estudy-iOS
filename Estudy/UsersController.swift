@@ -21,6 +21,7 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
         tableView.delegate = self
         tableView.dataSource = self
+//        ApiRequest.sharedInstance.get("http://localhost:3000/api/v0/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
         Alamofire.request(.GET, "http://localhost:3000/api/v0/users")
             .responseJSON { response in
                 var jsonData = JSON(response.result.value!)
@@ -39,6 +40,14 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         let user = serverResponse[row]
         cell.setUserData(user)
         return cell as UITableViewCell
+    }
+    
+    func successUsersCallback(objects: JSON){
+    
+    }
+    
+    func errorUsersCallback(objects: JSON){
+    
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
