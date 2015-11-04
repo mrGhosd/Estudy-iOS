@@ -29,6 +29,9 @@ class ServerError: NSObject {
     
     func showAlertViewWithError(){
         let alert = UIAlertController(title: "Error", message: self.desc, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
         self.parentController!.presentViewController(alert, animated: true, completion: nil)
     }
 }
