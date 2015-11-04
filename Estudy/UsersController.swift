@@ -14,6 +14,7 @@ var serverResponse:[User] = []
 let textCellIdentifier = "TextCell"
 
 class UsersController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet var sidebarButton: UIBarButtonItem!
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -21,6 +22,11 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
         tableView.delegate = self
         tableView.dataSource = self
+        if self.revealViewController() != nil {
+            sidebarButton.target = self.revealViewController()
+            sidebarButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         User.getCollection("http://localhost:3000/api/v0/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
 
     }
