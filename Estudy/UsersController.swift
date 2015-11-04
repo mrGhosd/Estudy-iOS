@@ -21,17 +21,8 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
         tableView.delegate = self
         tableView.dataSource = self
-        ApiRequest.sharedInstance.get("http://localhost:3000/api/v0/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
-//        Alamofire.request(.GET, "http://localhost:3000/api/v0/users")
-//            .responseJSON { response in
-//                var jsonData = JSON(response.result.value!)
-//                for user in jsonData["users"]{
-//                    let newUser = User(parameters: user.1)
-//                    serverResponse.append(newUser)
-//                }
-//                self.tableView.reloadData()
-//                
-//        }
+        User.getCollection("http://localhost:3000/api/v0/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -42,11 +33,8 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         return cell as UITableViewCell
     }
     
-    func successUsersCallback(objects: JSON){
-        for user in objects["users"]{
-            let newUser = User(parameters: user.1)
-            serverResponse.append(newUser)
-        }
+    func successUsersCallback(objects: [User]){
+        serverResponse = objects
         self.tableView.reloadData()
     }
     

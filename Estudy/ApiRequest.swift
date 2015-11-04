@@ -24,14 +24,8 @@ class ApiRequest: NSObject {
         Alamofire.request(.GET, url)
                     .responseJSON { response in
                         if let data = response.result.value{
-                            success(JSON(data))
+                            success(JSON(data)["users"])
                         }
-//                        var jsonData = JSON(response.result.value!)
-//                        for user in jsonData["users"]{
-//                            let newUser = User(parameters: user.1)
-//                            serverResponse.append(newUser)
-//                        }
-//                        self.tableView.reloadData()
                         
                 }
     }

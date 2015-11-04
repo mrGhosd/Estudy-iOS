@@ -22,4 +22,19 @@ class User : NSObject {
             self.avatarUrl = "http://localhost:3000\(parameters["image"]["file"]["url"])"
         }
     }
+    
+    class func getCollection(url: String, parameters: NSDictionary, success: ([User]) -> Void, error: (JSON) -> Void) -> Void{
+        ApiRequest.sharedInstance.get(url, parameters: parameters,
+            success: {(objects: JSON) in
+                var usersList:[User] = []
+                for object in objects{
+                    let user = User(parameters: object.1)
+                    usersList.append(user)
+                }
+                success(usersList)
+            },
+            error: {(errors: JSON) in
+            
+            })
+    }
 }
