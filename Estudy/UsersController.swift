@@ -38,8 +38,8 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.tableView.reloadData()
     }
     
-    func errorUsersCallback(objects: JSON){
-    
+    func errorUsersCallback(error: ServerError){
+        error.handle(self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

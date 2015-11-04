@@ -23,7 +23,7 @@ class User : NSObject {
         }
     }
     
-    class func getCollection(url: String, parameters: NSDictionary, success: ([User]) -> Void, error: (JSON) -> Void) -> Void{
+    class func getCollection(url: String, parameters: NSDictionary, success: ([User]) -> Void, error: (ServerError) -> Void) -> Void{
         ApiRequest.sharedInstance.get(url, parameters: parameters,
             success: {(objects: JSON) in
                 var usersList:[User] = []
@@ -33,8 +33,9 @@ class User : NSObject {
                 }
                 success(usersList)
             },
-            error: {(errors: JSON) in
-            
+            error: {(errors: NSError) in
+                let serverError = ServerError(parameters: errors)
+                error(serverError)
             })
     }
 }
