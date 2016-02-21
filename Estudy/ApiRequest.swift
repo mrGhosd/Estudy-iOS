@@ -9,9 +9,15 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import AlamofireObjectMapper
 import SwiftyJSON
 
+public enum Method: String {
+    case GET, HEAD, POST, PUT, PATCH, DELETE
+}
+
 class ApiRequest: NSObject {
+    var host = "http://localhost:3000"
     class var sharedInstance: ApiRequest {
         struct Singleton {
             static let instance: ApiRequest = ApiRequest()
@@ -20,15 +26,20 @@ class ApiRequest: NSObject {
         return Singleton.instance
     }
     
-    func get(url: String, parameters: NSDictionary, success: (JSON) -> Void, error: (NSError) -> Void){
-        Alamofire.request(.GET, url)
-                    .responseJSON { response in
-                        switch(response.result) {
-                        case .Success(let data):
-                            success(JSON(data)["users"])
-                        case .Failure(let errorData):
-                            error(errorData)
-                        }
-                }
+    func get(url: String, parameters: NSDictionary) -> Request {
+        return request(url, requestType: .GET, parameters: parameters)
+    }
+    
+    func request(url: String, requestType: Alamofire.Method, parameters: NSDictionary) -> Request {
+        
+        return Alamofire.request(requestType, "http://localhost:3000/api/v0\(url)")
+//            .responseJSON { response in
+//                switch(response.result) {
+//                case .Success(let data):
+//                    success(JSON(data))
+//                case .Failure(let errorData):
+//                    error(errorData)
+//                }
+//        }
     }
 }

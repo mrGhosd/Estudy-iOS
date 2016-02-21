@@ -86,10 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-EstudyTests/Alamofire.framework"
   install_framework "Pods-EstudyTests/AlamofireImage.framework"
+  install_framework "Pods-EstudyTests/AlamofireObjectMapper.framework"
+  install_framework "Pods-EstudyTests/ObjectMapper.framework"
   install_framework "Pods-EstudyTests/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EstudyTests/Alamofire.framework"
   install_framework "Pods-EstudyTests/AlamofireImage.framework"
+  install_framework "Pods-EstudyTests/AlamofireObjectMapper.framework"
+  install_framework "Pods-EstudyTests/ObjectMapper.framework"
   install_framework "Pods-EstudyTests/SwiftyJSON.framework"
 fi

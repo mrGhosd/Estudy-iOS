@@ -25,7 +25,7 @@ class UserListCell: UITableViewCell {
     
     func setUserData(user: User){
         self.userEmail.text = user.email
-        if let avatarUrl = user.avatarUrl{
+        if let avatarUrl = user.fullAvatarUrl() {
             Alamofire.request(.GET, avatarUrl).responseImage{ response in
                 if let image = response.result.value {
                     self.userAvatar.image = image

@@ -27,7 +27,7 @@ class UsersController: UIViewController, UITableViewDataSource, UITableViewDeleg
             sidebarButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        User.getCollection("http://localhost:3000/api/v0/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
+        UserFactory.getCollection("/users", parameters: [:], success: successUsersCallback, error: errorUsersCallback)
 
     }
     
