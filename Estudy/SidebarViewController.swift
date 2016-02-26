@@ -36,6 +36,31 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
         return sideBarMenu.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch sideBarMenu[indexPath.row] {
+            case "Sign in":
+                self.performSegueWithIdentifier("authorization", sender: self)
+            case "Sign up":
+                self.performSegueWithIdentifier("registration", sender: self)
+        default: break
+            
+            
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navVC = segue.destinationViewController as! UINavigationController
+        if segue.identifier == "authorization" {
+            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
+            tableVC.isAuth = true
+        }
+        
+        if (segue.identifier == "registration") {
+            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
+            tableVC.isAuth = false
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
