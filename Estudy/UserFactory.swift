@@ -20,8 +20,8 @@ class UserFactory: NSObject {
         return UserFactory.instance
     }
     
-    class func getCollection(url: String, parameters: NSDictionary, success: ([User]) -> Void, error: (ServerError) -> Void) -> Void{
-        ApiRequest.sharedInstance.get(url, parameters: parameters)
+    class func getCollection(parameters: NSDictionary, success: ([User]) -> Void, error: (ServerError) -> Void) -> Void{
+        ApiRequest.sharedInstance.get("/users", parameters: parameters)
             .responseArray("users", completionHandler: { (response: Response<[User], NSError>) in
                 switch(response.result) {
                     case .Success(let data):

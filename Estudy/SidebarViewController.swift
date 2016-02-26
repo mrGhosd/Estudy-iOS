@@ -7,8 +7,10 @@
 //
 
 import UIKit
+
 let sidebarCell = "sidebarCell"
 let sideBarMenu = ["Sign in", "Sign up"]
+let authSideBarMenu = ["Messages"]
 
 class SidebarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
