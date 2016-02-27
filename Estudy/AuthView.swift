@@ -10,5 +10,14 @@ import UIKit
 import Foundation
 
 class AuthView: UIView {
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var signInButton: UIButton!
+    var delegate: Authorization!
+    
+    @IBAction func signIn(sender: AnyObject) {
+        delegate.signIn!(emailField.text, password: passwordField.text)
+    }
+
     
 }

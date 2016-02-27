@@ -15,16 +15,19 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsU-El-N3i">
                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-H7-5xj">
                     <rect key="frame" x="8" y="46" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn3-yU-grA">
                     <rect key="frame" x="253" y="84" width="95" height="30"/>
                     <state key="normal" title="Sign in"/>
+                    <connections>
+                        <action selector="signIn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Abl-G1-bPB"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,6 +42,11 @@
                 <constraint firstItem="wNu-H7-5xj" firstAttribute="top" secondItem="FsU-El-N3i" secondAttribute="bottom" constant="8" id="yoX-zY-XEz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emailField" destination="FsU-El-N3i" id="4fB-CL-Ghd"/>
+                <outlet property="passwordField" destination="wNu-H7-5xj" id="aIs-Jr-CYN"/>
+                <outlet property="signInButton" destination="Cn3-yU-grA" id="u9G-mW-WiP"/>
+            </connections>
             <point key="canvasLocation" x="325.5" y="170"/>
         </view>
     </objects>

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class AuthorizationViewController: UIViewController {
+class AuthorizationViewController: UIViewController, Authorization {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!
@@ -26,6 +26,7 @@ class AuthorizationViewController: UIViewController {
         }
         
         authView = NSBundle.mainBundle().loadNibNamed("AuthView", owner: self, options: nil).first as! AuthView
+        authView.delegate = self
         contentView.addSubview(authView)
         regView = NSBundle.mainBundle().loadNibNamed("RegView", owner: self, options: nil).first as! RegView
         contentView.addSubview(regView)
@@ -55,4 +56,7 @@ class AuthorizationViewController: UIViewController {
         }
     }
     
+    func signIn(email: String!, password: String!) {
+        
+    }
 }
