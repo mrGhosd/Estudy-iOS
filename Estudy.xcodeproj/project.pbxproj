@@ -21,6 +21,7 @@
 		645A66341C810EE4006FF8D5 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66331C810EE4006FF8D5 /* AuthView.xib */; };
 		645A66361C810EF2006FF8D5 /* RegView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66351C810EF2006FF8D5 /* RegView.xib */; };
 		645A66391C81E85C006FF8D5 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66381C81E85C006FF8D5 /* AuthDelegate.swift */; };
+		645A663B1C81EAE2006FF8D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663A1C81EAE2006FF8D5 /* AuthService.swift */; };
 		64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C4B1BE92254005D80AA /* AppDelegate.swift */; };
 		64876C511BE92254005D80AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C4F1BE92254005D80AA /* Main.storyboard */; };
 		64876C531BE92254005D80AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64876C521BE92254005D80AA /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		645A66331C810EE4006FF8D5 /* AuthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
 		645A66351C810EF2006FF8D5 /* RegView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegView.xib; sourceTree = "<group>"; };
 		645A66381C81E85C006FF8D5 /* AuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDelegate.swift; sourceTree = "<group>"; };
+		645A663A1C81EAE2006FF8D5 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6485548E1BE938F900D940F6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		64876C481BE92254005D80AA /* Estudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64876C4B1BE92254005D80AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				642BBA101BE95F49007EE777 /* User.swift */,
+				645A663A1C81EAE2006FF8D5 /* AuthService.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */,
 				645A66301C80F936006FF8D5 /* AuthView.swift in Sources */,
 				641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */,
+				645A663B1C81EAE2006FF8D5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

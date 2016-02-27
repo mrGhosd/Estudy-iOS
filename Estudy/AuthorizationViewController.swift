@@ -19,6 +19,7 @@ class AuthorizationViewController: UIViewController, Authorization {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
         if self.revealViewController() != nil {
             sidebarButton.target = self.revealViewController()
             sidebarButton.action = "revealToggle:"
@@ -43,6 +44,10 @@ class AuthorizationViewController: UIViewController, Authorization {
         }
     }
     
+    func currentUserReceived(notification: NSNotification) {
+        
+    }
+    
     @IBAction func switchViews(sender: AnyObject) {
         var index = segmentSwitcher.selectedSegmentIndex
         
@@ -57,6 +62,18 @@ class AuthorizationViewController: UIViewController, Authorization {
     }
     
     func signIn(email: String!, password: String!) {
+        AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
+    }
+    
+    func successAuthCallback(object: AnyObject!) {
+    
+    }
+    
+    func failureAuthCallback(error: ServerError) {
         
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

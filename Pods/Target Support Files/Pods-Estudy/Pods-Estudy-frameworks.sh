@@ -87,6 +87,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Estudy/Alamofire.framework"
   install_framework "Pods-Estudy/AlamofireImage.framework"
   install_framework "Pods-Estudy/AlamofireObjectMapper.framework"
+  install_framework "Pods-Estudy/KeychainSwift.framework"
   install_framework "Pods-Estudy/ObjectMapper.framework"
   install_framework "Pods-Estudy/SwiftyJSON.framework"
 fi
@@ -94,6 +95,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Estudy/Alamofire.framework"
   install_framework "Pods-Estudy/AlamofireImage.framework"
   install_framework "Pods-Estudy/AlamofireObjectMapper.framework"
+  install_framework "Pods-Estudy/KeychainSwift.framework"
   install_framework "Pods-Estudy/ObjectMapper.framework"
   install_framework "Pods-Estudy/SwiftyJSON.framework"
 fi

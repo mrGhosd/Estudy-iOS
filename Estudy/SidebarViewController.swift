@@ -9,12 +9,14 @@
 import UIKit
 
 let sidebarCell = "sidebarCell"
-let sideBarMenu = ["Sign in", "Sign up"]
+var sideBarMenu: [String]!
 let authSideBarMenu = ["Messages"]
 
 class SidebarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
+        setSidebarItems()
         
     }
     @IBOutlet var tableView: UITableView!
@@ -26,6 +28,19 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    func currentUserReceived(notification: NSNotification) {
+        setSidebarItems()
+        self.tableView.reloadData()
+    }
+    
+    func setSidebarItems() {
+        if (AuthService.sharedInstance.currentUser != nil) {
+            sideBarMenu = ["Profile", "Messages"]
+        }
+        else {
+           sideBarMenu = ["Sign in", "Sign up"]
+        }
+    }
 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -63,5 +78,9 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }

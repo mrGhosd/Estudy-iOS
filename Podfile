@@ -7,6 +7,7 @@ pod 'AlamofireImage', '~> 2.0'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'AlamofireObjectMapper', '~> 2.1'
 pod 'ObjectMapper', '~> 1.1'
+pod 'KeychainSwift', '~> 3.0'
 
 target 'Estudy' do
 end
