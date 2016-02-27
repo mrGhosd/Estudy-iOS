@@ -91,8 +91,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-8A-kd9">
-                                <rect key="frame" x="0.0" y="40" width="600" height="560"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-8A-kd9">
+                                <rect key="frame" x="0.0" y="40" width="600" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sidebarCell" id="Wd2-5R-gCW">
@@ -109,16 +109,26 @@
                                     <outlet property="delegate" destination="cHJ-oq-jbW" id="g4W-20-c6B"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-zC-wtK">
+                                <rect key="frame" x="20" y="570" width="87" height="30"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="cHJ-oq-jbW" eventType="touchUpInside" id="4ag-WY-24e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xfb-8A-kd9" firstAttribute="leading" secondItem="lWo-ru-Jla" secondAttribute="leadingMargin" constant="-20" id="7LC-Wg-oiF"/>
+                            <constraint firstItem="gKb-zC-wtK" firstAttribute="leading" secondItem="lWo-ru-Jla" secondAttribute="leadingMargin" id="Cm5-Bj-2rb"/>
+                            <constraint firstItem="gKb-zC-wtK" firstAttribute="top" secondItem="xfb-8A-kd9" secondAttribute="bottom" id="EM7-fl-vnJ"/>
+                            <constraint firstItem="fdf-0F-HBZ" firstAttribute="top" secondItem="gKb-zC-wtK" secondAttribute="bottom" id="Xza-x7-jTQ"/>
                             <constraint firstItem="xfb-8A-kd9" firstAttribute="top" secondItem="lWo-ru-Jla" secondAttribute="topMargin" constant="40" id="dAF-MC-u7Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xfb-8A-kd9" secondAttribute="trailing" constant="-20" id="gtH-XF-S3l"/>
-                            <constraint firstItem="fdf-0F-HBZ" firstAttribute="top" secondItem="xfb-8A-kd9" secondAttribute="bottom" id="uXZ-pI-ptz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="signOutButton" destination="gKb-zC-wtK" id="mL8-6k-AAR"/>
                         <outlet property="tableView" destination="xfb-8A-kd9" id="Fwf-Vu-UhC"/>
                         <segue destination="IMk-B6-Y4w" kind="custom" identifier="authorization" customClass="SWRevealViewControllerSeguePushController" id="vkJ-WS-8z1"/>
                         <segue destination="IMk-B6-Y4w" kind="custom" identifier="registration" customClass="SWRevealViewControllerSeguePushController" id="g69-6h-w2l"/>

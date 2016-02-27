@@ -53,4 +53,10 @@ class AuthService: NSObject {
             
         })
     }
+    
+    func signOut() {
+        keychain.delete("estudyauthtoken")
+        self.currentUser = nil
+        NSNotificationCenter.defaultCenter().postNotificationName("signOut", object: nil)
+    }
 }

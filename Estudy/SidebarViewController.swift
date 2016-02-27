@@ -13,9 +13,12 @@ var sideBarMenu: [String]!
 let authSideBarMenu = ["Messages"]
 
 class SidebarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet var signOutButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "signOut", object: nil)
         setSidebarItems()
         
     }
@@ -36,9 +39,11 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
     func setSidebarItems() {
         if (AuthService.sharedInstance.currentUser != nil) {
             sideBarMenu = ["Profile", "Messages"]
+            signOutButton.hidden = false
         }
         else {
            sideBarMenu = ["Sign in", "Sign up"]
+           signOutButton.hidden = true
         }
     }
 
@@ -78,6 +83,10 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func signOut(sender: AnyObject) {
+        AuthService.sharedInstance.signOut()
     }
     
     deinit {

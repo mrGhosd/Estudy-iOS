@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "478296259.823432"
+            timestampString = "478297664.901938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -562,11 +562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "478296259.823432"
+            timestampString = "478297936.259697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -578,11 +578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "478296259.823432"
+            timestampString = "478297936.259697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -823,6 +823,38 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "getCurrentUser()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/AuthService.swift"
+            timestampString = "478297802.635451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "signOut()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/SidebarViewController.swift"
+            timestampString = "478297768.134889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "currentUserReceived(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
