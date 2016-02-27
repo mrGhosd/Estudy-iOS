@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChatCell" customModule="Estudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQh-PR-lAS">
+                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="5Tn-vo-zpW"/>
+                        <constraint firstAttribute="width" constant="70" id="Yg2-Zm-4d8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTK-Wx-Z6E">
+                    <rect key="frame" x="484" y="8" width="108" height="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZE-QT-Kxy">
+                    <rect key="frame" x="86" y="37" width="506" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-YN-hi3">
+                    <rect key="frame" x="86" y="8" width="390" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JZE-QT-Kxy" secondAttribute="trailing" constant="8" id="4b9-zk-1YX"/>
+                <constraint firstItem="MQh-PR-lAS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8Cl-1L-NWe"/>
+                <constraint firstItem="tDD-YN-hi3" firstAttribute="leading" secondItem="MQh-PR-lAS" secondAttribute="trailing" constant="8" id="CgO-Ac-KGK"/>
+                <constraint firstItem="bTK-Wx-Z6E" firstAttribute="leading" secondItem="tDD-YN-hi3" secondAttribute="trailing" constant="8" id="QVh-qF-GcC"/>
+                <constraint firstItem="bTK-Wx-Z6E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="UNf-tA-kt3"/>
+                <constraint firstItem="JZE-QT-Kxy" firstAttribute="leading" secondItem="MQh-PR-lAS" secondAttribute="trailing" constant="8" id="UXl-KU-yda"/>
+                <constraint firstAttribute="trailing" secondItem="bTK-Wx-Z6E" secondAttribute="trailing" constant="8" id="Vw9-C2-0aZ"/>
+                <constraint firstItem="JZE-QT-Kxy" firstAttribute="top" secondItem="tDD-YN-hi3" secondAttribute="bottom" constant="8" id="aF2-wa-bFN"/>
+                <constraint firstItem="MQh-PR-lAS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="coT-N9-exw"/>
+                <constraint firstItem="tDD-YN-hi3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="nrQ-OU-NCK"/>
+                <constraint firstAttribute="bottom" secondItem="MQh-PR-lAS" secondAttribute="bottom" constant="8" id="tFv-Aj-3t8"/>
+                <constraint firstAttribute="bottom" secondItem="JZE-QT-Kxy" secondAttribute="bottom" constant="8" id="wdV-VC-Xon"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="chatCreatedAt" destination="bTK-Wx-Z6E" id="Omh-z2-vMH"/>
+                <outlet property="lastMessage" destination="JZE-QT-Kxy" id="Ypg-5R-9WU"/>
+                <outlet property="membersNames" destination="tDD-YN-hi3" id="cDU-Jd-raV"/>
+                <outlet property="userImage" destination="MQh-PR-lAS" id="3Ka-9e-mh8"/>
+            </connections>
+            <point key="canvasLocation" x="342" y="188"/>
+        </view>
+    </objects>
+</document>

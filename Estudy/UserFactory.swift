@@ -17,7 +17,7 @@ class UserFactory: NSObject {
             static let instance: UserFactory = UserFactory()
         }
         
-        return UserFactory.instance
+        return Singleton.instance
     }
     
     class func getCollection(parameters: NSDictionary, success: ([User]) -> Void, error: (ServerError) -> Void) -> Void{

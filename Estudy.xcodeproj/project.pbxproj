@@ -23,6 +23,11 @@
 		645A66391C81E85C006FF8D5 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66381C81E85C006FF8D5 /* AuthDelegate.swift */; };
 		645A663B1C81EAE2006FF8D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663A1C81EAE2006FF8D5 /* AuthService.swift */; };
 		645A663D1C824D81006FF8D5 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663C1C824D81006FF8D5 /* ChatsViewController.swift */; };
+		645A663F1C824EF3006FF8D5 /* ChatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663E1C824EF3006FF8D5 /* ChatFactory.swift */; };
+		645A66411C824F66006FF8D5 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66401C824F66006FF8D5 /* Chat.swift */; };
+		645A66441C8253A4006FF8D5 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66431C8253A4006FF8D5 /* ChatCell.swift */; };
+		645A66461C825403006FF8D5 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66451C825403006FF8D5 /* ChatCell.xib */; };
+		645A66481C825ECE006FF8D5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66471C825ECE006FF8D5 /* Message.swift */; };
 		64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C4B1BE92254005D80AA /* AppDelegate.swift */; };
 		64876C511BE92254005D80AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C4F1BE92254005D80AA /* Main.storyboard */; };
 		64876C531BE92254005D80AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64876C521BE92254005D80AA /* Assets.xcassets */; };
@@ -75,6 +80,11 @@
 		645A66381C81E85C006FF8D5 /* AuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDelegate.swift; sourceTree = "<group>"; };
 		645A663A1C81EAE2006FF8D5 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		645A663C1C824D81006FF8D5 /* ChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		645A663E1C824EF3006FF8D5 /* ChatFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFactory.swift; sourceTree = "<group>"; };
+		645A66401C824F66006FF8D5 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		645A66431C8253A4006FF8D5 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		645A66451C825403006FF8D5 /* ChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		645A66471C825ECE006FF8D5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		6485548E1BE938F900D940F6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		64876C481BE92254005D80AA /* Estudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64876C4B1BE92254005D80AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +184,15 @@
 			name = delegates;
 			sourceTree = "<group>";
 		};
+		645A66421C825385006FF8D5 /* chats */ = {
+			isa = PBXGroup;
+			children = (
+				645A66431C8253A4006FF8D5 /* ChatCell.swift */,
+				645A66451C825403006FF8D5 /* ChatCell.xib */,
+			);
+			name = chats;
+			sourceTree = "<group>";
+		};
 		6485548D1BE9261000D940F6 /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +287,7 @@
 		64876C7B1BE922DB005D80AA /* views */ = {
 			isa = PBXGroup;
 			children = (
+				645A66421C825385006FF8D5 /* chats */,
 				645A662E1C80F926006FF8D5 /* authorization */,
 				642BBA121BE96291007EE777 /* users */,
 			);
@@ -279,6 +299,8 @@
 			children = (
 				642BBA101BE95F49007EE777 /* User.swift */,
 				645A663A1C81EAE2006FF8D5 /* AuthService.swift */,
+				645A66401C824F66006FF8D5 /* Chat.swift */,
+				645A66471C825ECE006FF8D5 /* Message.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -295,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				64C328941C792FC2000F15BC /* UserFactory.swift */,
+				645A663E1C824EF3006FF8D5 /* ChatFactory.swift */,
 			);
 			name = factories;
 			sourceTree = "<group>";
@@ -422,6 +445,7 @@
 				64876C531BE92254005D80AA /* Assets.xcassets in Resources */,
 				64876C511BE92254005D80AA /* Main.storyboard in Resources */,
 				642BBA1A1BE96C88007EE777 /* empty-user.png in Resources */,
+				645A66461C825403006FF8D5 /* ChatCell.xib in Resources */,
 				645A66361C810EF2006FF8D5 /* RegView.xib in Resources */,
 				641D35061BEA9E2D00DD660C /* menu-32.png in Resources */,
 			);
@@ -498,13 +522,17 @@
 			files = (
 				641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */,
 				642BBA141BE962C3007EE777 /* UserListCell.swift in Sources */,
+				645A66411C824F66006FF8D5 /* Chat.swift in Sources */,
 				64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */,
 				645A66391C81E85C006FF8D5 /* AuthDelegate.swift in Sources */,
+				645A663F1C824EF3006FF8D5 /* ChatFactory.swift in Sources */,
 				64876C7E1BE9230B005D80AA /* UsersController.swift in Sources */,
+				645A66481C825ECE006FF8D5 /* Message.swift in Sources */,
 				64C328951C792FC2000F15BC /* UserFactory.swift in Sources */,
 				645A66321C80F940006FF8D5 /* RegView.swift in Sources */,
 				645A663D1C824D81006FF8D5 /* ChatsViewController.swift in Sources */,
 				6493CCBF1BE9835C00D36AD0 /* ApiRequest.swift in Sources */,
+				645A66441C8253A4006FF8D5 /* ChatCell.swift in Sources */,
 				642BBA111BE95F49007EE777 /* User.swift in Sources */,
 				6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */,
 				645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */,

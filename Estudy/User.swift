@@ -10,9 +10,9 @@ import Foundation
 import ObjectMapper
 
 class User: Mappable {
-    var firstName = ""
-    var secondName = ""
-    var middleName = ""
+    var firstName: String!
+    var lastName: String!
+    var middleName: String!
     var email: String = ""
     var avatarUrl: String? = nil
     
@@ -22,7 +22,22 @@ class User: Mappable {
 
     func mapping(map: Map) {
         email <- map["email"]
+        firstName <- map["first_name"]
+        lastName <- map["last_name"]
+        middleName <- map["middle_name"]
         avatarUrl <- map["image.url"]
+    }
+    
+    func getCorrectName() -> String{
+        var name: String?
+        
+        if (firstName != nil && lastName != nil) {
+            name = "\(firstName) \(lastName)"
+        }
+        else {
+            name = email
+        }
+        return name!
     }
     
     func fullAvatarUrl() -> String? {
