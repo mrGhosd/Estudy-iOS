@@ -40,6 +40,23 @@ class AuthService: NSObject {
         })
     }
     
+    func signUp(email: String, password: String!, passwordConfirmation: String!, error: (ServerError) -> Void) {
+        ApiRequest.sharedInstance.post("/registrations", parameters: ["user": ["email": email, "password": password, "password_confirmation": passwordConfirmation]])
+            .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
+                switch(response.result) {
+                case .Success(let data):
+                    if let token = data["remember_token"] as? String {
+                        self.keychain.set(token, forKey: "estudyauthtoken")
+                        self.getCurrentUser()
+                    }
+                    
+                case .Failure(let errorData):
+                    let errorValue = ServerError(parameters: errorData)
+                    error(errorValue)
+                }
+            })
+    }
+    
     func getCurrentUser() {
         if (keychain.get("estudyauthtoken") == nil) { return }
         

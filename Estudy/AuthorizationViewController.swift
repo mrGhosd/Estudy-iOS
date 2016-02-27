@@ -30,6 +30,7 @@ class AuthorizationViewController: UIViewController, Authorization {
         authView.delegate = self
         contentView.addSubview(authView)
         regView = NSBundle.mainBundle().loadNibNamed("RegView", owner: self, options: nil).first as! RegView
+        regView.delegate = self
         contentView.addSubview(regView)
         
         if isAuth == true {
@@ -65,12 +66,20 @@ class AuthorizationViewController: UIViewController, Authorization {
         AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
     }
     
+    func signUp(email: String!, pasword: String!, password_confirmation: String!) {
+        AuthService.sharedInstance.signUp(email, password: password_confirmation, passwordConfirmation: password_confirmation, error: failureSiegnUpCallback)
+    }
+    
     func successAuthCallback(object: AnyObject!) {
     
     }
     
     func failureAuthCallback(error: ServerError) {
         
+    }
+    
+    func failureSiegnUpCallback(error: ServerError) {
+    
     }
     
     deinit {

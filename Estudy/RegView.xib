@@ -29,6 +29,9 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omm-GQ-Rck">
                     <rect key="frame" x="277" y="122" width="71" height="30"/>
                     <state key="normal" title="Sign up"/>
+                    <connections>
+                        <action selector="signUp:" destination="iN0-l3-epB" eventType="touchUpInside" id="K3C-jZ-iwv"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -46,6 +49,12 @@
                 <constraint firstItem="omm-GQ-Rck" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wVo-5S-5sN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emailField" destination="d4C-b4-LPa" id="ROM-Ry-Um1"/>
+                <outlet property="passwordConfirmationField" destination="xGc-3H-fke" id="G22-Xa-14l"/>
+                <outlet property="passwordField" destination="J9R-ou-bJp" id="UZZ-Y6-C5a"/>
+                <outlet property="signUpButton" destination="omm-GQ-Rck" id="p0J-h8-lOC"/>
+            </connections>
             <point key="canvasLocation" x="325" y="178"/>
         </view>
     </objects>
