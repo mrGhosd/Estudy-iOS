@@ -29,13 +29,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="wNu-H7-5xj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K0c-cJ-tA0"/>
                 <constraint firstItem="Cn3-yU-grA" firstAttribute="top" secondItem="wNu-H7-5xj" secondAttribute="bottom" constant="8" id="Muj-YQ-frz"/>
-                <constraint firstItem="wNu-H7-5xj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Ohe-0K-ccG"/>
-                <constraint firstItem="FsU-El-N3i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bhw-tu-VbK"/>
-                <constraint firstAttribute="trailing" secondItem="FsU-El-N3i" secondAttribute="trailing" constant="10" id="duj-aX-Pcg"/>
+                <constraint firstItem="FsU-El-N3i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bhw-tu-VbK"/>
+                <constraint firstAttribute="trailing" secondItem="FsU-El-N3i" secondAttribute="trailing" id="duj-aX-Pcg"/>
                 <constraint firstItem="Cn3-yU-grA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l7T-o1-YOd"/>
-                <constraint firstAttribute="trailingMargin" secondItem="wNu-H7-5xj" secondAttribute="trailing" id="oHH-1W-IsO"/>
                 <constraint firstItem="FsU-El-N3i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="tLV-x1-83U"/>
+                <constraint firstAttribute="trailing" secondItem="wNu-H7-5xj" secondAttribute="trailing" id="wyM-2b-jRn"/>
                 <constraint firstItem="wNu-H7-5xj" firstAttribute="top" secondItem="FsU-El-N3i" secondAttribute="bottom" constant="8" id="yoX-zY-XEz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
