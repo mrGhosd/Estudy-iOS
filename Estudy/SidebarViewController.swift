@@ -62,6 +62,8 @@ class SidebarViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.performSegueWithIdentifier("authorization", sender: self)
             case "Sign up":
                 self.performSegueWithIdentifier("registration", sender: self)
+            case "Messages":
+                self.performSegueWithIdentifier("chats", sender: self)
         default: break
             
             
