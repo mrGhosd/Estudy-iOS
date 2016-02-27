@@ -3,20 +3,21 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AuthView" customModule="Estudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="601" height="134"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsU-El-N3i">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsU-El-N3i">
                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-H7-5xj">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-H7-5xj">
                     <rect key="frame" x="8" y="46" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -28,15 +29,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="wNu-H7-5xj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="F7c-40-bxw"/>
-                <constraint firstItem="FsU-El-N3i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="GyY-ao-PF3"/>
-                <constraint firstAttribute="trailing" secondItem="wNu-H7-5xj" secondAttribute="trailing" constant="8" id="HMO-9W-pO1"/>
-                <constraint firstItem="Cn3-yU-grA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Pej-rU-pa6"/>
-                <constraint firstItem="wNu-H7-5xj" firstAttribute="top" secondItem="FsU-El-N3i" secondAttribute="bottom" constant="8" id="VUg-OU-qPm"/>
-                <constraint firstItem="Cn3-yU-grA" firstAttribute="top" secondItem="wNu-H7-5xj" secondAttribute="bottom" constant="8" id="mg5-0O-GhU"/>
-                <constraint firstAttribute="trailing" secondItem="FsU-El-N3i" secondAttribute="trailing" constant="8" id="wI6-cD-rvW"/>
-                <constraint firstItem="FsU-El-N3i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="xIc-LW-abM"/>
+                <constraint firstItem="Cn3-yU-grA" firstAttribute="top" secondItem="wNu-H7-5xj" secondAttribute="bottom" constant="8" id="Muj-YQ-frz"/>
+                <constraint firstItem="wNu-H7-5xj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="Ohe-0K-ccG"/>
+                <constraint firstItem="FsU-El-N3i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bhw-tu-VbK"/>
+                <constraint firstAttribute="trailing" secondItem="FsU-El-N3i" secondAttribute="trailing" constant="10" id="duj-aX-Pcg"/>
+                <constraint firstItem="Cn3-yU-grA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l7T-o1-YOd"/>
+                <constraint firstAttribute="trailingMargin" secondItem="wNu-H7-5xj" secondAttribute="trailing" id="oHH-1W-IsO"/>
+                <constraint firstItem="FsU-El-N3i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="tLV-x1-83U"/>
+                <constraint firstItem="wNu-H7-5xj" firstAttribute="top" secondItem="FsU-El-N3i" secondAttribute="bottom" constant="8" id="yoX-zY-XEz"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="325.5" y="170"/>
         </view>
     </objects>
 </document>

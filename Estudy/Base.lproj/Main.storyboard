@@ -144,11 +144,10 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rf9-F5-Wwh">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="586"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rJ-kn-IIi">
-                                                <rect key="frame" x="33" y="44" width="549" height="458"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <rect key="frame" x="8" y="44" width="584" height="458"/>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JyP-WM-yea">
                                                 <rect key="frame" x="151" y="8" width="314" height="29"/>
@@ -156,15 +155,18 @@
                                                     <segment title="Authorization"/>
                                                     <segment title="Registration"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="switchViews:" destination="iOH-qD-Y3Y" eventType="valueChanged" id="G8O-6R-jha"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" id="0Ck-bl-jny"/>
-                                            <constraint firstAttribute="bottom" secondItem="9rJ-kn-IIi" secondAttribute="bottom" id="7L0-J4-V8D"/>
-                                            <constraint firstAttribute="trailing" secondItem="9rJ-kn-IIi" secondAttribute="trailing" id="H1v-B3-hv9"/>
-                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="top" secondItem="JyP-WM-yea" secondAttribute="bottom" constant="8" id="QdT-zL-Hfd"/>
+                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" constant="8" id="Mbx-Pl-Jor"/>
+                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="top" secondItem="JyP-WM-yea" secondAttribute="bottom" constant="50" id="QdT-zL-Hfd"/>
+                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="top" secondItem="JyP-WM-yea" secondAttribute="bottom" constant="8" id="daa-WC-QrQ"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="jOT-XJ-Dfn"/>
+                                            <constraint firstAttribute="trailing" secondItem="9rJ-kn-IIi" secondAttribute="trailing" constant="30" id="qIB-jO-7We"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="yPI-an-YLC"/>
                                         </constraints>
                                     </view>

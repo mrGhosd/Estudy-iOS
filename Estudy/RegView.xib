@@ -7,21 +7,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RegView" customModule="Estudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="592" height="152"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4C-b4-LPa">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4C-b4-LPa">
                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9R-ou-bJp">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9R-ou-bJp">
                     <rect key="frame" x="8" y="46" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-3H-fke">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-3H-fke">
                     <rect key="frame" x="8" y="84" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -34,18 +34,22 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="d4C-b4-LPa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="0j7-90-187"/>
+                <constraint firstItem="J9R-ou-bJp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Bg-os-Xtp"/>
                 <constraint firstItem="J9R-ou-bJp" firstAttribute="top" secondItem="d4C-b4-LPa" secondAttribute="bottom" constant="8" id="6nc-7X-g5w"/>
                 <constraint firstItem="omm-GQ-Rck" firstAttribute="top" secondItem="xGc-3H-fke" secondAttribute="bottom" constant="8" id="BgT-i2-MQG"/>
                 <constraint firstItem="d4C-b4-LPa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="O9t-yT-2dZ"/>
+                <constraint firstItem="xGc-3H-fke" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q4n-iQ-ElL"/>
                 <constraint firstItem="xGc-3H-fke" firstAttribute="top" secondItem="J9R-ou-bJp" secondAttribute="bottom" constant="8" id="QI8-aO-wIN"/>
                 <constraint firstAttribute="trailing" secondItem="d4C-b4-LPa" secondAttribute="trailing" constant="8" id="UZI-ym-N7r"/>
                 <constraint firstItem="omm-GQ-Rck" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XXo-1g-9Dn"/>
                 <constraint firstItem="xGc-3H-fke" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="YQG-RE-Cm6"/>
                 <constraint firstAttribute="trailing" secondItem="xGc-3H-fke" secondAttribute="trailing" constant="8" id="owY-DN-Gp5"/>
+                <constraint firstItem="d4C-b4-LPa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wra-xz-oj4"/>
                 <constraint firstItem="J9R-ou-bJp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="yVi-Il-06R"/>
                 <constraint firstAttribute="trailing" secondItem="J9R-ou-bJp" secondAttribute="trailing" constant="8" id="zVx-1L-Cx0"/>
             </constraints>
-            <point key="canvasLocation" x="325" y="402"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="321" y="178"/>
         </view>
     </objects>
 </document>
