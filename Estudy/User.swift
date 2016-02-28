@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class User: Mappable {
+    var id: Int!
     var firstName: String!
     var lastName: String!
     var middleName: String!
@@ -21,6 +22,7 @@ class User: Mappable {
     }    
 
     func mapping(map: Map) {
+        id <- map["id"]
         email <- map["email"]
         firstName <- map["first_name"]
         lastName <- map["last_name"]

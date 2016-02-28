@@ -31,7 +31,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         return cell
     }
     
-    func currentUserReceived(notification: NSNotification) {
+    override func currentUserReceived(notification: NSNotification) {
         setSidebarItems()
         self.tableView.reloadData()
     }

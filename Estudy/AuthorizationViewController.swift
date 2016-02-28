@@ -45,7 +45,7 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
         }
     }
     
-    func currentUserReceived(notification: NSNotification) {
+    override func currentUserReceived(notification: NSNotification) {
         
     }
     
