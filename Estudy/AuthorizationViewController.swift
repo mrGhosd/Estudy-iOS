@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class AuthorizationViewController: UIViewController, Authorization {
+class AuthorizationViewController: ApplicationViewController, Authorization {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!

@@ -14,6 +14,7 @@
 		642BBA141BE962C3007EE777 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA131BE962C3007EE777 /* UserListCell.swift */; };
 		642BBA181BE96372007EE777 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
 		642BBA1A1BE96C88007EE777 /* empty-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA191BE96C88007EE777 /* empty-user.png */; };
+		642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
 		645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
 		645A66301C80F936006FF8D5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
@@ -71,6 +72,7 @@
 		642BBA131BE962C3007EE777 /* UserListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		642BBA171BE96372007EE777 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		642BBA191BE96C88007EE777 /* empty-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-user.png"; sourceTree = "<group>"; };
+		642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		643E1FBA1C0B276300BC5A43 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		645A662F1C80F936006FF8D5 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				641D35031BEA9D4400DD660C /* SidebarViewController.swift */,
 				645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */,
 				645A663C1C824D81006FF8D5 /* ChatsViewController.swift */,
+				642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				645A66411C824F66006FF8D5 /* Chat.swift in Sources */,
 				64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */,
 				645A66391C81E85C006FF8D5 /* AuthDelegate.swift in Sources */,
+				642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */,
 				645A663F1C824EF3006FF8D5 /* ChatFactory.swift in Sources */,
 				64876C7E1BE9230B005D80AA /* UsersController.swift in Sources */,
 				645A66481C825ECE006FF8D5 /* Message.swift in Sources */,

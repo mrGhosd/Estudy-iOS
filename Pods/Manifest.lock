@@ -7,6 +7,7 @@ PODS:
     - ObjectMapper (~> 1.0)
   - KeychainSwift (3.0.11)
   - ObjectMapper (1.1.5)
+  - Socket.IO-Client-Swift (5.5.0)
   - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 2.1)
   - KeychainSwift (~> 3.0)
   - ObjectMapper (~> 1.1)
+  - Socket.IO-Client-Swift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 24097576202064f8b0a583452dd934064f78dc0e
   KeychainSwift: 0a4214c910423543a42b0f30f25987d46178b6a5
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  Socket.IO-Client-Swift: f39dbd4e9b295907bb7fd4b9588b89c00426783d
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
 COCOAPODS: 0.39.0

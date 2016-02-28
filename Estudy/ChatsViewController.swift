@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ChatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     var chatsList: [Chat] = []

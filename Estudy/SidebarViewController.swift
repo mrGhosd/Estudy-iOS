@@ -12,7 +12,7 @@ let sidebarCell = "sidebarCell"
 var sideBarMenu: [String]!
 let authSideBarMenu = ["Messages"]
 
-class SidebarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SidebarViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var signOutButton: UIButton!
 
     override func viewDidLoad() {

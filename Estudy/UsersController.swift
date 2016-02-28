@@ -13,7 +13,7 @@ import SwiftyJSON
 var serverResponse:[User] = []
 let textCellIdentifier = "TextCell"
 
-class UsersController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UsersController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var sidebarButton: UIBarButtonItem!
     
     @IBOutlet var tableView: UITableView!
