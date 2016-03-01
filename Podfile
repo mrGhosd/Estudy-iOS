@@ -9,6 +9,8 @@ pod 'AlamofireObjectMapper', '~> 2.1'
 pod 'ObjectMapper', '~> 1.1'
 pod 'KeychainSwift', '~> 3.0'
 pod 'Socket.IO-Client-Swift'
+pod 'Whisper'
+
 
 target 'Estudy' do
 end

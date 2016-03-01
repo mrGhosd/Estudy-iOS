@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-EstudyUITests/ObjectMapper.framework"
   install_framework "Pods-EstudyUITests/SocketIOClientSwift.framework"
   install_framework "Pods-EstudyUITests/SwiftyJSON.framework"
+  install_framework "Pods-EstudyUITests/Whisper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EstudyUITests/Alamofire.framework"
@@ -100,4 +101,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-EstudyUITests/ObjectMapper.framework"
   install_framework "Pods-EstudyUITests/SocketIOClientSwift.framework"
   install_framework "Pods-EstudyUITests/SwiftyJSON.framework"
+  install_framework "Pods-EstudyUITests/Whisper.framework"
 fi
