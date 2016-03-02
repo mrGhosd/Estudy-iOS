@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import Alamofire
+import AlamofireObjectMapper
 
 class MessagesFactory: NSObject {
+    class var instance: MessagesFactory {
+        struct Singleton {
+            static let instance: MessagesFactory = MessagesFactory()
+        }
+        
+        return Singleton.instance
+    }
 
 }
