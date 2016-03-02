@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Foundatione
+import Foundation
 
 class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
@@ -18,17 +18,22 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
+        tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
         let message = chat.messages[indexPath.row]
-        cell.textLabel!.text = message.text
+        cell.setMessageData(message)
         return cell as UITableViewCell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 90
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
