@@ -14,6 +14,7 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     @IBOutlet var tableView: UITableView!
     var chatsList: [Chat] = []
     let cellIdentifier = "chatsCell"
+    var selectedChat: Chat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,20 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
         return chatsList.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedChat = chatsList[indexPath.row]
+        performSegueWithIdentifier("messages", sender: self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "messages" {
+            let messagesVC = segue.destinationViewController as! MessagesViewController
+            messagesVC.chat = selectedChat
+            selectedChat = nil
+        }
     }
 }

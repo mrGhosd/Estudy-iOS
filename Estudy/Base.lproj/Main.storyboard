@@ -272,11 +272,63 @@
                     <connections>
                         <outlet property="sidebarButton" destination="I0H-eC-Yfe" id="jaO-r8-Raz"/>
                         <outlet property="tableView" destination="KVe-18-Wnf" id="9d5-iq-afQ"/>
+                        <segue destination="oLl-FW-ozI" kind="show" identifier="messages" id="PF9-jL-j1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acK-JC-kjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1936" y="-1224"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="fxI-8f-fDd">
+            <objects>
+                <viewController id="oLl-FW-ozI" customClass="MessagesViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pir-Aw-iQ2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nli-xQ-c4J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DWX-ap-rnB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqe-ft-GKf">
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-R0-q2h">
+                                <rect key="frame" x="0.0" y="64" width="600" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="owt-dY-AGb">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="owt-dY-AGb" id="r2F-pz-ltb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Msb-R0-q2h" firstAttribute="leading" secondItem="DWX-ap-rnB" secondAttribute="leadingMargin" id="6eI-Hh-KXG"/>
+                            <constraint firstItem="Nli-xQ-c4J" firstAttribute="top" secondItem="xqe-ft-GKf" secondAttribute="bottom" id="BUB-cm-2Lk"/>
+                            <constraint firstItem="Msb-R0-q2h" firstAttribute="top" secondItem="Pir-Aw-iQ2" secondAttribute="bottom" id="Kgb-wj-QTu"/>
+                            <constraint firstItem="xqe-ft-GKf" firstAttribute="top" secondItem="Msb-R0-q2h" secondAttribute="bottom" id="RCc-Th-cUg"/>
+                            <constraint firstItem="xqe-ft-GKf" firstAttribute="leading" secondItem="DWX-ap-rnB" secondAttribute="leadingMargin" id="T4w-yE-3zv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Msb-R0-q2h" secondAttribute="trailing" id="yX0-6q-1hy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xqe-ft-GKf" secondAttribute="trailing" id="zjO-il-g6y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageFormView" destination="xqe-ft-GKf" id="02W-1X-89u"/>
+                        <outlet property="tableView" destination="Msb-R0-q2h" id="vgI-hD-I6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhD-af-972" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2670" y="-1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rtb-QY-4FK">
