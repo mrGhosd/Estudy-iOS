@@ -14,18 +14,27 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var messageFormView: UIView!
     var chat: Chat!
     var cellIdentifier = "messageCell"
+    var currentUserCellIdentifier = "currentUserMessageCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
         tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+                tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
         let message = chat.messages[indexPath.row]
-        cell.setMessageData(message)
-        return cell as UITableViewCell
+        if (message.user.id == AuthService.sharedInstance.currentUser.id) {
+            var cell = tableView.dequeueReusableCellWithIdentifier(currentUserCellIdentifier, forIndexPath: indexPath) as! CurrentUserMessageCell
+            cell.setMessageData(message)
+            return cell as UITableViewCell
+        }
+        else {
+            var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
+            cell.setMessageData(message)
+            return cell as UITableViewCell
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
