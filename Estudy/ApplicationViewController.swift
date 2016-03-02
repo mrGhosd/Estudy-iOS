@@ -14,15 +14,10 @@ import Alamofire
 import AlamofireImage
 
 class ApplicationViewController: UIViewController {
-    var currentViewController: UIViewController!
-    var currentNavigationVC: UINavigationController!
     let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:5001")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let window: UIWindow! = UIApplication.sharedApplication().keyWindow
-        let rootVC = window.rootViewController as! SWRevealViewController
-        currentViewController = rootVC.frontViewController
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "signOut", object: nil)
         setSocketsListener()
@@ -86,7 +81,7 @@ class ApplicationViewController: UIViewController {
         let topVC = navVC.topViewController!
         let title = message!.user.getCorrectName()
         let text = message!.text
-        let announcement = Announcement(title: title, subtitle: text, image: userImage, duration: 10.0)
+        let announcement = Announcement(title: title, subtitle: text, image: userImage, duration: 3.0)
         Shout(announcement, to: topVC)
     }
     
