@@ -12,26 +12,11 @@ import Alamofire
 import AlamofireImage
 
 
-class CurrentUserMessageCell: UITableViewCell {
-    @IBOutlet var messageImage: UIImageView!
-    @IBOutlet var messageText: UILabel!
-    var message: Message!
+class CurrentUserMessageCell: MessageCell {
+    @IBOutlet var messageCellImage: UIImageView!
+    @IBOutlet var messageCellText: UILabel!
     
-    func setMessageData(messageData: Message) {
-        message = messageData
-        messageText.text = message.text
-        setMessageImage()
-    }
-    
-    func setMessageImage() {
-        if let avatarUrl = message.user!.fullAvatarUrl() {
-            Alamofire.request(.GET, avatarUrl).responseImage{ response in
-                if let image = response.result.value {
-                    self.messageImage.image = image
-                }
-            }
-        } else {
-            self.messageImage.image = UIImage(named: "empty-user.png")
-        }
+    func setDataToMessageData(messageData: Message!) {
+        super.setMessageData(messageData, textField: messageCellText, image: messageCellImage)
     }
 }

@@ -37,8 +37,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="messageImage" destination="7RS-4X-40p" id="yiZ-dy-8Lp"/>
-                <outlet property="messageText" destination="lYz-86-PqB" id="d6Y-3j-xkG"/>
+                <outlet property="messageCellImage" destination="7RS-4X-40p" id="XH0-yR-NEV"/>
+                <outlet property="messageCellText" destination="lYz-86-PqB" id="zGE-Ty-AAY"/>
             </connections>
         </view>
     </objects>

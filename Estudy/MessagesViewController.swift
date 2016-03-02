@@ -27,12 +27,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         let message = chat.messages[indexPath.row]
         if (message.user.id == AuthService.sharedInstance.currentUser.id) {
             var cell = tableView.dequeueReusableCellWithIdentifier(currentUserCellIdentifier, forIndexPath: indexPath) as! CurrentUserMessageCell
-            cell.setMessageData(message)
+            cell.setDataToMessageData(message)
             return cell as UITableViewCell
         }
         else {
             var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
-            cell.setMessageData(message)
+            cell.setDataToMessageData(message)
             return cell as UITableViewCell
         }
     }
