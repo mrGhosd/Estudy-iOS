@@ -37,4 +37,10 @@ class MessageCell: UITableViewCell {
         }
     }
     
+    func setPersonalMessageData(messageData: Message, textField: UILabel!) {
+        message = messageData
+        messageText = textField
+        
+        messageText.text = message.text
+    }
 }

@@ -15,26 +15,62 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     var chat: Chat!
     var cellIdentifier = "messageCell"
     var currentUserCellIdentifier = "currentUserMessageCell"
+    var personalCellIdentifier = "personalCellIdentifier"
+    var currentUserPersonalCellIdentifier = "currentUserPersonalCellIdentifier"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
         tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-                tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
+        tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
+        tableView.registerNib(UINib(nibName: "PersonalMessageCell", bundle: nil), forCellReuseIdentifier: personalCellIdentifier)
+        tableView.registerNib(UINib(nibName: "CurrentUserPersonalMessageCell", bundle: nil), forCellReuseIdentifier: currentUserPersonalCellIdentifier)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let message = chat.messages[indexPath.row]
-        if (message.user.id == AuthService.sharedInstance.currentUser.id) {
-            var cell = tableView.dequeueReusableCellWithIdentifier(currentUserCellIdentifier, forIndexPath: indexPath) as! CurrentUserMessageCell
-            cell.setDataToMessageData(message)
-            return cell as UITableViewCell
+        if (hasMultipleUsers()) {
+            if (message.user.id == AuthService.sharedInstance.currentUser.id) {
+                return currentUserMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
+            }
+            else {
+                return messageCellInstance(message, indexPath: indexPath) as UITableViewCell
+            }
         }
         else {
-            var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
-            cell.setDataToMessageData(message)
-            return cell as UITableViewCell
+            if (message.user.id == AuthService.sharedInstance.currentUser.id) {
+                return currentUserPersonalMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
+            }
+            else {
+                return personalMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
+            }
         }
+        
+        
+    }
+    
+    func currentUserMessageCellInstance(message: Message, indexPath: NSIndexPath) -> CurrentUserMessageCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(currentUserCellIdentifier, forIndexPath: indexPath) as! CurrentUserMessageCell
+        cell.setDataToMessageData(message)
+        return cell
+    }
+    
+    func messageCellInstance(message: Message, indexPath: NSIndexPath) -> MessageCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
+        cell.setDataToMessageData(message)
+        return cell
+    }
+    
+    func personalMessageCellInstance(message: Message, indexPath: NSIndexPath) -> PersonalMessageCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(personalCellIdentifier, forIndexPath: indexPath) as! PersonalMessageCell
+        cell.setDataToMessageData(message)
+        return cell
+    }
+    
+    func currentUserPersonalMessageCellInstance(message: Message, indexPath: NSIndexPath) -> CurrentUserPersonalMessageCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(currentUserPersonalCellIdentifier, forIndexPath: indexPath) as! CurrentUserPersonalMessageCell
+        cell.setDataToMessageData(message)
+        return cell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -42,11 +78,21 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 90
+        if (hasMultipleUsers()) {
+            return 90
+        }
+        else {
+            return 50
+        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chat.messages.count
+    }
+    
+    func hasMultipleUsers() -> Bool {
+        return chat.users!.count > 2
     }
 
 }
