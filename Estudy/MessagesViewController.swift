@@ -20,6 +20,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarData()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
         tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
@@ -93,6 +94,19 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     func hasMultipleUsers() -> Bool {
         return chat.users!.count > 2
+    }
+    
+    func setNavigationBarData() {
+        if (!hasMultipleUsers()) {
+            let view = NSBundle.mainBundle().loadNibNamed("PersonalNavigationBar", owner: nil, options: nil).first as! PersonalNavigationBar
+            var member = returnOtherChatMembers().first as! User!
+            view.setMemberData(member)
+            self.navigationItem.titleView = view
+        }
+    }
+    
+    func returnOtherChatMembers() -> [User] {
+        return (chat.users?.filter({ $0.id != AuthService.sharedInstance.currentUser.id }))!
     }
 
 }
