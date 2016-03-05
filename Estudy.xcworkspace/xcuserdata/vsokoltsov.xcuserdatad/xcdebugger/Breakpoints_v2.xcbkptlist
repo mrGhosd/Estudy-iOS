@@ -1407,11 +1407,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessagesViewController.swift"
-            timestampString = "478657704.621542"
+            timestampString = "478912888.590822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1423,11 +1423,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessagesViewController.swift"
-            timestampString = "478657704.621542"
+            timestampString = "478912888.590822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "MessagesViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1471,11 +1471,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessagesViewController.swift"
-            timestampString = "478657832.121475"
+            timestampString = "478912888.590822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "setNavigationBarData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1487,11 +1487,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessagesViewController.swift"
-            timestampString = "478657877.324989"
+            timestampString = "478912888.590822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "returnOtherChatMembers()"
             landmarkType = "5">
             <Locations>
@@ -1535,12 +1535,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessagesViewController.swift"
-            timestampString = "478657877.324989"
+            timestampString = "478912888.590822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "setNavigationBarData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/MessagesViewController.swift"
+            timestampString = "478912888.590822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "keyboardDidShow(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/MessagesViewController.swift"
+            timestampString = "478912888.590822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "keyboardDidHide(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/MessagesViewController.swift"
+            timestampString = "478912797.383849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "keyboardDidShow(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

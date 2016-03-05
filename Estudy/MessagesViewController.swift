@@ -12,6 +12,9 @@ import Foundation
 class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var messageFormView: UIView!
+    @IBOutlet var messageFormHeightConstraint: NSLayoutConstraint!
+    
+    
     var chat: Chat!
     var cellIdentifier = "messageCell"
     var currentUserCellIdentifier = "currentUserMessageCell"
@@ -20,6 +23,9 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
+        setMessageForm();
         setNavigationBarData()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
         tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
@@ -107,6 +113,33 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     func returnOtherChatMembers() -> [User] {
         return (chat.users?.filter({ $0.id != AuthService.sharedInstance.currentUser.id }))!
+    }
+    
+    func setMessageForm() {
+        let view = NSBundle.mainBundle().loadNibNamed("MessageForm", owner: nil, options: nil).first as! MessageForm
+        messageFormView.addSubview(view)
+    }
+    
+    func keyboardDidShow(notification: NSNotification) {
+        var height = getKeyboardHeight(notification)
+        messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
+    }
+    
+    func keyboardDidHide(notification: NSNotification) {
+        var height = getKeyboardHeight(notification)
+        messageFormHeightConstraint.constant = messageFormHeightConstraint.constant - height
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        let keyboardHeight = keyboardRectangle.height
+        return keyboardHeight
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
 }
