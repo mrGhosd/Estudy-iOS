@@ -14,7 +14,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var messageFormView: UIView!
     @IBOutlet var messageFormHeightConstraint: NSLayoutConstraint!
     
-    
+    var keyboardIsVisible = false
     var chat: Chat!
     var cellIdentifier = "messageCell"
     var currentUserCellIdentifier = "currentUserMessageCell"
@@ -121,13 +121,18 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func keyboardDidShow(notification: NSNotification) {
+        keyboardIsVisible = true
         var height = getKeyboardHeight(notification)
         messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
     }
     
     func keyboardDidHide(notification: NSNotification) {
-        var height = getKeyboardHeight(notification)
-        messageFormHeightConstraint.constant = messageFormHeightConstraint.constant - height
+        if (keyboardIsVisible) {
+            keyboardIsVisible = false
+            var height = getKeyboardHeight(notification)
+            messageFormHeightConstraint.constant = messageFormHeightConstraint.constant - height
+
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
