@@ -11,12 +11,25 @@ import Alamofire
 import AlamofireObjectMapper
 
 class MessagesFactory: NSObject {
-    class var instance: MessagesFactory {
+    class var sharedInstance: MessagesFactory {
         struct Singleton {
-            static let instance: MessagesFactory = MessagesFactory()
+            static let sharedInstance: MessagesFactory = MessagesFactory()
         }
         
-        return Singleton.instance
+        return Singleton.sharedInstance
+    }
+    
+    func create(parameters: NSDictionary, success: (Message) -> Void, error: (ServerError) -> Void) {
+        ApiRequest.sharedInstance.post("/messages", parameters: parameters)
+            .responseObject("message", completionHandler: {(response: Response<Message, NSError>) in
+                switch(response.result) {
+                case .Success(let data):
+                    success(data)
+                case .Failure(let errorData):
+                    let errorValue = ServerError(parameters: errorData)
+                    error(errorValue)
+                }
+            })
     }
 
 }

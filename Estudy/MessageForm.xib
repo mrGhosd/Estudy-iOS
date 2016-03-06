@@ -23,6 +23,9 @@
                     <state key="normal" title="Send">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sendMessage:" destination="iN0-l3-epB" eventType="touchUpInside" id="WnA-UJ-KnA"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.21290949279999999" blue="0.19459590090000001" alpha="1" colorSpace="calibratedRGB"/>

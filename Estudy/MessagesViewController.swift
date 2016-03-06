@@ -17,8 +17,11 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     var keyboardIsVisible = false
     var messageFormDefaultHeight: CGFloat!
+    let minFormHeight = CGFloat(50)
     let maxFormHeight = CGFloat(160)
+    var defaultKeyboardHeight: CGFloat!
     var chat: Chat!
+    var messageFormContent: MessageForm!
     var cellIdentifier = "messageCell"
     var currentUserCellIdentifier = "currentUserMessageCell"
     var personalCellIdentifier = "personalCellIdentifier"
@@ -119,10 +122,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setMessageForm() {
-        let view = NSBundle.mainBundle().loadNibNamed("MessageForm", owner: nil, options: nil).first as! MessageForm
+        messageFormContent = NSBundle.mainBundle().loadNibNamed("MessageForm", owner: nil, options: nil).first as! MessageForm
         messageFormDefaultHeight = view.frame.size.height
-        view.delegate = self
-        messageFormView.addSubview(view)
+        messageFormContent.delegate = self
+        messageFormView.addSubview(messageFormContent)
     }
     
     func keyboardDidShow(notification: NSNotification) {
@@ -130,6 +133,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             keyboardIsVisible = true
             var height = getKeyboardHeight(notification)
             messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
+            scrollDownTableView()
         }
     }
     
@@ -146,8 +150,8 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         let userInfo:NSDictionary = notification.userInfo!
         let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRectangle = keyboardFrame.CGRectValue()
-        let keyboardHeight = keyboardRectangle.height
-        return keyboardHeight
+        defaultKeyboardHeight = keyboardRectangle.height
+        return defaultKeyboardHeight
     }
     
     deinit {
@@ -158,12 +162,43 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         let fixedWidth = textView.frame.size.width
         textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
         let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
-        if (newSize.height > messageFormDefaultHeight && newSize.height <= maxFormHeight) {
+        if (newSize.height > minFormHeight && newSize.height <= maxFormHeight) {
             messageFormHeightValue.constant = newSize.height
         }
         if (textView.text == "") {
-            messageFormHeightValue.constant = messageFormDefaultHeight
+            setDefaultMessageFormHeight()
         }
+    }
+    
+    func createMessage(text: String!) {
+        let user = AuthService.sharedInstance.currentUser
+        var params: NSDictionary = [
+            "message": ["user_id": user.id as Int, "chat_id": chat.id!, "text": text!]
+        ]
+        MessagesFactory.sharedInstance.create(params, success: successCreateMessageCallback, error: failureCreateMessageCallback)
+    }
+    
+    func successCreateMessageCallback(message: Message!) {
+        chat.messages.append(message)
+        tableView.reloadData()
+        scrollDownTableView()
+        messageFormContent.resetFormText()
+        setDefaultMessageFormHeight()
+    }
+    
+    func failureCreateMessageCallback(error: ServerError) {
+        
+    }
+    
+    func scrollDownTableView() {
+        let indexPath = NSIndexPath(forRow: chat.messages.count - 1, inSection: 0)
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        var y = cell!.frame.origin.y - defaultKeyboardHeight - minFormHeight
+        tableView.setContentOffset(CGPointMake(0, y ), animated: true)
+    }
+    
+    func setDefaultMessageFormHeight() {
+        messageFormHeightValue.constant = minFormHeight
     }
 
 }

@@ -11,4 +11,5 @@ import Foundation
 
 @objc protocol Messages {
     optional func textViewChangeSize(textView: UITextView!)
+    optional func createMessage(text: String!)
 }

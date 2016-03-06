@@ -64,7 +64,7 @@ class ApplicationViewController: UIViewController {
                 Alamofire.request(.GET, avatarUrl).responseImage{ response in
                     if let image = response.result.value {
                         userAvatar = image
-                        self.appNotification(message, userImage: userAvatar)
+//                        self.appNotification(message, userImage: userAvatar)
                     }
                 }
             } else {

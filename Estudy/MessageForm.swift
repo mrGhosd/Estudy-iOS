@@ -24,5 +24,12 @@ class MessageForm: UIView, UITextViewDelegate {
         delegate.textViewChangeSize!(messageFormText)
     }
     
+    @IBAction func sendMessage(sender: AnyObject) {
+        delegate.createMessage!(messageFormText.text)
+    }
+    
+    public func resetFormText() {
+        messageFormText.text = ""
+    }
     
 }
