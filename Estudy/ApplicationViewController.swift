@@ -64,7 +64,7 @@ class ApplicationViewController: UIViewController {
                 Alamofire.request(.GET, avatarUrl).responseImage{ response in
                     if let image = response.result.value {
                         userAvatar = image
-//                        self.appNotification(message, userImage: userAvatar)
+                        self.appNotification(message, userImage: userAvatar)
                     }
                 }
             } else {
@@ -79,10 +79,13 @@ class ApplicationViewController: UIViewController {
         let rootVC = window.rootViewController as! SWRevealViewController
         let navVC = rootVC.frontViewController as! UINavigationController
         let topVC = navVC.topViewController!
-        let title = message!.user.getCorrectName()
-        let text = message!.text
-        let announcement = Announcement(title: title, subtitle: text, image: userImage, duration: 3.0)
-        Shout(announcement, to: topVC)
+        if (topVC.classForCoder != MessagesViewController.classForCoder()) {
+            let title = message!.user.getCorrectName()
+            let text = message!.text
+            let announcement = Announcement(title: title, subtitle: text, image: userImage, duration: 3.0)
+            Shout(announcement, to: topVC)
+        }
+        
     }
     
     func appLocalNotification(message: Message) {
