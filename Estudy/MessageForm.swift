@@ -9,15 +9,20 @@
 import UIKit
 import Foundation
 
-class MessageForm: UIView {
+class MessageForm: UIView, UITextViewDelegate {
     @IBOutlet var messageFormText: UITextView!
     @IBOutlet var messageFormSend: UIButton!
+    var delegate: Messages!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        messageFormText.scrollRangeToVisible(NSRange(location: 0,length: 0))
-        
-        messageFormText.sizeToFit()
+        messageFormText.delegate = self
+        messageFormText.setContentOffset(CGPointMake(0, 0), animated: false)
     }
+    
+    func textViewDidChange(textView: UITextView) {
+        delegate.textViewChangeSize!(messageFormText)
+    }
+    
     
 }

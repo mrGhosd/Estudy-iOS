@@ -51,6 +51,7 @@
 		64876C7E1BE9230B005D80AA /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C7D1BE9230B005D80AA /* UsersController.swift */; };
 		648C59131C8B97CB00E3ADF0 /* MessageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59121C8B97CB00E3ADF0 /* MessageForm.swift */; };
 		648C59151C8B97E400E3ADF0 /* MessageForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648C59141C8B97E400E3ADF0 /* MessageForm.xib */; };
+		648C59171C8BAAA700E3ADF0 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59161C8BAAA700E3ADF0 /* MessageDelegate.swift */; };
 		6493CCBF1BE9835C00D36AD0 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */; };
 		6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCC11BEA03F700D36AD0 /* ServerError.swift */; };
 		64C328951C792FC2000F15BC /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
@@ -132,6 +133,7 @@
 		64876C7D1BE9230B005D80AA /* UsersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		648C59121C8B97CB00E3ADF0 /* MessageForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageForm.swift; sourceTree = "<group>"; };
 		648C59141C8B97E400E3ADF0 /* MessageForm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageForm.xib; sourceTree = "<group>"; };
+		648C59161C8BAAA700E3ADF0 /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		6493CCC11BEA03F700D36AD0 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		64C328941C792FC2000F15BC /* UserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				645A66381C81E85C006FF8D5 /* AuthDelegate.swift */,
+				648C59161C8BAAA700E3ADF0 /* MessageDelegate.swift */,
 			);
 			name = delegates;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				6466234C1C87B48100281878 /* PersonalMessageCell.swift in Sources */,
 				6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */,
 				645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */,
+				648C59171C8BAAA700E3ADF0 /* MessageDelegate.swift in Sources */,
 				645A66301C80F936006FF8D5 /* AuthView.swift in Sources */,
 				641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */,
 				6466233D1C8792BC00281878 /* MessagesViewController.swift in Sources */,

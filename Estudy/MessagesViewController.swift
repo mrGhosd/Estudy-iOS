@@ -9,12 +9,15 @@
 import UIKit
 import Foundation
 
-class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Messages {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var messageFormView: UIView!
     @IBOutlet var messageFormHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var messageFormHeightValue: NSLayoutConstraint!
     
     var keyboardIsVisible = false
+    var messageFormDefaultHeight: CGFloat!
+    let maxFormHeight = CGFloat(160)
     var chat: Chat!
     var cellIdentifier = "messageCell"
     var currentUserCellIdentifier = "currentUserMessageCell"
@@ -117,13 +120,17 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     func setMessageForm() {
         let view = NSBundle.mainBundle().loadNibNamed("MessageForm", owner: nil, options: nil).first as! MessageForm
+        messageFormDefaultHeight = view.frame.size.height
+        view.delegate = self
         messageFormView.addSubview(view)
     }
     
     func keyboardDidShow(notification: NSNotification) {
-        keyboardIsVisible = true
-        var height = getKeyboardHeight(notification)
-        messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
+        if (!keyboardIsVisible) {
+            keyboardIsVisible = true
+            var height = getKeyboardHeight(notification)
+            messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
+        }
     }
     
     func keyboardDidHide(notification: NSNotification) {
@@ -145,6 +152,18 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func textViewChangeSize(textView: UITextView!) {
+        let fixedWidth = textView.frame.size.width
+        textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+        if (newSize.height > messageFormDefaultHeight && newSize.height <= maxFormHeight) {
+            messageFormHeightValue.constant = newSize.height
+        }
+        if (textView.text == "") {
+            messageFormHeightValue.constant = messageFormDefaultHeight
+        }
     }
 
 }

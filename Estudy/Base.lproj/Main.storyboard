@@ -330,6 +330,7 @@
                     </view>
                     <connections>
                         <outlet property="messageFormHeightConstraint" destination="sME-od-HGR" id="RxZ-ty-7Ev"/>
+                        <outlet property="messageFormHeightValue" destination="j7R-I1-fcf" id="1T2-bd-sMH"/>
                         <outlet property="messageFormView" destination="xqe-ft-GKf" id="02W-1X-89u"/>
                         <outlet property="tableView" destination="Msb-R0-q2h" id="vgI-hD-I6X"/>
                     </connections>
