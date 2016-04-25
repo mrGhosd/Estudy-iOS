@@ -24,6 +24,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 232.0/255.0, alpha: 1.0)
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 242.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         if self.revealViewController() != nil {
             sidebarButton.target = self.revealViewController()
             sidebarButton.action = "revealToggle:"

@@ -11,31 +11,44 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-af-qT3">
-                    <rect key="frame" x="8" y="9" width="55" height="55"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-wb-tyP">
+                    <rect key="frame" x="8" y="9" width="584" height="56"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-af-qT3">
+                            <rect key="frame" x="10" y="5" width="55" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="55" id="7jC-5H-kc7"/>
+                                <constraint firstAttribute="height" constant="55" id="QPA-Q0-1XW"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-kK-5BF">
+                            <rect key="frame" x="71" y="17" width="336" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="55" id="nKr-ai-9Sh"/>
-                        <constraint firstAttribute="width" constant="55" id="t1a-U1-eTJ"/>
+                        <constraint firstItem="tiz-kK-5BF" firstAttribute="top" secondItem="XzO-wb-tyP" secondAttribute="top" constant="17" id="BdE-Va-Zzi"/>
+                        <constraint firstItem="tiz-kK-5BF" firstAttribute="leading" secondItem="nxE-af-qT3" secondAttribute="trailing" constant="8" id="FQw-7n-Ubj"/>
+                        <constraint firstItem="nxE-af-qT3" firstAttribute="leading" secondItem="XzO-wb-tyP" secondAttribute="leading" constant="10" id="HtQ-fP-4G4"/>
+                        <constraint firstAttribute="bottom" secondItem="tiz-kK-5BF" secondAttribute="bottom" constant="18" id="JOA-7Y-LV2"/>
+                        <constraint firstItem="nxE-af-qT3" firstAttribute="top" secondItem="XzO-wb-tyP" secondAttribute="top" constant="5" id="Nay-BL-1yD"/>
+                        <constraint firstAttribute="bottom" secondItem="nxE-af-qT3" secondAttribute="bottom" constant="5" id="QJZ-fR-GHN"/>
+                        <constraint firstAttribute="trailing" secondItem="tiz-kK-5BF" secondAttribute="trailing" constant="8" id="z4f-7j-PgG"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-kK-5BF">
-                    <rect key="frame" x="71" y="26" width="521" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="tiz-kK-5BF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="0Uq-Fe-vmE"/>
-                <constraint firstItem="nxE-af-qT3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="7tU-yx-ZQC"/>
-                <constraint firstItem="tiz-kK-5BF" firstAttribute="leading" secondItem="nxE-af-qT3" secondAttribute="trailing" constant="8" id="9Ci-ve-iRH"/>
-                <constraint firstAttribute="bottom" secondItem="tiz-kK-5BF" secondAttribute="bottom" constant="26" id="C7L-s6-B3l"/>
-                <constraint firstItem="nxE-af-qT3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="FRr-Hz-yyx"/>
-                <constraint firstAttribute="trailing" secondItem="tiz-kK-5BF" secondAttribute="trailing" constant="8" id="Otv-4c-kG2"/>
-                <constraint firstAttribute="bottom" secondItem="nxE-af-qT3" secondAttribute="bottom" constant="9" id="UOi-YG-Z1R"/>
+                <constraint firstItem="XzO-wb-tyP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="9dk-vi-Rd2"/>
+                <constraint firstAttribute="trailing" secondItem="XzO-wb-tyP" secondAttribute="trailing" constant="5" id="UCl-EO-hzy"/>
+                <constraint firstItem="XzO-wb-tyP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="grJ-Tv-EF4"/>
+                <constraint firstAttribute="bottom" secondItem="XzO-wb-tyP" secondAttribute="bottom" constant="5" id="pTI-gX-uFb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cardView" destination="XzO-wb-tyP" id="zZX-Vc-Q6l"/>
                 <outlet property="fullName" destination="tiz-kK-5BF" id="GPm-Xg-rwk"/>
                 <outlet property="userAvatar" destination="nxE-af-qT3" id="xdR-GO-euW"/>
             </connections>
