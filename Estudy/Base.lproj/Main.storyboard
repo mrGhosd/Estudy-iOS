@@ -70,7 +70,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="oGD-fJ-hec">
                         <barButtonItem key="backBarButtonItem" image="menu-32.png" id="OjK-T8-gHS"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="Vxk-mi-FWG"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="Vxk-mi-FWG">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="sidebarButton" destination="Vxk-mi-FWG" id="nmd-Me-Ubi"/>
