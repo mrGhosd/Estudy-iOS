@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+import ObjectMapper
 
 class MessagesFactory: NSObject {
     class var sharedInstance: MessagesFactory {
@@ -30,6 +31,10 @@ class MessagesFactory: NSObject {
                     error(errorValue)
                 }
             })
+    }
+    
+    func parseObject(message: String!) -> Message {
+        return Mapper<Message>().map(message)!
     }
 
 }

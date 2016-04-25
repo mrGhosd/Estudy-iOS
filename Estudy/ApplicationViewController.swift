@@ -14,7 +14,7 @@ import Alamofire
 import AlamofireImage
 
 class ApplicationViewController: UIViewController {
-    let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:5001")!)
+    let socket = SocketService.sharedInstance.socket
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,6 @@ class ApplicationViewController: UIViewController {
     
     func localNotificationForMessage(messageData: String) {
            let message = Mapper<Message>().map(messageData)
-//        let message = Mapper<Message>.map(messageData)
         if (UIApplication.sharedApplication().applicationState != UIApplicationState.Active) {
             self.appLocalNotification(message!)
         }
@@ -102,4 +101,5 @@ class ApplicationViewController: UIViewController {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+    
 }

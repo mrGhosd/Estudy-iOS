@@ -8,8 +8,9 @@
 
 import UIKit
 import Foundation
+import SocketIOClientSwift
 
-class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, Messages {
+class MessagesViewController: ApplicationViewController, UITableViewDelegate, UITableViewDataSource, Messages {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var messageFormView: UIView!
     @IBOutlet var messageFormHeightConstraint: NSLayoutConstraint!
@@ -27,10 +28,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     var personalCellIdentifier = "personalCellIdentifier"
     var currentUserPersonalCellIdentifier = "currentUserPersonalCellIdentifier"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
+        setSocketData()
         setMessageForm();
         setNavigationBarData()
         tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
@@ -191,14 +194,47 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func scrollDownTableView() {
+        var diff: CGFloat!
         let indexPath = NSIndexPath(forRow: chat.messages.count - 1, inSection: 0)
         var cell = tableView.cellForRowAtIndexPath(indexPath)
-        var y = cell!.frame.origin.y - defaultKeyboardHeight - minFormHeight
+        if (keyboardIsVisible) {
+            diff = cell!.frame.origin.y - defaultKeyboardHeight - minFormHeight
+        }
+        else {
+            diff = cell!.frame.origin.y
+        }
+        var y = diff
         tableView.setContentOffset(CGPointMake(0, y ), animated: true)
     }
     
     func setDefaultMessageFormHeight() {
         messageFormHeightValue.constant = minFormHeight
+    }
+    
+    func setSocketData() {
+        socket.on("user\(AuthService.sharedInstance.currentUser.id)chatmessage") {data, ack in
+            if let action = data.first!["action"] {
+                switch(String(action!)) {
+                case "chatmessage":
+                    if let object = data.first!["obj"] {
+                        self.addMessageToList(String(object!))
+                    }
+                default: break
+                }
+            }
+        }
+        
+        socket.connect()
+    }
+    
+    func addMessageToList(messageData: String!) {
+        let message = MessagesFactory.sharedInstance.parseObject(messageData)
+        if (message.user.id != AuthService.sharedInstance.currentUser.id) {
+            chat.messages.append(message)
+            tableView.reloadData()
+            scrollDownTableView()
+        }
+//
     }
 
 }

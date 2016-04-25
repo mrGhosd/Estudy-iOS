@@ -24,13 +24,17 @@ class AuthService: NSObject {
     }
     
     func signIn(email: String!, password: String!, success: (AnyObject) -> Void, error: (ServerError) -> Void) {
-        ApiRequest.sharedInstance.post("/sessions", parameters: ["session": ["email": email, "password": password]])
+        ApiRequest.sharedInstance.post("/sessions", parameters: ["session": ["email": email, "password": password,
+                                                                "authorization": self.deviseInormation()]])
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                     case .Success(let data):
-                        if let token = data["remember_token"] as? String {
+                        if let token = data["token"] as? String {
                             self.keychain.set(token, forKey: "estudyauthtoken")
                             self.getCurrentUser()
+                        }
+                        else {
+                    
                         }
                     
                     case .Failure(let errorData):
@@ -45,7 +49,7 @@ class AuthService: NSObject {
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                 case .Success(let data):
-                    if let token = data["remember_token"] as? String {
+                    if let token = data["token"] as? String {
                         self.keychain.set(token, forKey: "estudyauthtoken")
                         self.getCurrentUser()
                     }
@@ -58,9 +62,10 @@ class AuthService: NSObject {
     }
     
     func getCurrentUser() {
-        if (keychain.get("estudyauthtoken") == nil) { return }
+        let token = keychain.get("estudyauthtoken")
+        if (token == nil) { return }
         
-        ApiRequest.sharedInstance.get("/sessions/current", parameters: [:]).responseObject("user", completionHandler: {(response: Response<User, NSError>) in
+        ApiRequest.sharedInstance.get("/sessions/current", parameters: [:]).responseObject("current_user", completionHandler: {(response: Response<User, NSError>) in
             switch(response.result) {
             case .Success(let data):
                 self.currentUser = data
@@ -75,5 +80,12 @@ class AuthService: NSObject {
         keychain.delete("estudyauthtoken")
         self.currentUser = nil
         NSNotificationCenter.defaultCenter().postNotificationName("signOut", object: nil)
+    }
+    
+    func deviseInormation() -> NSDictionary {
+        let devise = UIDevice.currentDevice()
+        let deviseData = ["platform": devise.systemName, "platform_version": devise.systemVersion,
+                          "app_name": devise.name]
+        return deviseData
     }
 }

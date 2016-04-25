@@ -1,15 +1,15 @@
 PODS:
-  - Alamofire (3.1.1)
-  - AlamofireImage (2.1.0):
-    - Alamofire (~> 3.1)
-  - AlamofireObjectMapper (2.1.0):
-    - Alamofire (~> 3.1.0)
+  - Alamofire (3.3.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
+  - AlamofireObjectMapper (2.1.2):
+    - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
-  - KeychainSwift (3.0.11)
-  - ObjectMapper (1.1.5)
-  - Socket.IO-Client-Swift (5.5.0)
-  - SwiftyJSON (2.3.1)
-  - Whisper (2.0.2)
+  - KeychainSwift (3.0.13)
+  - ObjectMapper (1.2.0)
+  - Socket.IO-Client-Swift (6.1.0)
+  - SwiftyJSON (2.3.2)
+  - Whisper (2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
@@ -27,17 +27,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
-    :commit: ece271ab33839d11c2153d71fb59c53545132cf9
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 9b0a7188b961a03914a99304488bd226b0e46c0e
-  AlamofireImage: 97e00995920d85b5cb23ee4c3b7f92605f5dc74b
-  AlamofireObjectMapper: 24097576202064f8b0a583452dd934064f78dc0e
-  KeychainSwift: 0a4214c910423543a42b0f30f25987d46178b6a5
-  ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  Socket.IO-Client-Swift: f39dbd4e9b295907bb7fd4b9588b89c00426783d
-  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
-  Whisper: 49abcba82d23dd20f0a9a025797cacd09c8aa3bb
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
+  AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
+  KeychainSwift: 3bda518adb1ab386da0a9a1de93b561ee2c9322b
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  Socket.IO-Client-Swift: b0ebbd80f039992bad6d0f74730b5a540d979520
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  Whisper: 18b574de21a089c0d664b115f26e0d9ccbbadbab
 
 COCOAPODS: 0.39.0
