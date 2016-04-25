@@ -55,6 +55,7 @@
 		648C59191C8BC7E400E3ADF0 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59181C8BC7E400E3ADF0 /* SocketService.swift */; };
 		6493CCBF1BE9835C00D36AD0 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */; };
 		6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCC11BEA03F700D36AD0 /* ServerError.swift */; };
+		64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64C274E11CCE9A8B00D5C57E /* study_1.jpg */; };
 		64C328951C792FC2000F15BC /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
 		64D99AF71C8649B3008EF3A2 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
 		AFBFD58159DDA5CEC4812285 /* Pods_Estudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */; };
@@ -138,6 +139,7 @@
 		648C59181C8BC7E400E3ADF0 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		6493CCC11BEA03F700D36AD0 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		64C274E11CCE9A8B00D5C57E /* study_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = study_1.jpg; sourceTree = "<group>"; };
 		64C328941C792FC2000F15BC /* UserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		64C328961C793410000F15BC /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		64C328981C793419000F15BC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				64C274E11CCE9A8B00D5C57E /* study_1.jpg */,
 				641D35051BEA9E2D00DD660C /* menu-32.png */,
 				642BBA191BE96C88007EE777 /* empty-user.png */,
 			);
@@ -524,6 +527,7 @@
 				646623461C87ABF500281878 /* CurrentUserMessageCell.xib in Resources */,
 				64876C511BE92254005D80AA /* Main.storyboard in Resources */,
 				642BBA1A1BE96C88007EE777 /* empty-user.png in Resources */,
+				64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */,
 				645A66461C825403006FF8D5 /* ChatCell.xib in Resources */,
 				645A66361C810EF2006FF8D5 /* RegView.xib in Resources */,
 				641D35061BEA9E2D00DD660C /* menu-32.png in Resources */,
