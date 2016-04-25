@@ -60,5 +60,9 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 73;
+    }
+    
     
 }
