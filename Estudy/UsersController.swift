@@ -20,27 +20,22 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 142.0/255.0, green: 209.0/255.0, blue: 232.0/255.0, alpha: 1.0)
-        self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 242.0/255.0, blue: 245.0/255.0, alpha: 1.0)
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.setUIForView()
+        self.setSidebarButton()
+        UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
+
+    }
+    
+    //MARK: Set navigation for viewController
+    func setSidebarButton() {
         if self.revealViewController() != nil {
             sidebarButton.target = self.revealViewController()
             sidebarButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
-
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UserListCell
-        let row = indexPath.row
-        let user = serverResponse[row]
-        cell.setUserData(user)
-        return cell as UITableViewCell
-    }
+    //MARK: API request callbacks
     
     func successUsersCallback(objects: [User]){
         serverResponse = objects
@@ -50,6 +45,9 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     func errorUsersCallback(error: ServerError){
         error.handle(self)
     }
+    
+    
+    //MARK: UITableViewDelegate and UITableViewDataSource methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -63,12 +61,28 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 73;
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 73
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UserListCell
+        let row = indexPath.row
+        let user = serverResponse[row]
+        cell.setUserData(user)
+        return cell as UITableViewCell
+    }
+    
+    //MARK: UI Setup
+    
+    func setUIForView() {
+        self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
+        self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
 }

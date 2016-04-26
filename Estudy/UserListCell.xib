@@ -42,8 +42,8 @@
             </subviews>
             <constraints>
                 <constraint firstItem="XzO-wb-tyP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="9dk-vi-Rd2"/>
-                <constraint firstAttribute="trailing" secondItem="XzO-wb-tyP" secondAttribute="trailing" constant="5" id="UCl-EO-hzy"/>
-                <constraint firstItem="XzO-wb-tyP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="grJ-Tv-EF4"/>
+                <constraint firstAttribute="trailing" secondItem="XzO-wb-tyP" secondAttribute="trailing" constant="15" id="UCl-EO-hzy"/>
+                <constraint firstItem="XzO-wb-tyP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="grJ-Tv-EF4"/>
                 <constraint firstAttribute="bottom" secondItem="XzO-wb-tyP" secondAttribute="bottom" constant="5" id="pTI-gX-uFb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
