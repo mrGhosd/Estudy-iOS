@@ -10,6 +10,7 @@ pod 'ObjectMapper', '~> 1.1'
 pod 'KeychainSwift', '~> 3.0'
 pod 'Socket.IO-Client-Swift'
 pod 'Whisper'
+pod 'UIScrollView-InfiniteScroll'
 
 
 target 'Estudy' do

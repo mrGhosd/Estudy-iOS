@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 var serverResponse:[User] = []
 let textCellIdentifier = "TextCell"
@@ -16,6 +15,7 @@ let textCellIdentifier = "TextCell"
 class UsersController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var sidebarButton: UIBarButtonItem!
     var refreshControl: UIRefreshControl!
+    var pageNumber = 1
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         self.setupUIRefreshController()
         self.setUIForView()
         self.setSidebarButton()
+        self.setupInfinteScrolling()
         self.loadUsersList()
     }
     
@@ -31,7 +32,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     func setSidebarButton() {
         if self.revealViewController() != nil {
             sidebarButton.target = self.revealViewController()
-            sidebarButton.action = "revealToggle:"
+            sidebarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
@@ -42,11 +43,20 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
     }
     
+    func loadMoreUsersList() {
+        UserFactory.getCollection(["page": pageNumber], success: successLoadMoreUsersCallback, error: errorUsersCallback)
+    }
+    
     //MARK: API request callbacks
     
     func successUsersCallback(objects: [User]){
         refreshControl.endRefreshing()
         serverResponse = objects
+        self.tableView.reloadData()
+    }
+    
+    func successLoadMoreUsersCallback(objects: [User]) {
+        serverResponse += objects
         self.tableView.reloadData()
     }
     
@@ -85,9 +95,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         cell.setUserData(user)
         return cell as UITableViewCell
     }
-    
     //MARK: UI Setup
-    
     func setUIForView() {
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
         self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
@@ -97,8 +105,18 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     func setupUIRefreshController() {
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: "loadUsersList", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(UsersController.loadUsersList), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl) // not required when using UITableViewController
+    }
+    
+    func setupInfinteScrolling() {
+        self.tableView.infiniteScrollIndicatorStyle = .White
+        self.tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
+            let tableView = scrollView as! UITableView
+            self.pageNumber += 1
+            self.loadMoreUsersList()
+            tableView.finishInfiniteScroll()
+        }
     }
     
 }
