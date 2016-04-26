@@ -15,15 +15,16 @@ let textCellIdentifier = "TextCell"
 
 class UsersController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var sidebarButton: UIBarButtonItem!
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
+        self.setupUIRefreshController()
         self.setUIForView()
         self.setSidebarButton()
-        UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
-
+        self.loadUsersList()
     }
     
     //MARK: Set navigation for viewController
@@ -35,14 +36,22 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         }
     }
     
+    //MARK: API requests 
+    
+    func loadUsersList() {
+        UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
+    }
+    
     //MARK: API request callbacks
     
     func successUsersCallback(objects: [User]){
+        refreshControl.endRefreshing()
         serverResponse = objects
         self.tableView.reloadData()
     }
     
     func errorUsersCallback(error: ServerError){
+        refreshControl.endRefreshing()
         error.handle(self)
     }
     
@@ -83,6 +92,13 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
         self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+    
+    func setupUIRefreshController() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: "loadUsersList", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl) // not required when using UITableViewController
     }
     
 }
