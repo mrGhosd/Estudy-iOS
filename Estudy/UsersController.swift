@@ -9,13 +9,18 @@
 import UIKit
 import Alamofire
 
-var serverResponse:[User] = []
 let textCellIdentifier = "TextCell"
 
-class UsersController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
+
+class UsersController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
     @IBOutlet var sidebarButton: UIBarButtonItem!
     var refreshControl: UIRefreshControl!
     var pageNumber = 1
+    var searchActive : Bool = false
+    var searchedData:[User] = []
+    var serverResponse:[User] = []
+    @IBOutlet var searchBar: UISearchBar!
     
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -47,6 +52,11 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         UserFactory.getCollection(["page": pageNumber], success: successLoadMoreUsersCallback, error: errorUsersCallback)
     }
     
+    func searchUsers(query: String!) {
+        let parameters = ["object": "user", "query": query]
+        UserFactory.search(parameters, success: successSearchUsersCallback, error: errorUsersCallback)
+    }
+    
     //MARK: API request callbacks
     
     func successUsersCallback(objects: [User]){
@@ -57,6 +67,16 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     
     func successLoadMoreUsersCallback(objects: [User]) {
         serverResponse += objects
+        self.tableView.reloadData()
+    }
+    
+    func successSearchUsersCallback(objects: [User]) {
+        searchedData = objects
+//        if(searchedData.count == 0){
+//            searchActive = false;
+//        } else {
+//            searchActive = true;
+//        }
         self.tableView.reloadData()
     }
     
@@ -73,6 +93,9 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return searchedData.count
+        }
         return serverResponse.count
     }
     
@@ -91,10 +114,17 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UserListCell
         let row = indexPath.row
-        let user = serverResponse[row]
+        let user: User!
+        if(searchActive) {
+            user = searchedData[row]
+        }
+        else {
+            user = serverResponse[row]
+        }
         cell.setUserData(user)
         return cell as UITableViewCell
     }
+    
     //MARK: UI Setup
     func setUIForView() {
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
@@ -117,6 +147,44 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
             self.loadMoreUsersList()
             tableView.finishInfiniteScroll()
         }
+    }
+    
+    //MARK: UISearchBarDelegate methods
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+        self.searchBar.showsCancelButton = true
+        self.searchBar.endEditing(true)
+        self.searchBar.showsCancelButton = false
+        self.searchBar.text = nil
+        self.tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchUsers(searchText)
+//        filtered = data.filter({ (text) -> Bool in
+//            let tmp: NSString = text
+//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+//            return range.location != NSNotFound
+//        })
+//        if(filtered.count == 0){
+//            searchActive = false;
+//        } else {
+//            searchActive = true;
+//        }
+//        self.tableView.reloadData()
     }
     
 }

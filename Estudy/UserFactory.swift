@@ -32,4 +32,17 @@ class UserFactory: NSObject {
                 }
         })
     }
-}
+    
+    class func search(parameters: NSDictionary, success: ([User]) -> Void, error: (ServerError) -> Void) -> Void {
+        ApiRequest.sharedInstance.get("/search", parameters: parameters)
+            .responseArray("search", completionHandler: { (response: Response<[User], NSError>) in
+                switch(response.result) {
+                case .Success(let data):
+                    success(data)
+                case .Failure(let errorData):
+                    let errorValue = ServerError(parameters: errorData)
+                    error(errorValue)
+                }
+            })
+    }
+  }
