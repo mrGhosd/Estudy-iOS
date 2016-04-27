@@ -26,6 +26,7 @@ class UserListCell: UITableViewCell {
         var path: UIBezierPath = UIBezierPath(roundedRect: self.cardView.bounds, cornerRadius: 1)
         self.cardView.layer.shadowPath = path.CGPath
         self.cardView.layer.shadowOpacity = 0.2
+        self.fullName.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19.0)
         
         // Initialization code
     }
