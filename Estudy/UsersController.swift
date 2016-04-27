@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 let textCellIdentifier = "TextCell"
 
@@ -20,9 +21,11 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     var searchActive : Bool = false
     var searchedData:[User] = []
     var serverResponse:[User] = []
-    @IBOutlet var searchBar: UISearchBar!
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
@@ -45,10 +48,12 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     //MARK: API requests 
     
     func loadUsersList() {
+        self.showProgress()
         UserFactory.getCollection([:], success: successUsersCallback, error: errorUsersCallback)
     }
     
     func loadMoreUsersList() {
+        self.showProgress()
         UserFactory.getCollection(["page": pageNumber], success: successLoadMoreUsersCallback, error: errorUsersCallback)
     }
     
@@ -61,26 +66,24 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     
     func successUsersCallback(objects: [User]){
         refreshControl.endRefreshing()
+        self.hideProgress()
         serverResponse = objects
         self.tableView.reloadData()
     }
     
     func successLoadMoreUsersCallback(objects: [User]) {
+        self.hideProgress()
         serverResponse += objects
         self.tableView.reloadData()
     }
     
     func successSearchUsersCallback(objects: [User]) {
         searchedData = objects
-//        if(searchedData.count == 0){
-//            searchActive = false;
-//        } else {
-//            searchActive = true;
-//        }
         self.tableView.reloadData()
     }
     
     func errorUsersCallback(error: ServerError){
+        self.hideProgress()
         refreshControl.endRefreshing()
         error.handle(self)
     }
@@ -136,7 +139,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(UsersController.loadUsersList), forControlEvents: UIControlEvents.ValueChanged)
-        tableView.addSubview(refreshControl) // not required when using UITableViewController
+        tableView.addSubview(refreshControl)
     }
     
     func setupInfinteScrolling() {
@@ -174,17 +177,16 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         self.searchUsers(searchText)
-//        filtered = data.filter({ (text) -> Bool in
-//            let tmp: NSString = text
-//            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
-//            return range.location != NSNotFound
-//        })
-//        if(filtered.count == 0){
-//            searchActive = false;
-//        } else {
-//            searchActive = true;
-//        }
-//        self.tableView.reloadData()
+    }
+    
+    //MARK: MBProgressHUD actions
+    
+    func showProgress() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+    }
+    
+    func hideProgress() {
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
     
 }

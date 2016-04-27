@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
   - KeychainSwift (3.0.13)
+  - MBProgressHUD (0.9.2)
   - ObjectMapper (1.2.0)
   - Socket.IO-Client-Swift (6.1.0)
   - SwiftyJSON (2.3.2)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 2.0)
   - AlamofireObjectMapper (~> 2.1)
   - KeychainSwift (~> 3.0)
+  - MBProgressHUD (~> 0.9.2)
   - ObjectMapper (~> 1.1)
   - Socket.IO-Client-Swift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
   KeychainSwift: 3bda518adb1ab386da0a9a1de93b561ee2c9322b
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   Socket.IO-Client-Swift: b0ebbd80f039992bad6d0f74730b5a540d979520
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

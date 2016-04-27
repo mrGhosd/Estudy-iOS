@@ -19,6 +19,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "signOut", object: nil)
+        self.tableView.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = Constants.Colors.sidebarBackground
         setSidebarItems()
         
     }
@@ -28,6 +30,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         let cell = tableView.dequeueReusableCellWithIdentifier(sidebarCell, forIndexPath: indexPath)
         let row = sideBarMenu[indexPath.row]
         cell.textLabel?.text = row
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     
