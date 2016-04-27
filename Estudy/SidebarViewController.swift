@@ -32,7 +32,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         cell.textLabel?.text = row
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 19.0)
+        cell.textLabel?.font = Constants.Fonts.sidebarItemFont
         return cell
     }
     

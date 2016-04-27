@@ -15,4 +15,9 @@ struct Constants {
         
         static let sidebarBackground = UIColor(red: 111.0/255.0, green: 146.0/255.0, blue: 158.0/255.0, alpha: 1.0)
     }
+    
+    struct Fonts {
+        static let usersListNameFont = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19.0)
+        static let sidebarItemFont = UIFont(name: "Avenir-Medium", size: 19.0)
+    }
 }
