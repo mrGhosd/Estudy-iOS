@@ -29,6 +29,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "UserListCell", bundle: nil), forCellReuseIdentifier: "TextCell")
+        self.searchBar.placeholder = NSLocalizedString("users_search", comment: "")
         self.setupUIRefreshController()
         self.setUIForView()
         self.setSidebarButton()

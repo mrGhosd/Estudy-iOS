@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Estudy
+
+  Created by vsokoltsov on 29.04.16.
+  Copyright © 2016 vsokoltsov. All rights reserved.
+*/
+
+/*SIDEBAR*/
+"sidebar_sign_in" = "Войти";
+"sidebar_sign_up" = "Регистрация";
+
+/*USERS LIST*/
+"users_search" = "Поиск";

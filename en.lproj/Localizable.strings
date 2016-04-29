@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Estudy
+
+  Created by vsokoltsov on 29.04.16.
+  Copyright © 2016 vsokoltsov. All rights reserved.
+*/
+
+/*SIDEBAR*/
+"sidebar_sign_in" = "Sign in";
+"sidebar_sign_up" = "Sign up";
+
+
+/*USERS LIST*/
+"users_search" = "Search";

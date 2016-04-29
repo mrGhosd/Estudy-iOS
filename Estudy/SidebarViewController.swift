@@ -47,7 +47,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
             signOutButton.hidden = false
         }
         else {
-           sideBarMenu = ["Sign in", "Sign up"]
+           sideBarMenu = [NSLocalizedString("sidebar_sign_in", comment: ""), NSLocalizedString("sidebar_sign_up", comment: "")]
            signOutButton.hidden = true
         }
     }
@@ -63,9 +63,9 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch sideBarMenu[indexPath.row] {
-            case "Sign in":
+            case NSLocalizedString("sidebar_sign_in", comment: ""):
                 self.performSegueWithIdentifier("authorization", sender: self)
-            case "Sign up":
+            case NSLocalizedString("sidebar_sign_up", comment: ""):
                 self.performSegueWithIdentifier("registration", sender: self)
             case "Messages":
                 self.performSegueWithIdentifier("chats", sender: self)

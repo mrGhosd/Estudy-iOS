@@ -60,6 +60,7 @@
 		64C274E41CCEC53F00D5C57E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C274E31CCEC53F00D5C57E /* UIColor.swift */; };
 		64C328951C792FC2000F15BC /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
 		64D99AF71C8649B3008EF3A2 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
+		64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64D9EAF71CD2DEFC00235743 /* Localizable.strings */; };
 		AFBFD58159DDA5CEC4812285 /* Pods_Estudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */; };
 		ECEE55A82B89CE97CCC82BBC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAD773AAF40F2558BBB698 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -148,6 +149,8 @@
 		64C328961C793410000F15BC /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		64C328981C793419000F15BC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESUIWindow.swift; sourceTree = "<group>"; };
+		64D9EAF61CD2DEFC00235743 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		64D9EAF81CD2DF1500235743 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2FC11957D7961A27572E154 /* Pods-Estudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Estudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Estudy/Pods-Estudy.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AAD773AAF40F2558BBB698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -269,6 +272,7 @@
 		64876C3F1BE92254005D80AA = {
 			isa = PBXGroup;
 			children = (
+				64D9EAF71CD2DEFC00235743 /* Localizable.strings */,
 				64876C4A1BE92254005D80AA /* Estudy */,
 				64876C5F1BE92254005D80AA /* EstudyTests */,
 				64876C6A1BE92254005D80AA /* EstudyUITests */,
@@ -502,6 +506,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 64876C3F1BE92254005D80AA;
 			productRefGroup = 64876C491BE92254005D80AA /* Products */;
@@ -533,6 +538,7 @@
 				646623461C87ABF500281878 /* CurrentUserMessageCell.xib in Resources */,
 				64876C511BE92254005D80AA /* Main.storyboard in Resources */,
 				642BBA1A1BE96C88007EE777 /* empty-user.png in Resources */,
+				64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */,
 				64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */,
 				645A66461C825403006FF8D5 /* ChatCell.xib in Resources */,
 				645A66361C810EF2006FF8D5 /* RegView.xib in Resources */,
@@ -692,6 +698,15 @@
 				64876C551BE92254005D80AA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		64D9EAF71CD2DEFC00235743 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64D9EAF61CD2DEFC00235743 /* en */,
+				64D9EAF81CD2DF1500235743 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
