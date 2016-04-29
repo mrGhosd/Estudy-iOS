@@ -9,52 +9,47 @@
 import UIKit
 
 let sidebarCell = "sidebarCell"
-var sideBarMenu: [String]!
+var sideBarMenu: [[String: String]]!
 let authSideBarMenu = ["Messages"]
 
 class SidebarViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var signOutButton: UIButton!
-
+    @IBOutlet var tableView: UITableView!
+    
+    
+    //MARK: default UIViewController actions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "signOut", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "signOut", object: nil)
         self.tableView.backgroundColor = UIColor.clearColor()
         self.view.backgroundColor = Constants.Colors.sidebarBackground
         setSidebarItems()
         
     }
-    @IBOutlet var tableView: UITableView!
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //MARK: UITableViewDelegates and UITableViewDataSource methods
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(sidebarCell, forIndexPath: indexPath)
         let row = sideBarMenu[indexPath.row]
-        cell.textLabel?.text = row
+        cell.textLabel?.text = row["title"] as String!
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.font = Constants.Fonts.sidebarItemFont
+        cell.imageView!.image = UIImage(named: row["icon"] as String!)
         return cell
     }
-    
-    override func currentUserReceived(notification: NSNotification) {
-        setSidebarItems()
-        self.tableView.reloadData()
-    }
-    
-    func setSidebarItems() {
-        if (AuthService.sharedInstance.currentUser != nil) {
-            sideBarMenu = ["Profile", "Messages"]
-            signOutButton.hidden = false
-        }
-        else {
-           sideBarMenu = [NSLocalizedString("sidebar_sign_in", comment: ""),
-                          NSLocalizedString("sidebar_sign_up", comment: ""),
-                          NSLocalizedString("sidebar_users", comment: "")]
-           signOutButton.hidden = true
-        }
-    }
 
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -64,7 +59,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch sideBarMenu[indexPath.row] {
+        var title = sideBarMenu[indexPath.row]["title"] as String!
+        switch title {
             case NSLocalizedString("sidebar_sign_in", comment: ""):
                 self.performSegueWithIdentifier("authorization", sender: self)
             case NSLocalizedString("sidebar_sign_up", comment: ""):
@@ -79,6 +75,19 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         }
     }
     
+    //MARK: UIViewController actions
+    
+    @IBAction func signOut(sender: AnyObject) {
+        AuthService.sharedInstance.signOut()
+    }
+    
+    //MARK: Current user actions
+    override func currentUserReceived(notification: NSNotification) {
+        setSidebarItems()
+        self.tableView.reloadData()
+    }
+    
+    //MARK: Segue Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let navVC = segue.destinationViewController as! UINavigationController
         if segue.identifier == "authorization" {
@@ -96,15 +105,24 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //MARK: UI setup methods
+    func setSidebarItems() {
+        if (AuthService.sharedInstance.currentUser != nil) {
+            sideBarMenu = [
+                ["icon": "profile_icon", "title": "Profile"],
+                ["icon": "messages_icon", "title": "Messages"],
+            ]
+            signOutButton.hidden = false
+        }
+        else {
+            sideBarMenu = [
+                ["icon": "sign_in_icon", "title": NSLocalizedString("sidebar_sign_in", comment: "")],
+                ["icon": "sign_up_icon", "title":  NSLocalizedString("sidebar_sign_up", comment: "")],
+                ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
+            ]
+            signOutButton.hidden = true
+        }
     }
     
-    @IBAction func signOut(sender: AnyObject) {
-        AuthService.sharedInstance.signOut()
-    }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 }
