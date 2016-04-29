@@ -47,7 +47,9 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
             signOutButton.hidden = false
         }
         else {
-           sideBarMenu = [NSLocalizedString("sidebar_sign_in", comment: ""), NSLocalizedString("sidebar_sign_up", comment: "")]
+           sideBarMenu = [NSLocalizedString("sidebar_sign_in", comment: ""),
+                          NSLocalizedString("sidebar_sign_up", comment: ""),
+                          NSLocalizedString("sidebar_users", comment: "")]
            signOutButton.hidden = true
         }
     }
@@ -67,6 +69,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
                 self.performSegueWithIdentifier("authorization", sender: self)
             case NSLocalizedString("sidebar_sign_up", comment: ""):
                 self.performSegueWithIdentifier("registration", sender: self)
+            case NSLocalizedString("sidebar_users", comment: ""):
+                self.performSegueWithIdentifier("users", sender: self)
             case "Messages":
                 self.performSegueWithIdentifier("chats", sender: self)
         default: break
@@ -85,6 +89,10 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         if (segue.identifier == "registration") {
             let tableVC = navVC.viewControllers.first as! AuthorizationViewController
             tableVC.isAuth = false
+        }
+        
+        if (segue.identifier == "users") {
+            let tableVC = navVC.viewControllers.first as! UsersController
         }
     }
     

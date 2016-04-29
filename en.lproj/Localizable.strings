@@ -9,6 +9,7 @@
 /*SIDEBAR*/
 "sidebar_sign_in" = "Sign in";
 "sidebar_sign_up" = "Sign up";
+"sidebar_users" = "Users";
 
 
 /*USERS LIST*/

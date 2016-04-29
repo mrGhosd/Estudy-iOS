@@ -9,6 +9,7 @@
 /*SIDEBAR*/
 "sidebar_sign_in" = "Войти";
 "sidebar_sign_up" = "Регистрация";
+"sidebar_users" = "Пользователи";
 
 /*USERS LIST*/
 "users_search" = "Поиск";

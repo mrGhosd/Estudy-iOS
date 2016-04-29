@@ -99,7 +99,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1403" y="332"/>
+            <point key="canvasLocation" x="1229" y="694"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="7OR-x5-aD8">
@@ -155,11 +155,12 @@
                         <segue destination="IMk-B6-Y4w" kind="custom" identifier="authorization" customClass="SWRevealViewControllerSeguePushController" id="vkJ-WS-8z1"/>
                         <segue destination="IMk-B6-Y4w" kind="custom" identifier="registration" customClass="SWRevealViewControllerSeguePushController" id="g69-6h-w2l"/>
                         <segue destination="R2z-bK-M74" kind="custom" identifier="chats" customClass="SWRevealViewControllerSeguePushController" id="fXP-uE-NcG"/>
+                        <segue destination="ZNT-We-ObA" kind="custom" identifier="users" customClass="SWRevealViewControllerSeguePushController" id="7Gt-H9-keh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcg-7a-7Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="-491"/>
+            <point key="canvasLocation" x="278" y="-443"/>
         </scene>
         <!--Authorization View Controller-->
         <scene sceneID="sww-bF-60n">
@@ -247,7 +248,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtS-yL-xVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="332"/>
+            <point key="canvasLocation" x="395" y="654"/>
         </scene>
         <!--Chats View Controller-->
         <scene sceneID="umG-RJ-eRv">
@@ -403,5 +404,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g69-6h-w2l"/>
+        <segue reference="7Gt-H9-keh"/>
     </inferredMetricsTieBreakers>
 </document>
