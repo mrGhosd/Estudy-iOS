@@ -11,6 +11,16 @@
 "sidebar_sign_up" = "Sign up";
 "sidebar_users" = "Users";
 
-
 /*USERS LIST*/
 "users_search" = "Search";
+
+/*Authorization view controller*/
+"auth_auth" = "Authorization";
+"auth_reg" = "Registration";
+
+"auth_button" = "Sign in";
+"reg_button" = "Sign up";
+
+"email_field" = "Email";
+"password_field" = "Password";
+"password_confirmation_field" = "Password confirmation";

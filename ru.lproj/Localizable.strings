@@ -13,3 +13,14 @@
 
 /*USERS LIST*/
 "users_search" = "Поиск";
+
+/*Authorization view controller*/
+"auth_auth" = "Авторизация";
+"auth_reg" = "Регистрация";
+
+"auth_button" = "Войти";
+"reg_button" = "Регистрация";
+
+"email_field" = "Электронная почта";
+"password_field" = "Пароль";
+"password_confirmation_field" = "Подтверждение пароля";

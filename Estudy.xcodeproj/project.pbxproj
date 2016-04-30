@@ -60,6 +60,8 @@
 		64D99AF71C8649B3008EF3A2 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
 		64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64D9EAF71CD2DEFC00235743 /* Localizable.strings */; };
 		64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091C1CD41E7700F7CABE /* menu-32.png */; };
+		64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091E1CD4265600F7CABE /* estudy_bg_2.png */; };
+		64F509211CD42C1000F7CABE /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F509201CD42C1000F7CABE /* email_icon.png */; };
 		AFBFD58159DDA5CEC4812285 /* Pods_Estudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */; };
 		ECEE55A82B89CE97CCC82BBC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAD773AAF40F2558BBB698 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -149,6 +151,8 @@
 		64D9EAF61CD2DEFC00235743 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64D9EAF81CD2DF1500235743 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64F5091C1CD41E7700F7CABE /* menu-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-32.png"; sourceTree = "<group>"; };
+		64F5091E1CD4265600F7CABE /* estudy_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estudy_bg_2.png; sourceTree = "<group>"; };
+		64F509201CD42C1000F7CABE /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
 		C2FC11957D7961A27572E154 /* Pods-Estudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Estudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Estudy/Pods-Estudy.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AAD773AAF40F2558BBB698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -335,6 +339,8 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				64F509201CD42C1000F7CABE /* email_icon.png */,
+				64F5091E1CD4265600F7CABE /* estudy_bg_2.png */,
 				64F5091C1CD41E7700F7CABE /* menu-32.png */,
 				64C274E11CCE9A8B00D5C57E /* study_1.jpg */,
 			);
@@ -527,9 +533,11 @@
 				646623521C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib in Resources */,
 				646623541C87B9DC00281878 /* PersonalNavigationBar.xib in Resources */,
 				64876C561BE92254005D80AA /* LaunchScreen.storyboard in Resources */,
+				64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */,
 				645A66341C810EE4006FF8D5 /* AuthView.xib in Resources */,
 				64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
+				64F509211CD42C1000F7CABE /* email_icon.png in Resources */,
 				646623441C87A82100281878 /* MessageCell.xib in Resources */,
 				64876C531BE92254005D80AA /* Assets.xcassets in Resources */,
 				648C59151C8B97E400E3ADF0 /* MessageForm.xib in Resources */,

@@ -174,6 +174,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="estudy_bg_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-ls-Uv2">
+                                <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6o-T5-ztt">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
@@ -189,12 +192,12 @@
                                                     <segment title="Authorization"/>
                                                     <segment title="Registration"/>
                                                 </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="switchViews:" destination="iOH-qD-Y3Y" eventType="valueChanged" id="G8O-6R-jha"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="8Kg-f8-QkU"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="COc-Dk-q33"/>
@@ -215,12 +218,18 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="L6o-T5-ztt" secondAttribute="trailing" constant="-20" id="1Kj-fH-Ck3"/>
                             <constraint firstItem="L6o-T5-ztt" firstAttribute="top" secondItem="gt9-bz-OE5" secondAttribute="bottom" id="JJ4-xC-PXd"/>
+                            <constraint firstItem="iBS-ls-Uv2" firstAttribute="top" secondItem="gt9-bz-OE5" secondAttribute="bottom" id="MvD-km-aiy"/>
                             <constraint firstItem="L6o-T5-ztt" firstAttribute="leading" secondItem="TEn-qb-Reu" secondAttribute="leadingMargin" constant="-20" id="NkO-RH-bVp"/>
+                            <constraint firstItem="sDS-Mt-1k0" firstAttribute="top" secondItem="iBS-ls-Uv2" secondAttribute="bottom" id="SCf-sO-bxA"/>
                             <constraint firstItem="sDS-Mt-1k0" firstAttribute="top" secondItem="L6o-T5-ztt" secondAttribute="bottom" id="UKD-ih-kUH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iBS-ls-Uv2" secondAttribute="trailing" constant="-20" id="i6d-fE-lqo"/>
+                            <constraint firstItem="iBS-ls-Uv2" firstAttribute="leading" secondItem="TEn-qb-Reu" secondAttribute="leadingMargin" constant="-20" id="iNr-Kl-q0x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zfa-Qb-erm">
-                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="ZTw-BF-XoO"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="ZTw-BF-XoO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentView" destination="9rJ-kn-IIi" id="B7w-eW-Nho"/>
@@ -290,7 +299,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wli-u4-LLb">
-                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="I0H-eC-Yfe"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="I0H-eC-Yfe">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="sidebarButton" destination="I0H-eC-Yfe" id="jaO-r8-Raz"/>
@@ -400,6 +411,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="estudy_bg_2.png" width="480" height="480"/>
         <image name="menu-32.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>

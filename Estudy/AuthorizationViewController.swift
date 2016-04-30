@@ -17,15 +17,63 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     var authView: AuthView!
     var regView: RegView!
     
+    //MARK: Default UIViewController events
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentUserReceived:", name: "currentUser", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
+        self.setupSWRevealViewController()
+        self.setupUI()
+        
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //MARK: Current User recevieing
+    
+    override func currentUserReceived(notification: NSNotification) {
+        
+    }
+    
+    //MARK: APi requests
+    
+    func signIn(email: String!, password: String!) {
+        AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
+    }
+    
+    func signUp(email: String!, pasword: String!, password_confirmation: String!) {
+        AuthService.sharedInstance.signUp(email, password: password_confirmation, passwordConfirmation: password_confirmation, error: failureSiegnUpCallback)
+    }
+    
+    //MARK: API callbacks
+    
+    func successAuthCallback(object: AnyObject!) {
+    
+    }
+    
+    func failureAuthCallback(error: ServerError) {
+        
+    }
+    
+    func failureSiegnUpCallback(error: ServerError) {
+    
+    }
+    
+    
+    //MARK: Setup UI for view
+    
+    func setupSWRevealViewController() {
         if self.revealViewController() != nil {
             sidebarButton.target = self.revealViewController()
-            sidebarButton.action = "revealToggle:"
+            sidebarButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+    }
+    
+    
+    func setupUI() {
         authView = NSBundle.mainBundle().loadNibNamed("AuthView", owner: self, options: nil).first as! AuthView
         authView.delegate = self
         contentView.addSubview(authView)
@@ -43,14 +91,15 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
             authView.hidden = true
             regView.hidden = false
         }
-    }
-    
-    override func currentUserReceived(notification: NSNotification) {
         
+        self.segmentSwitcher.setTitle(NSLocalizedString("auth_auth", comment: ""), forSegmentAtIndex: 0)
+        self.segmentSwitcher.setTitle(NSLocalizedString("auth_reg", comment: ""), forSegmentAtIndex: 1)
+        self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
     }
     
+    //MARK: UI actions
     @IBAction func switchViews(sender: AnyObject) {
-        var index = segmentSwitcher.selectedSegmentIndex
+        let index = segmentSwitcher.selectedSegmentIndex
         
         if index == 0 {
             authView.hidden = false
@@ -60,29 +109,5 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
             authView.hidden = true
             regView.hidden = false
         }
-    }
-    
-    func signIn(email: String!, password: String!) {
-        AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
-    }
-    
-    func signUp(email: String!, pasword: String!, password_confirmation: String!) {
-        AuthService.sharedInstance.signUp(email, password: password_confirmation, passwordConfirmation: password_confirmation, error: failureSiegnUpCallback)
-    }
-    
-    func successAuthCallback(object: AnyObject!) {
-    
-    }
-    
-    func failureAuthCallback(error: ServerError) {
-        
-    }
-    
-    func failureSiegnUpCallback(error: ServerError) {
-    
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
