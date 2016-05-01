@@ -40,9 +40,12 @@ class ApiRequest: NSObject {
     func request(url: String, requestType: Alamofire.Method, parameters: NSDictionary) -> Request {
         var request: Request!
         let token = keychain.get("estudyauthtoken")
+        let currentLocale = NSLocale.preferredLanguages().first
+        let rangeOfHello = currentLocale?.startIndex.advancedBy(2)
         
         var headers = [
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "locale": currentLocale!.substringToIndex(rangeOfHello!)
         ]
         
         if (token != nil) {
@@ -50,20 +53,12 @@ class ApiRequest: NSObject {
         }
         
         if requestType != Alamofire.Method.GET {
-            request = Alamofire.request(requestType, "http://localhost:3000/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers, encoding: .JSON)
+            request = Alamofire.request(requestType, "\(host)/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers, encoding: .JSON)
         }
         else {
-            request = Alamofire.request(requestType, "http://localhost:3000/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers)
+            request = Alamofire.request(requestType, "\(host)/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers)
         }
         
         return request.validate()
-//            .responseJSON { response in
-//                switch(response.result) {
-//                case .Success(let data):
-//                    success(JSON(data))
-//                case .Failure(let errorData):
-//                    error(errorData)
-//                }
-//        }
     }
 }
