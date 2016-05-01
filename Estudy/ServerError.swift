@@ -13,11 +13,24 @@ import SwiftyJSON
 class ServerError: NSObject {
     var desc: String = ""
     var status: Int = 0
+    var params: Dictionary<String, AnyObject>?
+    var formErrors: NSDictionary!
     var parentController: UIViewController?
     
     init(parameters: NSError) {
         self.status = parameters.code
         self.desc = parameters.localizedDescription
+    }
+    
+    init(parameters: NSError!, data: NSData!) {
+        self.status = parameters.code
+        self.desc = parameters.localizedDescription
+        do {
+            self.params = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! Dictionary<String, AnyObject>
+        }
+        catch let error as NSError {
+            self.params = nil
+        }
     }
     
     func handle(view: UIViewController){

@@ -33,12 +33,9 @@ class AuthService: NSObject {
                             self.keychain.set(token, forKey: "estudyauthtoken")
                             self.getCurrentUser()
                         }
-                        else {
-                    
-                        }
                     
                     case .Failure(let errorData):
-                        let errorValue = ServerError(parameters: errorData)
+                        let errorValue = ServerError(parameters: errorData, data: response.data!)
                         error(errorValue)
                 }
         })

@@ -14,6 +14,8 @@ struct Constants {
         static let mainBackgroundColor = UIColor(red: 240.0/255.0, green: 242.0/255.0, blue: 245.0/255.0, alpha: 1.0)
         
         static let sidebarBackground = UIColor(red: 111.0/255.0, green: 146.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+        
+        static let authViewPlaceholder = UIColor(red: 200.0/255.0, green: 214.0/255.0, blue: 219.0/255.0, alpha: 1.0)
     }
     
     struct Fonts {

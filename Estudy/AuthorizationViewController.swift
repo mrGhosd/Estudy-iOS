@@ -47,11 +47,13 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
         AuthService.sharedInstance.signUp(email, password: password_confirmation, passwordConfirmation: password_confirmation, error: failureSiegnUpCallback)
     }
     
-    //MARK: API callbacks
+    //MARK: success API callbacks
     
     func successAuthCallback(object: AnyObject!) {
     
     }
+    
+    //MARK: failure API callbacks
     
     func failureAuthCallback(error: ServerError) {
         

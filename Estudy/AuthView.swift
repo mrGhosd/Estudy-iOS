@@ -17,17 +17,12 @@ class AuthView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        emailField.backgroundColor = UIColor.clearColor()
-        emailField.placeholder = NSLocalizedString("email_field", comment: "")
-        let str = NSAttributedString(string: NSLocalizedString("email_field", comment: ""), attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
-        emailField.tintColor = UIColor.whiteColor()
-        emailField.textColor = UIColor.whiteColor()
-        emailField.attributedPlaceholder = str
-        emailField.leftViewMode = UITextFieldViewMode.Always
-        emailField.leftView = UIImageView(image: UIImage(named: "email_icon"))
-        emailField.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18.0)
-        passwordField.placeholder = NSLocalizedString("password_field", comment: "")
+        Functions.AuthViews.customizeTextField(emailField, placeholder: NSLocalizedString("email_field", comment: ""), image: "email_icon")
+        Functions.AuthViews.customizeTextField(passwordField, placeholder: NSLocalizedString("password_field", comment: ""), image: "password_icon")
         self.signInButton.setTitle(NSLocalizedString("auth_button", comment: ""), forState: UIControlState.Normal)
+        self.signInButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!
+        self.signInButton.backgroundColor = UIColor(red: 55.0/255.0, green: 240.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+        self.signInButton.layer.cornerRadius = 8
     }
     
     @IBAction func signIn(sender: AnyObject) {

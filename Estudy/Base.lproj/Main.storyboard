@@ -184,7 +184,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="586"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rJ-kn-IIi">
-                                                <rect key="frame" x="0.0" y="44" width="600" height="319"/>
+                                                <rect key="frame" x="0.0" y="44" width="600" height="177"/>
                                             </view>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JyP-WM-yea">
                                                 <rect key="frame" x="151" y="8" width="314" height="29"/>
@@ -197,10 +197,18 @@
                                                     <action selector="switchViews:" destination="iOH-qD-Y3Y" eventType="valueChanged" id="G8O-6R-jha"/>
                                                 </connections>
                                             </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-2c-Us8">
+                                                <rect key="frame" x="248" y="236" width="46" height="30"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="dt6-2c-Us8" firstAttribute="top" secondItem="9rJ-kn-IIi" secondAttribute="bottom" id="0gC-DX-RCm"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="8Kg-f8-QkU"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="COc-Dk-q33"/>
+                                            <constraint firstItem="dt6-2c-Us8" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="FWb-h4-8Sh"/>
                                             <constraint firstItem="9rJ-kn-IIi" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" constant="10" id="gXt-Kz-ZYm"/>
                                             <constraint firstAttribute="trailing" secondItem="9rJ-kn-IIi" secondAttribute="trailing" constant="10" id="h9n-ig-IUG"/>
                                         </constraints>

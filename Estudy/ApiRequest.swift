@@ -56,7 +56,7 @@ class ApiRequest: NSObject {
             request = Alamofire.request(requestType, "http://localhost:3000/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers)
         }
         
-        return request
+        return request.validate()
 //            .responseJSON { response in
 //                switch(response.result) {
 //                case .Success(let data):

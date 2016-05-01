@@ -53,6 +53,9 @@
 		648C59191C8BC7E400E3ADF0 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59181C8BC7E400E3ADF0 /* SocketService.swift */; };
 		6493CCBF1BE9835C00D36AD0 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */; };
 		6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCC11BEA03F700D36AD0 /* ServerError.swift */; };
+		64A1B0721CD64FB000BD6E23 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */; };
+		64A1B0761CD6522800BD6E23 /* password_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A1B0751CD6522800BD6E23 /* password_icon.png */; };
+		64A1B0781CD6528200BD6E23 /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A1B0771CD6528200BD6E23 /* email_icon.png */; };
 		64C0D77E1CD022D20007DC7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C0D77D1CD022D20007DC7D /* Constants.swift */; };
 		64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64C274E11CCE9A8B00D5C57E /* study_1.jpg */; };
 		64C274E41CCEC53F00D5C57E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C274E31CCEC53F00D5C57E /* UIColor.swift */; };
@@ -61,7 +64,6 @@
 		64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64D9EAF71CD2DEFC00235743 /* Localizable.strings */; };
 		64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091C1CD41E7700F7CABE /* menu-32.png */; };
 		64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091E1CD4265600F7CABE /* estudy_bg_2.png */; };
-		64F509211CD42C1000F7CABE /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F509201CD42C1000F7CABE /* email_icon.png */; };
 		AFBFD58159DDA5CEC4812285 /* Pods_Estudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */; };
 		ECEE55A82B89CE97CCC82BBC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AAD773AAF40F2558BBB698 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +143,9 @@
 		648C59181C8BC7E400E3ADF0 /* SocketService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		6493CCBE1BE9835C00D36AD0 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		6493CCC11BEA03F700D36AD0 /* ServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
+		64A1B0751CD6522800BD6E23 /* password_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password_icon.png; sourceTree = "<group>"; };
+		64A1B0771CD6528200BD6E23 /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
 		64C0D77D1CD022D20007DC7D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		64C274E11CCE9A8B00D5C57E /* study_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = study_1.jpg; sourceTree = "<group>"; };
 		64C274E31CCEC53F00D5C57E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -152,7 +157,6 @@
 		64D9EAF81CD2DF1500235743 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64F5091C1CD41E7700F7CABE /* menu-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-32.png"; sourceTree = "<group>"; };
 		64F5091E1CD4265600F7CABE /* estudy_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = estudy_bg_2.png; sourceTree = "<group>"; };
-		64F509201CD42C1000F7CABE /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
 		C2FC11957D7961A27572E154 /* Pods-Estudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Estudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Estudy/Pods-Estudy.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AAD773AAF40F2558BBB698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -221,6 +225,7 @@
 				645A66311C80F940006FF8D5 /* RegView.swift */,
 				645A66331C810EE4006FF8D5 /* AuthView.xib */,
 				645A66351C810EF2006FF8D5 /* RegView.xib */,
+				64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */,
 			);
 			name = authorization;
 			sourceTree = "<group>";
@@ -339,7 +344,8 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				64F509201CD42C1000F7CABE /* email_icon.png */,
+				64A1B0771CD6528200BD6E23 /* email_icon.png */,
+				64A1B0751CD6522800BD6E23 /* password_icon.png */,
 				64F5091E1CD4265600F7CABE /* estudy_bg_2.png */,
 				64F5091C1CD41E7700F7CABE /* menu-32.png */,
 				64C274E11CCE9A8B00D5C57E /* study_1.jpg */,
@@ -528,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A1B0781CD6528200BD6E23 /* email_icon.png in Resources */,
 				646623501C87B4D100281878 /* PersonalMessageCell.xib in Resources */,
 				642BBA181BE96372007EE777 /* UserListCell.xib in Resources */,
 				646623521C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib in Resources */,
@@ -537,7 +544,7 @@
 				645A66341C810EE4006FF8D5 /* AuthView.xib in Resources */,
 				64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
-				64F509211CD42C1000F7CABE /* email_icon.png in Resources */,
+				64A1B0761CD6522800BD6E23 /* password_icon.png in Resources */,
 				646623441C87A82100281878 /* MessageCell.xib in Resources */,
 				64876C531BE92254005D80AA /* Assets.xcassets in Resources */,
 				648C59151C8B97E400E3ADF0 /* MessageForm.xib in Resources */,
@@ -621,6 +628,7 @@
 			files = (
 				641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */,
 				64C0D77E1CD022D20007DC7D /* Constants.swift in Sources */,
+				64A1B0721CD64FB000BD6E23 /* CommonFunctions.swift in Sources */,
 				642BBA141BE962C3007EE777 /* UserListCell.swift in Sources */,
 				6466233F1C879A6000281878 /* MessagesFactory.swift in Sources */,
 				646623481C87AF2800281878 /* CurrentUserMessageCell.swift in Sources */,
