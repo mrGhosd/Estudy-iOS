@@ -14,6 +14,7 @@
 		642BBA181BE96372007EE777 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
 		642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
+		645017B21CD6A09D00B0DB9B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 645017B11CD6A09D00B0DB9B /* cross.png */; };
 		645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
 		645A66301C80F936006FF8D5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
 		645A66321C80F940006FF8D5 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66311C80F940006FF8D5 /* RegView.swift */; };
@@ -97,6 +98,7 @@
 		642BBA171BE96372007EE777 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		643E1FBA1C0B276300BC5A43 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		645017B11CD6A09D00B0DB9B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		645A662F1C80F936006FF8D5 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		645A66311C80F940006FF8D5 /* RegView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				645017B11CD6A09D00B0DB9B /* cross.png */,
 				64A1B0771CD6528200BD6E23 /* email_icon.png */,
 				64A1B0751CD6522800BD6E23 /* password_icon.png */,
 				64F5091E1CD4265600F7CABE /* estudy_bg_2.png */,
@@ -534,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645017B21CD6A09D00B0DB9B /* cross.png in Resources */,
 				64A1B0781CD6528200BD6E23 /* email_icon.png in Resources */,
 				646623501C87B4D100281878 /* PersonalMessageCell.xib in Resources */,
 				642BBA181BE96372007EE777 /* UserListCell.xib in Resources */,

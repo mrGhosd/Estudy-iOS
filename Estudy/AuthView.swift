@@ -19,15 +19,17 @@ class AuthView: UIView {
         super.awakeFromNib()
         Functions.AuthViews.customizeTextField(emailField, placeholder: NSLocalizedString("email_field", comment: ""), image: "email_icon")
         Functions.AuthViews.customizeTextField(passwordField, placeholder: NSLocalizedString("password_field", comment: ""), image: "password_icon")
-        self.signInButton.setTitle(NSLocalizedString("auth_button", comment: ""), forState: UIControlState.Normal)
-        self.signInButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!
-        self.signInButton.backgroundColor = UIColor(red: 55.0/255.0, green: 240.0/255.0, blue: 132.0/255.0, alpha: 1.0)
-        self.signInButton.layer.cornerRadius = 8
+        setupUIForButton()
     }
     
     @IBAction func signIn(sender: AnyObject) {
         delegate.signIn!(emailField.text, password: passwordField.text)
     }
-
     
+    func setupUIForButton() {
+        self.signInButton.setTitle(NSLocalizedString("auth_button", comment: ""), forState: UIControlState.Normal)
+        self.signInButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!
+        self.signInButton.backgroundColor = UIColor(red: 55.0/255.0, green: 240.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+        self.signInButton.layer.cornerRadius = 8
+    }
 }
