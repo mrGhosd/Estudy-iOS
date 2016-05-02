@@ -589,7 +589,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
@@ -602,7 +602,7 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Estudy.AuthorizationViewController.successAuthCallback (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
@@ -617,7 +617,7 @@
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Estudy.AuthorizationViewController.successAuthCallback (Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;) -&gt; ()"
@@ -1599,7 +1599,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483883098.331748"
+                  timestampString = "483909850.479171"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -1614,7 +1614,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483883098.331985"
+                  timestampString = "483909850.479553"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"

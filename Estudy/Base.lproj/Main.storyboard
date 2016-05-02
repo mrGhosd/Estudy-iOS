@@ -205,7 +205,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="dt6-2c-Us8" firstAttribute="top" secondItem="9rJ-kn-IIi" secondAttribute="bottom" id="0gC-DX-RCm"/>
+                                            <constraint firstItem="dt6-2c-Us8" firstAttribute="top" secondItem="9rJ-kn-IIi" secondAttribute="bottom" constant="-20" id="0gC-DX-RCm"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="8Kg-f8-QkU"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="COc-Dk-q33"/>
                                             <constraint firstItem="dt6-2c-Us8" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="FWb-h4-8Sh"/>
