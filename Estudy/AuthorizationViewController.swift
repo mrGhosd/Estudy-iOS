@@ -43,8 +43,8 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
         AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
     }
     
-    func signUp(email: String!, pasword: String!, password_confirmation: String!) {
-        AuthService.sharedInstance.signUp(email, password: password_confirmation, passwordConfirmation: password_confirmation, error: failureSiegnUpCallback)
+    func signUp(email: String!, password: String!, passwordConfirmation: String!) {
+        AuthService.sharedInstance.signUp(email, password: password, passwordConfirmation: passwordConfirmation, error: failureSignUpCallback)
     }
     
     //MARK: success API callbacks
@@ -64,8 +64,8 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
         
     }
     
-    func failureSiegnUpCallback(error: ServerError) {
-    
+    func failureSignUpCallback(error: ServerError) {
+        regView.setErrors(error.params!["errors"] as! Dictionary<String, AnyObject>)
     }
     
     

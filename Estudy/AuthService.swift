@@ -42,7 +42,7 @@ class AuthService: NSObject {
     }
     
     func signUp(email: String, password: String!, passwordConfirmation: String!, error: (ServerError) -> Void) {
-        ApiRequest.sharedInstance.post("/registrations", parameters: ["user": ["email": email, "password": password, "password_confirmation": passwordConfirmation]])
+        ApiRequest.sharedInstance.post("/registrations", parameters: ["user": ["email": email, "password": password, "password_confirmation": passwordConfirmation, "authorization": self.deviseInormation()]])
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                 case .Success(let data):
@@ -52,7 +52,7 @@ class AuthService: NSObject {
                     }
                     
                 case .Failure(let errorData):
-                    let errorValue = ServerError(parameters: errorData)
+                    let errorValue = ServerError(parameters: errorData, data: response.data)
                     error(errorValue)
                 }
             })

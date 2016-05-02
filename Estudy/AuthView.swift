@@ -15,6 +15,7 @@ class AuthView: UIView {
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var emailErrors: UILabel!
     @IBOutlet var passwordErrors: UILabel!
+    
     var delegate: Authorization!
     
     override func awakeFromNib() {

@@ -806,7 +806,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "signUp(_:pasword:password_confirmation:)"
+            landmarkName = "signUp(_:password:passwordConfirmation:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1599,7 +1599,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483909850.479171"
+                  timestampString = "483920925.280383"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -1614,7 +1614,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483909850.479553"
+                  timestampString = "483920925.280718"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -2115,6 +2115,22 @@
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "request(_:requestType:parameters:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/RegView.swift"
+            timestampString = "483914941.692839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "signUp(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

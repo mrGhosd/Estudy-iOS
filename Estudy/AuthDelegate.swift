@@ -10,5 +10,5 @@ import Foundation
 
 @objc protocol Authorization {
     optional func signIn(email: String!, password: String!)
-    optional func signUp(email: String!, pasword: String!, password_confirmation: String!)
+    optional func signUp(email: String!, password: String!, passwordConfirmation: String!)
 }
