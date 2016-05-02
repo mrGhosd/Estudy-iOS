@@ -209,6 +209,7 @@
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="8Kg-f8-QkU"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="COc-Dk-q33"/>
                                             <constraint firstItem="dt6-2c-Us8" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="FWb-h4-8Sh"/>
+                                            <constraint firstItem="9rJ-kn-IIi" firstAttribute="top" secondItem="JyP-WM-yea" secondAttribute="bottom" constant="8" id="GTi-4o-ttw"/>
                                             <constraint firstItem="9rJ-kn-IIi" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" constant="10" id="gXt-Kz-ZYm"/>
                                             <constraint firstAttribute="trailing" secondItem="9rJ-kn-IIi" secondAttribute="trailing" constant="10" id="h9n-ig-IUG"/>
                                         </constraints>

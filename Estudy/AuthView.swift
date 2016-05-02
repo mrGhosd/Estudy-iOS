@@ -13,6 +13,8 @@ class AuthView: UIView {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var signInButton: UIButton!
+    @IBOutlet var emailErrors: UILabel!
+    @IBOutlet var passwordErrors: UILabel!
     var delegate: Authorization!
     
     override func awakeFromNib() {
@@ -31,5 +33,24 @@ class AuthView: UIView {
         self.signInButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!
         self.signInButton.backgroundColor = UIColor(red: 55.0/255.0, green: 240.0/255.0, blue: 132.0/255.0, alpha: 1.0)
         self.signInButton.layer.cornerRadius = 8
+    }
+    
+    func setErrors(errors: Dictionary<String, AnyObject>) {
+        self.emailErrors.hidden = true
+        self.passwordErrors.hidden = true
+        
+        if let emailErrorsArr = errors["email"] {
+            let errorsArr = emailErrorsArr as! [String]
+            var emailError: String! = errorsArr.joinWithSeparator("\n")
+            self.emailErrors.text = emailError
+            self.emailErrors.hidden = false
+        }
+        
+        if let passwordErrorsArr = errors["password"] {
+            let errorsArr = passwordErrorsArr as! [String]
+            var passwordError: String! = errorsArr.joinWithSeparator("\n")
+            self.passwordErrors.text = passwordError
+            self.passwordErrors.hidden = false
+        }
     }
 }

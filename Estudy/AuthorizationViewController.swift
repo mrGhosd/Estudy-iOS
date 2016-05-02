@@ -56,17 +56,7 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     //MARK: failure API callbacks
     
     func failureAuthCallback(error: ServerError) {
-        
-//        var view = UIView(frame: CGRectMake(authView.emailField.frame.origin.x + authView.emailField.frame.size.width, 10, 100, 100))
-//        view.backgroundColor = UIColor.redColor()
-//        authView.addSubview(view)
-        authView.emailField.rightViewMode = UITextFieldViewMode.Always
-        let imView = UIImageView(image: UIImage(named: "cross"))
-        authView.emailField.rightView = imView
-        authView.emailField.layer.borderColor = UIColor.redColor().CGColor
-        authView.emailField.layer.borderWidth = 2
-        
-        
+        authView.setErrors(error.params!["errors"] as! Dictionary<String, AnyObject>)
     }
     
     func imageTapped(img: AnyObject)
