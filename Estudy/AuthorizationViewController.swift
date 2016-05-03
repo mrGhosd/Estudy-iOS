@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import MBProgressHUD
 
 class AuthorizationViewController: ApplicationViewController, Authorization {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
@@ -40,31 +41,30 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     //MARK: APi requests
     
     func signIn(email: String!, password: String!) {
+        self.showProgress()
         AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
     }
     
     func signUp(email: String!, password: String!, passwordConfirmation: String!) {
+        self.showProgress()
         AuthService.sharedInstance.signUp(email, password: password, passwordConfirmation: passwordConfirmation, error: failureSignUpCallback)
     }
     
     //MARK: success API callbacks
     
     func successAuthCallback(object: AnyObject!) {
-    
+        self.hideProgress()
     }
     
     //MARK: failure API callbacks
     
     func failureAuthCallback(error: ServerError) {
+        self.hideProgress()
         authView.setErrors(error.params!["errors"] as! Dictionary<String, AnyObject>)
     }
     
-    func imageTapped(img: AnyObject)
-    {
-        
-    }
-    
     func failureSignUpCallback(error: ServerError) {
+        self.hideProgress()
         regView.setErrors(error.params!["errors"] as! Dictionary<String, AnyObject>)
     }
     
@@ -78,7 +78,6 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    
     
     func setupUI() {
         authView = NSBundle.mainBundle().loadNibNamed("AuthView", owner: self, options: nil).first as! AuthView
@@ -116,5 +115,15 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
             authView.hidden = true
             regView.hidden = false
         }
+    }
+    
+    //MARK: MBProgressHud methods
+    
+    func showProgress() {
+        Functions.progressBar.showProgressBar(self.view)
+    }
+    
+    func hideProgress() {
+        Functions.progressBar.hideProgressBar(self.view)
     }
 }

@@ -227,7 +227,6 @@
 				645A66311C80F940006FF8D5 /* RegView.swift */,
 				645A66331C810EE4006FF8D5 /* AuthView.xib */,
 				645A66351C810EF2006FF8D5 /* RegView.xib */,
-				64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */,
 			);
 			name = authorization;
 			sourceTree = "<group>";
@@ -413,6 +412,7 @@
 		64D99AF51C86499F008EF3A2 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */,
 				64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */,
 				64C274E31CCEC53F00D5C57E /* UIColor.swift */,
 				64C0D77D1CD022D20007DC7D /* Constants.swift */,

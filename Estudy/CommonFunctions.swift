@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBProgressHUD
 
 struct Functions {
     struct AuthViews {
@@ -20,6 +21,16 @@ struct Functions {
             field.leftViewMode = UITextFieldViewMode.Always
             field.leftView = UIImageView(image: UIImage(named: image))
             field.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18.0)
+        }
+    }
+    
+    struct progressBar {
+        static func showProgressBar(view: UIView!) {
+            MBProgressHUD.showHUDAddedTo(view, animated: true)
+        }
+        
+        static func hideProgressBar(view: UIView!) {
+            MBProgressHUD.hideAllHUDsForView(view, animated: true)
         }
     }
 }

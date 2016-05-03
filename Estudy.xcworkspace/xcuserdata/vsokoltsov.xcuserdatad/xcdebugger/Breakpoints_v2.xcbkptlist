@@ -530,11 +530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "478221463.343027"
+            timestampString = "483965763.464485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
             <Locations>
@@ -593,11 +593,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "483665283.01867"
+            timestampString = "483981768.088629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "successAuthCallback(_:)"
             landmarkType = "5">
             <Locations>
@@ -737,11 +737,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "483665283.01867"
+            timestampString = "483965763.464485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "currentUserReceived(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -753,11 +753,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "483665283.01867"
+            timestampString = "483965763.464485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "currentUserReceived(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -801,11 +801,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "483665283.01867"
+            timestampString = "483981768.088629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "signUp(_:password:passwordConfirmation:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1599,12 +1599,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483920925.280383"
+                  timestampString = "483981769.895481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "18">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1614,12 +1614,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "483920925.280718"
+                  timestampString = "483981769.895913"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "82">
+                  offsetFromSymbolStart = "75">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1933,11 +1933,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/CommonFunctions.swift"
-            timestampString = "483807243.155338"
+            timestampString = "483981768.088629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "customizeTextField(_:placeholder:image:)"
             landmarkType = "5">
          </BreakpointContent>

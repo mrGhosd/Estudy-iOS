@@ -183,11 +183,11 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     //MARK: MBProgressHUD actions
     
     func showProgress() {
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        Functions.progressBar.showProgressBar(self.view)
     }
     
     func hideProgress() {
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        Functions.progressBar.hideProgressBar(self.view)
     }
     
 }
