@@ -13,6 +13,7 @@ pod 'Socket.IO-Client-Swift'
 pod 'Whisper'
 pod 'UIScrollView-InfiniteScroll'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
 
 
 target 'Estudy' do

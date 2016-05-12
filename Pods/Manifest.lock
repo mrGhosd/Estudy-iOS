@@ -10,6 +10,7 @@ PODS:
   - ObjectMapper (1.2.0)
   - Socket.IO-Client-Swift (6.1.0)
   - SwiftyJSON (2.3.2)
+  - SwiftyVK (1.2)
   - UIScrollView-InfiniteScroll (0.7.3)
   - Whisper (2.1)
 
@@ -22,17 +23,23 @@ DEPENDENCIES:
   - ObjectMapper (~> 1.1)
   - Socket.IO-Client-Swift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`)
   - UIScrollView-InfiniteScroll
   - Whisper
 
 EXTERNAL SOURCES:
   SwiftyJSON:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  SwiftyVK:
+    :git: https://github.com/WE-St0r/SwiftyVK.git
 
 CHECKOUT OPTIONS:
   SwiftyJSON:
     :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+  SwiftyVK:
+    :commit: 37424c7bde47896fc0042ad6158fd7290b2c8f60
+    :git: https://github.com/WE-St0r/SwiftyVK.git
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
@@ -43,6 +50,7 @@ SPEC CHECKSUMS:
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
   Socket.IO-Client-Swift: b0ebbd80f039992bad6d0f74730b5a540d979520
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SwiftyVK: 7bb2ee6bb4d9504bf5fbc2756ad7cd30d7f980c5
   UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
   Whisper: 18b574de21a089c0d664b115f26e0d9ccbbadbab
 

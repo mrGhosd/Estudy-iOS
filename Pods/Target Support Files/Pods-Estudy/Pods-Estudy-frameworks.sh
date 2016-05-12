@@ -92,6 +92,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Estudy/ObjectMapper.framework"
   install_framework "Pods-Estudy/SocketIOClientSwift.framework"
   install_framework "Pods-Estudy/SwiftyJSON.framework"
+  install_framework "Pods-Estudy/SwiftyVK.framework"
   install_framework "Pods-Estudy/UIScrollView_InfiniteScroll.framework"
   install_framework "Pods-Estudy/Whisper.framework"
 fi
@@ -104,6 +105,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Estudy/ObjectMapper.framework"
   install_framework "Pods-Estudy/SocketIOClientSwift.framework"
   install_framework "Pods-Estudy/SwiftyJSON.framework"
+  install_framework "Pods-Estudy/SwiftyVK.framework"
   install_framework "Pods-Estudy/UIScrollView_InfiniteScroll.framework"
   install_framework "Pods-Estudy/Whisper.framework"
 fi

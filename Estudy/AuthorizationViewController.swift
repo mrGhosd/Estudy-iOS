@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 import MBProgressHUD
+import SwiftyVK
 
-class AuthorizationViewController: ApplicationViewController, Authorization {
+class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!
@@ -23,9 +24,9 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
+        VK.start(appID: "5455068", delegate: self)
         self.setupSWRevealViewController()
         self.setupUI()
-        
     }
     
     deinit {
@@ -34,7 +35,7 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     
     //MARK: Current User recevieing
     
-    override func currentUserReceived(notification: NSNotification) {
+    func currentUserReceived(notification: NSNotification) {
         
     }
     
@@ -66,6 +67,10 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     func failureSignUpCallback(error: ServerError) {
         self.hideProgress()
         regView.setErrors(error.params!["errors"] as! Dictionary<String, AnyObject>)
+    }
+    
+    func failureVkSignInCallback(error: ServerError) {
+        self.hideProgress()
     }
     
     
@@ -117,6 +122,10 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
         }
     }
     
+    @IBAction func vkAuth(sender: AnyObject) {
+        VK.autorize()
+    }
+    
     //MARK: MBProgressHud methods
     
     func showProgress() {
@@ -126,4 +135,37 @@ class AuthorizationViewController: ApplicationViewController, Authorization {
     func hideProgress() {
         Functions.progressBar.hideProgressBar(self.view)
     }
+    
+    //MARK: VK SDK delegate methods
+    
+    func vkWillAutorize() -> [VK.Scope] {
+        //Called when SwiftyVK need autorization permissions.
+        return [VK.Scope.email]//an array of application permissions
+    }
+    
+    func vkDidAutorize(parameters: Dictionary<String, String>) {
+        AuthService.sharedInstance.signInViaVK(parameters["email"]!, error: failureVkSignInCallback)
+        //Called when the user is log in.
+        //Here you can start to send requests to the API.
+    }
+
+    func vkDidUnautorize() {
+        //Called when user is log out.
+    }
+
+    func vkAutorizationFailed(error: VK.Error) {
+        //Called when SwiftyVK could not authorize. To let the application know that something went wrong.
+    }
+
+    func vkTokenPath() -> (useUserDefaults: Bool, alternativePath: String) {
+        //Called when SwiftyVK need know where a token is located.
+        return (false, "path")//bool value that indicates whether save token to NSUserDefaults or not, and alternative save path.
+    }
+
+    func vkWillPresentView() -> UIViewController {
+    //Only for iOS!
+    //Called when need to display a view from SwiftyVK.
+        return self.navigationController!.topViewController!
+    }
 }
+
