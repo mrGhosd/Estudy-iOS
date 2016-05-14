@@ -60,6 +60,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var title = sideBarMenu[indexPath.row]["title"] as String!
+        let currentUser = AuthService.sharedInstance.currentUser
+        
         switch title {
             case NSLocalizedString("sidebar_sign_in", comment: ""):
                 self.performSegueWithIdentifier("authorization", sender: self)
@@ -67,6 +69,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
                 self.performSegueWithIdentifier("registration", sender: self)
             case NSLocalizedString("sidebar_users", comment: ""):
                 self.performSegueWithIdentifier("users", sender: self)
+            case currentUser.getCorrectName():
+                self.performSegueWithIdentifier("profile", sender: self)
             case "Messages":
                 self.performSegueWithIdentifier("chats", sender: self)
         default: break
@@ -101,15 +105,20 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         }
         
         if (segue.identifier == "users") {
-            let tableVC = navVC.viewControllers.first as! UsersController
+            _ = navVC.viewControllers.first as! UsersController
+        }
+        
+        if (segue.identifier == "profile") {
+            _ = navVC.viewControllers.first as! ProfileViewController
         }
     }
     
     //MARK: UI setup methods
     func setSidebarItems() {
-        if (AuthService.sharedInstance.currentUser != nil) {
+        let currentUser = AuthService.sharedInstance.currentUser
+        if (currentUser != nil) {
             sideBarMenu = [
-                ["icon": "profile_icon", "title": "Profile"],
+                ["icon": "profile_icon", "title": currentUser.getCorrectName()],
                 ["icon": "messages_icon", "title": "Messages"],
             ]
             signOutButton.hidden = false

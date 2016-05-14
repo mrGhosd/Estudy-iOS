@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jMQ-mA-sQ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jMQ-mA-sQ4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -99,7 +99,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1229" y="694"/>
+            <point key="canvasLocation" x="1149" y="1342"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="7OR-x5-aD8">
@@ -156,6 +156,7 @@
                         <segue destination="IMk-B6-Y4w" kind="custom" identifier="registration" customClass="SWRevealViewControllerSeguePushController" id="g69-6h-w2l"/>
                         <segue destination="R2z-bK-M74" kind="custom" identifier="chats" customClass="SWRevealViewControllerSeguePushController" id="fXP-uE-NcG"/>
                         <segue destination="ZNT-We-ObA" kind="custom" identifier="users" customClass="SWRevealViewControllerSeguePushController" id="7Gt-H9-keh"/>
+                        <segue destination="ZgA-fb-9nD" kind="custom" identifier="profile" customClass="SWRevealViewControllerSeguePushController" id="0mg-xw-gsd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcg-7a-7Lt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,11 +248,12 @@
                         <outlet property="contentView" destination="9rJ-kn-IIi" id="B7w-eW-Nho"/>
                         <outlet property="segmentSwitcher" destination="JyP-WM-yea" id="1Ws-fk-tf6"/>
                         <outlet property="sidebarButton" destination="ZTw-BF-XoO" id="k2W-Co-vXV"/>
+                        <segue destination="iRX-He-jVf" kind="show" identifier="authorized" id="fZ7-yb-aTP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvY-e8-thO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-480"/>
+            <point key="canvasLocation" x="2200" y="-430"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UeW-xO-Ega">
@@ -269,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtS-yL-xVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="654"/>
+            <point key="canvasLocation" x="219" y="1294"/>
         </scene>
         <!--Chats View Controller-->
         <scene sceneID="umG-RJ-eRv">
@@ -385,6 +387,32 @@
             </objects>
             <point key="canvasLocation" x="2670" y="-1224"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="73S-Ce-Sb9">
+            <objects>
+                <viewController id="iRX-He-jVf" customClass="ProfileViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yrc-Xd-dsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Dq-6Z-sNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KYE-nj-Xqp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfu-Iq-Qkm">
+                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="DZL-mM-PD6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="DZL-mM-PD6" id="y4e-Z3-tuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ov9-2b-O1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3034" y="584"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rtb-QY-4FK">
             <objects>
@@ -421,13 +449,32 @@
             </objects>
             <point key="canvasLocation" x="1124" y="-1224"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eY2-4T-43M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZgA-fb-9nD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lve-e6-FZc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iRX-He-jVf" kind="relationship" relationship="rootViewController" id="Wgg-3O-XgI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1U-St-qbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="584"/>
+        </scene>
     </scenes>
     <resources>
         <image name="estudy_bg_2.png" width="480" height="480"/>
         <image name="menu-32.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g69-6h-w2l"/>
         <segue reference="7Gt-H9-keh"/>
+        <segue reference="g69-6h-w2l"/>
+        <segue reference="fZ7-yb-aTP"/>
     </inferredMetricsTieBreakers>
 </document>

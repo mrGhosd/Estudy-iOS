@@ -61,6 +61,7 @@
 		64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64C274E11CCE9A8B00D5C57E /* study_1.jpg */; };
 		64C274E41CCEC53F00D5C57E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C274E31CCEC53F00D5C57E /* UIColor.swift */; };
 		64C328951C792FC2000F15BC /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
+		64D635441CE7C3F000BD5339 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D635431CE7C3F000BD5339 /* ProfileViewController.swift */; };
 		64D99AF71C8649B3008EF3A2 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
 		64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64D9EAF71CD2DEFC00235743 /* Localizable.strings */; };
 		64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091C1CD41E7700F7CABE /* menu-32.png */; };
@@ -154,6 +155,7 @@
 		64C328941C792FC2000F15BC /* UserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		64C328961C793410000F15BC /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		64C328981C793419000F15BC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
+		64D635431CE7C3F000BD5339 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESUIWindow.swift; sourceTree = "<group>"; };
 		64D9EAF61CD2DEFC00235743 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64D9EAF81CD2DF1500235743 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				645A663C1C824D81006FF8D5 /* ChatsViewController.swift */,
 				642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */,
 				6466233C1C8792BC00281878 /* MessagesViewController.swift */,
+				64D635431CE7C3F000BD5339 /* ProfileViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				642BBA141BE962C3007EE777 /* UserListCell.swift in Sources */,
 				6466233F1C879A6000281878 /* MessagesFactory.swift in Sources */,
 				646623481C87AF2800281878 /* CurrentUserMessageCell.swift in Sources */,
+				64D635441CE7C3F000BD5339 /* ProfileViewController.swift in Sources */,
 				645A66411C824F66006FF8D5 /* Chat.swift in Sources */,
 				648C59131C8B97CB00E3ADF0 /* MessageForm.swift in Sources */,
 				64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */,

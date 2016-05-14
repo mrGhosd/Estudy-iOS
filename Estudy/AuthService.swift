@@ -32,31 +32,32 @@ class AuthService: NSObject {
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                     case .Success(let data):
-                        self.successSign(data)
+                        self.successSign(data, success: success)
                     case .Failure(let errorData):
                         self.failureSign(errorData, responseData: response.data!, error: error)
                 }
         })
     }
     
-    func signUp(email: String, password: String!, passwordConfirmation: String!, error: (ServerError) -> Void) {
+    func signUp(email: String, password: String!, passwordConfirmation: String!,
+                success: (AnyObject) -> Void, error: (ServerError) -> Void) {
         ApiRequest.sharedInstance.post("/registrations", parameters: ["user": ["email": email, "password": password, "password_confirmation": passwordConfirmation, "authorization": self.deviseInormation(defaultProvider)]])
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                 case .Success(let data):
-                    self.successSign(data)
+                    self.successSign(data, success: success)
                 case .Failure(let errorData):
                     self.failureSign(errorData, responseData: response.data!, error: error)
                 }
             })
     }
     
-    func signInViaVK(email: String, error: (ServerError) -> Void) {
+    func signInViaVK(email: String, success: (AnyObject) -> Void, error: (ServerError) -> Void) {
         ApiRequest.sharedInstance.post("/oauth/vkontakte", parameters: ["email": email, "auth": self.deviseInormation(vkProvider)])
             .responseJSON(completionHandler: { (response: Response<AnyObject, NSError>) in
                 switch(response.result) {
                 case .Success(let data):
-                    self.successSign(data)                    
+                    self.successSign(data, success: success)
                 case .Failure(let errorData):
                     self.failureSign(errorData, responseData: response.data!, error: error)
                 }
@@ -91,10 +92,13 @@ class AuthService: NSObject {
         return deviseData
     }
     
-    func successSign(data: AnyObject) {
+    func successSign(data: AnyObject, success: ((AnyObject) -> Void)!) {
         if let token = data["token"] as? String {
             self.keychain.set(token, forKey: "estudyauthtoken")
             self.getCurrentUser()
+        }
+        if ((success) != nil) {
+            success(data)
         }
     }
     
