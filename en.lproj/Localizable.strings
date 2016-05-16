@@ -21,6 +21,8 @@
 "auth_button" = "Sign in";
 "reg_button" = "Sign up";
 
+"auth_vk" = "Sign via Vkontakte";
+
 "email_field" = "Email";
 "password_field" = "Password";
 "password_confirmation_field" = "Password confirmation";

@@ -21,6 +21,8 @@
 "auth_button" = "Войти";
 "reg_button" = "Регистрация";
 
+"auth_vk" = "Войти через Вконтакте";
+
 "email_field" = "Электронная почта";
 "password_field" = "Пароль";
 "password_confirmation_field" = "Подтверждение пароля";

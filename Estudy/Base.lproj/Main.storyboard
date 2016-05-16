@@ -212,10 +212,12 @@
                                             <constraint firstItem="dt6-2c-Us8" firstAttribute="top" secondItem="9rJ-kn-IIi" secondAttribute="bottom" constant="-20" id="0gC-DX-RCm"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="top" secondItem="rf9-F5-Wwh" secondAttribute="top" constant="8" id="8Kg-f8-QkU"/>
                                             <constraint firstItem="JyP-WM-yea" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="COc-Dk-q33"/>
+                                            <constraint firstAttribute="trailing" secondItem="dt6-2c-Us8" secondAttribute="trailing" constant="8" id="FJy-Gw-8oR"/>
                                             <constraint firstItem="dt6-2c-Us8" firstAttribute="centerX" secondItem="rf9-F5-Wwh" secondAttribute="centerX" id="FWb-h4-8Sh"/>
                                             <constraint firstItem="9rJ-kn-IIi" firstAttribute="top" secondItem="JyP-WM-yea" secondAttribute="bottom" constant="8" id="GTi-4o-ttw"/>
                                             <constraint firstItem="9rJ-kn-IIi" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" constant="10" id="gXt-Kz-ZYm"/>
                                             <constraint firstAttribute="trailing" secondItem="9rJ-kn-IIi" secondAttribute="trailing" constant="10" id="h9n-ig-IUG"/>
+                                            <constraint firstItem="dt6-2c-Us8" firstAttribute="leading" secondItem="rf9-F5-Wwh" secondAttribute="leading" constant="8" id="xAc-Eg-iZ5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -248,6 +250,7 @@
                         <outlet property="contentView" destination="9rJ-kn-IIi" id="B7w-eW-Nho"/>
                         <outlet property="segmentSwitcher" destination="JyP-WM-yea" id="1Ws-fk-tf6"/>
                         <outlet property="sidebarButton" destination="ZTw-BF-XoO" id="k2W-Co-vXV"/>
+                        <outlet property="vkAuthButton" destination="dt6-2c-Us8" id="MBJ-Fq-dG3"/>
                         <segue destination="iRX-He-jVf" kind="show" identifier="authorized" id="fZ7-yb-aTP"/>
                     </connections>
                 </viewController>

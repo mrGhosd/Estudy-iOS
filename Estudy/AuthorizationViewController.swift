@@ -15,6 +15,7 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!
+    @IBOutlet var vkAuthButton: UIButton!
     var isAuth: Bool! = true
     var authView: AuthView!
     var regView: RegView!
@@ -118,6 +119,13 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
         self.segmentSwitcher.setTitle(NSLocalizedString("auth_auth", comment: ""), forSegmentAtIndex: 0)
         self.segmentSwitcher.setTitle(NSLocalizedString("auth_reg", comment: ""), forSegmentAtIndex: 1)
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
+        self.vkAuthButton.setTitle(NSLocalizedString("auth_vk", comment: ""), forState: UIControlState.Normal)
+//        89, 125, 163
+        self.vkAuthButton.backgroundColor = UIColor(red: 89.0/255.0, green: 125.0/255, blue: 163.0/255.0, alpha: 1.0)
+        self.vkAuthButton.layer.cornerRadius = 8
+        self.vkAuthButton.tintColor = UIColor.whiteColor()
+        self.vkAuthButton.setImage(UIImage(named: "vk-social-network-logo.png"), forState: UIControlState.Normal)
+        self.vkAuthButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
     }
     
     //MARK: UI actions

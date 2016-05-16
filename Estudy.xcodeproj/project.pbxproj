@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6412296E1CEA3E8B0019E12B /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */; };
 		641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */; };
+		641229721CEA923E0019E12B /* vkontakte-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 641229711CEA923E0019E12B /* vkontakte-logo.png */; };
+		641229741CEA93900019E12B /* vkontakte_logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 641229731CEA93900019E12B /* vkontakte_logo_1.png */; };
+		641229761CEA93DE0019E12B /* vk-social-network-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 641229751CEA93DE0019E12B /* vk-social-network-logo.png */; };
 		641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
 		641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
 		642BBA111BE95F49007EE777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
@@ -94,6 +97,9 @@
 		32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Estudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
+		641229711CEA923E0019E12B /* vkontakte-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vkontakte-logo.png"; sourceTree = "<group>"; };
+		641229731CEA93900019E12B /* vkontakte_logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vkontakte_logo_1.png; sourceTree = "<group>"; };
+		641229751CEA93DE0019E12B /* vk-social-network-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-social-network-logo.png"; sourceTree = "<group>"; };
 		641D34FF1BEA9CD500DD660C /* Estudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Estudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		641D35001BEA9CD600DD660C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		641D35011BEA9CD600DD660C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -360,6 +366,9 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				641229751CEA93DE0019E12B /* vk-social-network-logo.png */,
+				641229731CEA93900019E12B /* vkontakte_logo_1.png */,
+				641229711CEA923E0019E12B /* vkontakte-logo.png */,
 				645017B11CD6A09D00B0DB9B /* cross.png */,
 				64A1B0771CD6528200BD6E23 /* email_icon.png */,
 				64A1B0751CD6522800BD6E23 /* password_icon.png */,
@@ -567,14 +576,17 @@
 				64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */,
 				641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
+				641229741CEA93900019E12B /* vkontakte_logo_1.png in Resources */,
 				64A1B0761CD6522800BD6E23 /* password_icon.png in Resources */,
 				646623441C87A82100281878 /* MessageCell.xib in Resources */,
 				64876C531BE92254005D80AA /* Assets.xcassets in Resources */,
+				641229721CEA923E0019E12B /* vkontakte-logo.png in Resources */,
 				648C59151C8B97E400E3ADF0 /* MessageForm.xib in Resources */,
 				646623461C87ABF500281878 /* CurrentUserMessageCell.xib in Resources */,
 				64876C511BE92254005D80AA /* Main.storyboard in Resources */,
 				64D9EAF51CD2DEFB00235743 /* Localizable.strings in Resources */,
 				64C274E21CCE9A8B00D5C57E /* study_1.jpg in Resources */,
+				641229761CEA93DE0019E12B /* vk-social-network-logo.png in Resources */,
 				645A66461C825403006FF8D5 /* ChatCell.xib in Resources */,
 				645A66361C810EF2006FF8D5 /* RegView.xib in Resources */,
 			);
