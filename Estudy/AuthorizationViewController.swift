@@ -36,29 +36,30 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     //MARK: Current User recevieing
     
     func currentUserReceived(notification: NSNotification) {
-//        self.performSegueWithIdentifier("authorized", sender: self)
+        self.performSegueWithIdentifier("authorized", sender: self)
     }
     
     //MARK: segue navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let navVC = segue.destinationViewController as! UINavigationController
-//        
-////        if (segue.identifier == "authorized") {
-//            let profileView = navVC.topViewController as! ProfileViewController
-////        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "authorized") {
+            let profileView = segue.destinationViewController as! ProfileViewController
+            let currentUser = AuthService.sharedInstance.currentUser
+            profileView.user = currentUser
+        }
+    }
 
     
     //MARK: APi requests
     
     func signIn(email: String!, password: String!) {
         self.showProgress()
-        AuthService.sharedInstance.signIn(email, password: password, success: successAuthCallback, error: failureAuthCallback)
+        AuthService.sharedInstance.signIn(email, password: password, error: failureAuthCallback)
     }
     
     func signUp(email: String!, password: String!, passwordConfirmation: String!) {
         self.showProgress()
-        AuthService.sharedInstance.signUp(email, password: password, passwordConfirmation: passwordConfirmation, success: successAuthCallback, error: failureSignUpCallback)
+        AuthService.sharedInstance.signUp(email, password: password, passwordConfirmation: passwordConfirmation, error: failureSignUpCallback)
     }
     
     //MARK: success API callbacks
@@ -155,7 +156,7 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     }
     
     func vkDidAutorize(parameters: Dictionary<String, String>) {
-        AuthService.sharedInstance.signInViaVK(parameters["email"]!, success: self.successAuthCallback, error: self.failureVkSignInCallback)
+        AuthService.sharedInstance.signInViaVK(parameters["email"]!, error: self.failureVkSignInCallback)
         //Called when the user is log in.
         //Here you can start to send requests to the API.
     }

@@ -109,7 +109,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
         }
         
         if (segue.identifier == "profile") {
-            _ = navVC.viewControllers.first as! ProfileViewController
+            let profileView = navVC.viewControllers.first as! ProfileViewController
+            profileView.user = AuthService.sharedInstance.currentUser
         }
     }
     
@@ -120,6 +121,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
             sideBarMenu = [
                 ["icon": "profile_icon", "title": currentUser.getCorrectName()],
                 ["icon": "messages_icon", "title": "Messages"],
+                ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
             ]
             signOutButton.hidden = false
         }

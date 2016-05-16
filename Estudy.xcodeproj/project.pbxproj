@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6412296E1CEA3E8B0019E12B /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */; };
+		641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */; };
 		641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
 		641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
 		642BBA111BE95F49007EE777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
@@ -90,6 +92,8 @@
 /* Begin PBXFileReference section */
 		1E859032D285BDEEB88D09EA /* Pods-Estudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Estudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Estudy/Pods-Estudy.release.xcconfig"; sourceTree = "<group>"; };
 		32A71D215F84CBA9998EA98C /* Pods_Estudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Estudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileInfoView.xib; sourceTree = "<group>"; };
 		641D34FF1BEA9CD500DD660C /* Estudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Estudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		641D35001BEA9CD600DD660C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		641D35011BEA9CD600DD660C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 				D7AAD773AAF40F2558BBB698 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6412296C1CEA3E720019E12B /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */,
+				6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */,
+			);
+			name = profile;
 			sourceTree = "<group>";
 		};
 		641D34FE1BEA9CC200DD660C /* SWRevealViewController */ = {
@@ -374,6 +387,7 @@
 		64876C7B1BE922DB005D80AA /* views */ = {
 			isa = PBXGroup;
 			children = (
+				6412296C1CEA3E720019E12B /* profile */,
 				646623421C87A80A00281878 /* messages */,
 				645A66421C825385006FF8D5 /* chats */,
 				645A662E1C80F926006FF8D5 /* authorization */,
@@ -551,6 +565,7 @@
 				64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */,
 				645A66341C810EE4006FF8D5 /* AuthView.xib in Resources */,
 				64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */,
+				641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
 				64A1B0761CD6522800BD6E23 /* password_icon.png in Resources */,
 				646623441C87A82100281878 /* MessageCell.xib in Resources */,
@@ -634,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6412296E1CEA3E8B0019E12B /* ProfileInfoView.swift in Sources */,
 				641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */,
 				64C0D77E1CD022D20007DC7D /* Constants.swift in Sources */,
 				64A1B0721CD64FB000BD6E23 /* CommonFunctions.swift in Sources */,

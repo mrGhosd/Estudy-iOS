@@ -8,9 +8,13 @@
 import UIKit
 import Foundation
 
-
 class ProfileViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var sidebarButton: UIBarButtonItem!
+    @IBOutlet var tableView: UITableView!
+    
+    let textCellIdentifier = "TextCell"
+    let headerHeight: CGFloat! = 205
+    var user: User!
     
     //MARK: base UIViewController methods
     override func viewDidLoad() {
@@ -50,15 +54,22 @@ class ProfileViewController: ApplicationViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) 
         return cell as UITableViewCell
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = NSBundle.mainBundle().loadNibNamed("ProfileInfoView", owner: self, options: nil)[0] as! ProfileInfoView
+        view.setUserInformation(user)
+        return view as UIView
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return headerHeight
     }
     
     //MARK: UI Setup
     func setUIForView() {
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
-//        self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
-//        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
-    
 }
