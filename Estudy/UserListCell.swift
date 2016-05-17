@@ -33,17 +33,6 @@ class UserListCell: UITableViewCell {
     
     func setUserData(user: User){
         self.fullName.text = user.getCorrectName();
-        if let avatarUrl = user.fullAvatarUrl() {
-            Alamofire.request(.GET, avatarUrl).responseImage{ response in
-                if let image = response.result.value {
-                    self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2
-                    self.userAvatar.clipsToBounds = true
-                    self.userAvatar.layer.borderWidth = 1
-                    self.userAvatar.image = image
-                }
-            }
-        } else {
-            self.userAvatar.image = UIImage(named: "empty-user.png")
-        }
+        Functions.User.avatarImage(self.userAvatar, url: user.fullAvatarUrl())
     }
 }

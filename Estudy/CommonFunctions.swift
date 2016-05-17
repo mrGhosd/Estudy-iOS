@@ -8,6 +8,7 @@
 
 import Foundation
 import MBProgressHUD
+import Alamofire
 
 struct Functions {
     struct AuthViews {
@@ -31,6 +32,23 @@ struct Functions {
         
         static func hideProgressBar(view: UIView!) {
             MBProgressHUD.hideAllHUDsForView(view, animated: true)
+        }
+    }
+    
+    struct User {
+        static func avatarImage(imageView: UIImageView!, url: String?) {
+            if let avatarUrl =  url {
+                Alamofire.request(.GET, avatarUrl).responseImage{ response in
+                    if let image = response.result.value {
+                        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+                        imageView.clipsToBounds = true
+                        imageView.layer.borderWidth = 1
+                        imageView.image = image
+                    }
+                }
+            } else {
+                imageView.image = UIImage(named: "empty-user.png")
+            }
         }
     }
 }
