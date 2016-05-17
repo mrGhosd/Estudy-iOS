@@ -553,11 +553,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
             <Locations>
@@ -681,11 +681,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -697,11 +697,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -745,11 +745,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1543,12 +1543,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485208468.311963"
+                  timestampString = "485220608.025394"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "18">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1558,12 +1558,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485208468.31227"
+                  timestampString = "485220608.025709"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "82">
+                  offsetFromSymbolStart = "75">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2021,11 +2021,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "AuthorizationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2085,11 +2085,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "vkDidAutorize(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2101,11 +2101,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "vkDidAutorize(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2117,11 +2117,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "setupUI()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2133,11 +2133,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "vkWillAutorize()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2149,11 +2149,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "vkWillPresentView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2165,11 +2165,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "vkDidAutorize(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2181,11 +2181,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485135586.555763"
+            timestampString = "485220606.868979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "vkTokenPath()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2277,11 +2277,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "currentUserReceived(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2293,11 +2293,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "successAuthCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2309,11 +2309,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "failureAuthCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2325,11 +2325,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "successAuthCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2357,11 +2357,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2389,11 +2389,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/AuthorizationViewController.swift"
-            timestampString = "485134625.772601"
+            timestampString = "485209256.251491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2411,6 +2411,22 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "request(_:requestType:parameters:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/AuthorizationViewController.swift"
+            timestampString = "485220606.868979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "textFieldShouldReturn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

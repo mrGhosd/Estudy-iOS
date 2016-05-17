@@ -11,7 +11,7 @@ import Foundation
 import MBProgressHUD
 import SwiftyVK
 
-class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
+class AuthorizationViewController: UIViewController, Authorization, VKDelegate, UITextFieldDelegate {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!
@@ -19,6 +19,8 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     var isAuth: Bool! = true
     var authView: AuthView!
     var regView: RegView!
+    
+    @IBOutlet var scrollView: UIScrollView!
     
     //MARK: Default UIViewController events
     
@@ -126,6 +128,11 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
         self.vkAuthButton.tintColor = UIColor.whiteColor()
         self.vkAuthButton.setImage(UIImage(named: "vk-social-network-logo.png"), forState: UIControlState.Normal)
         self.vkAuthButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
+        authView.emailField.delegate = self
+        authView.passwordField.delegate = self
+        regView.emailField.delegate = self
+        regView.passwordField.delegate = self
+        regView.passwordConfirmationField.delegate = self
     }
     
     //MARK: UI actions
@@ -186,6 +193,38 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate {
     //Only for iOS!
     //Called when need to display a view from SwiftyVK.
         return self.navigationController!.topViewController!
+    }
+    
+    //MARK: UITextFieldDelegate methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case authView.emailField:
+            authView.passwordField.becomeFirstResponder()
+            scrollView.contentOffset = CGPoint(x: 0, y: authView.passwordField.frame.origin.y)
+            break
+        case authView.passwordField:
+            authView.signIn(self)
+            break
+        case regView.emailField:
+            regView.passwordField.becomeFirstResponder()
+            scrollView.contentOffset = CGPoint(x: 0, y: regView.passwordField.frame.origin.y)
+            break
+        case regView.passwordField:
+            regView.passwordConfirmationField.becomeFirstResponder()
+            scrollView.contentOffset = CGPoint(x: 0, y: regView.passwordConfirmationField.frame.origin.y)
+            break
+        case regView.passwordConfirmationField:
+            regView.signUp(self)
+            break
+        default:
+            break;
+        }
+        if textField == authView.emailField {
+            authView.passwordField.becomeFirstResponder()
+            scrollView.contentOffset = CGPoint(x: 0, y: authView.passwordField.frame.origin.y)
+            
+        }
+        return true
     }
 }
 

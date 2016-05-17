@@ -248,6 +248,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentView" destination="9rJ-kn-IIi" id="B7w-eW-Nho"/>
+                        <outlet property="scrollView" destination="L6o-T5-ztt" id="tTB-s3-lq8"/>
                         <outlet property="segmentSwitcher" destination="JyP-WM-yea" id="1Ws-fk-tf6"/>
                         <outlet property="sidebarButton" destination="ZTw-BF-XoO" id="k2W-Co-vXV"/>
                         <outlet property="vkAuthButton" destination="dt6-2c-Us8" id="MBJ-Fq-dG3"/>
