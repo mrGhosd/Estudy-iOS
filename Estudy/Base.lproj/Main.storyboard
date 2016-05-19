@@ -310,10 +310,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KVe-18-Wnf" firstAttribute="leading" secondItem="Gwb-z0-7JV" secondAttribute="leadingMargin" id="LWm-8O-ZlL"/>
-                            <constraint firstItem="KVe-18-Wnf" firstAttribute="top" secondItem="HZ8-dp-kRp" secondAttribute="bottom" constant="-40" id="QE6-h6-Xip"/>
+                            <constraint firstItem="KVe-18-Wnf" firstAttribute="leading" secondItem="Gwb-z0-7JV" secondAttribute="leadingMargin" constant="-20" id="LWm-8O-ZlL"/>
+                            <constraint firstItem="KVe-18-Wnf" firstAttribute="top" secondItem="HZ8-dp-kRp" secondAttribute="bottom" constant="-60" id="QE6-h6-Xip"/>
                             <constraint firstItem="F3i-eg-eHM" firstAttribute="top" secondItem="KVe-18-Wnf" secondAttribute="bottom" id="RvT-ZI-3kl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KVe-18-Wnf" secondAttribute="trailing" id="UAw-hS-TcZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KVe-18-Wnf" secondAttribute="trailing" constant="-20" id="UAw-hS-TcZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wli-u4-LLb">

@@ -16,27 +16,37 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     let cellIdentifier = "chatsCell"
     var selectedChat: Chat!
     
+    //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "ChatCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        setupUI()
+        loadChats()
         
-        if self.revealViewController() != nil {
-            sidebarButton.target = self.revealViewController()
-            sidebarButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: Api requests
+    func loadChats() {
         ChatFactory.instance.getCollection(successChatsCallback, error: failureChatCallback)
     }
     
+    //MARK: API success callbacks
     func successChatsCallback(chats: [Chat]) {
         chatsList = chats
         tableView.reloadData()
     }
     
+    //MARK: API failure callbacks
     func failureChatCallback(error: ServerError) {
         
     }
     
+    //MARK: UITableViewDelegate and UITableViewDataSource methods
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatCell
         let row = indexPath.row
@@ -63,15 +73,29 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
         performSegueWithIdentifier("messages", sender: self)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    //MARK: Segue navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "messages" {
             let messagesVC = segue.destinationViewController as! MessagesViewController
             messagesVC.chat = selectedChat
             selectedChat = nil
+        }
+    }
+    
+    //MARK: UI methods
+    
+    func setupUI() {
+        setNavigationBar()
+        self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
+        self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+    
+    func setNavigationBar() {
+        if self.revealViewController() != nil {
+            sidebarButton.target = self.revealViewController()
+            sidebarButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
 }
