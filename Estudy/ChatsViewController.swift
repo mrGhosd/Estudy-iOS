@@ -9,14 +9,16 @@
 import UIKit
 import Foundation
 
-class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     var chatsList: [Chat] = []
+    var searchActive : Bool = false
     let cellIdentifier = "chatsCell"
     var selectedChat: Chat!
     var refreshControl: UIRefreshControl!
     
+    @IBOutlet var searchBar: UISearchBar!
     //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,10 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     //MARK: Api requests
     func loadChats() {
         ChatFactory.instance.getCollection(successChatsCallback, error: failureChatCallback)
+    }
+    
+    func searchChats(query: String!) {
+    
     }
     
     //MARK: API success callbacks
@@ -92,8 +98,7 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
         self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
-        
+        self.searchBar.placeholder = NSLocalizedString("users_search", comment: "")
     }
     
     func setupRefreshControl() {
@@ -109,5 +114,32 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
             sidebarButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+    }
+    
+    //MARK: UISearchBarDelegate methods
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+        self.searchBar.showsCancelButton = true
+        self.searchBar.endEditing(true)
+        self.searchBar.showsCancelButton = false
+        self.searchBar.text = nil
+        self.tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchChats(searchText)
     }
 }
