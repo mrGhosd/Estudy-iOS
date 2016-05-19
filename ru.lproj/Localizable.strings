@@ -5,6 +5,8 @@
   Created by vsokoltsov on 29.04.16.
   Copyright © 2016 vsokoltsov. All rights reserved.
 */
+/*BASE*/
+"pull_to_refresh" = "Потяните для обновления";
 
 /*SIDEBAR*/
 "sidebar_sign_in" = "Войти";

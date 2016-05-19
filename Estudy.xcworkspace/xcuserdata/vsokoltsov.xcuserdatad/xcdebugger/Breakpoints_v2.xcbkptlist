@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "484952202.250101"
+            timestampString = "485370971.373749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "484952202.250101"
+            timestampString = "485371169.450527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -841,11 +841,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/ChatsViewController.swift"
-            timestampString = "485369727.053166"
+            timestampString = "485373385.823411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "successChatsCallback(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -857,11 +857,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/ChatsViewController.swift"
-            timestampString = "485369727.053166"
+            timestampString = "485373385.823411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1543,7 +1543,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485370428.814515"
+                  timestampString = "485373727.345717"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -1558,7 +1558,7 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485370428.814826"
+                  timestampString = "485373727.346014"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -2261,7 +2261,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/SidebarViewController.swift"
-            timestampString = "485114431.316279"
+            timestampString = "485371169.450527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -2443,6 +2443,22 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "fullAvatarUrl()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/ChatsViewController.swift"
+            timestampString = "485373462.740664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "loadChats()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

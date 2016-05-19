@@ -74,9 +74,9 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
             case "Messages":
                 self.performSegueWithIdentifier("chats", sender: self)
         default: break
-            
-            
         }
+        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     //MARK: UIViewController actions

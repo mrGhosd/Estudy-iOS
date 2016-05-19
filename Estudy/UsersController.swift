@@ -138,7 +138,7 @@ class UsersController: ApplicationViewController, UITableViewDataSource, UITable
     
     func setupUIRefreshController() {
         refreshControl = UIRefreshControl()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("pull_to_refresh", comment: ""))
         refreshControl.addTarget(self, action: #selector(UsersController.loadUsersList), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl)
     }

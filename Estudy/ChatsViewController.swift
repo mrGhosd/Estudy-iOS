@@ -15,6 +15,7 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     var chatsList: [Chat] = []
     let cellIdentifier = "chatsCell"
     var selectedChat: Chat!
+    var refreshControl: UIRefreshControl!
     
     //MARK: UIViewController methods
     override func viewDidLoad() {
@@ -24,7 +25,6 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
         loadChats()
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -37,13 +37,14 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     
     //MARK: API success callbacks
     func successChatsCallback(chats: [Chat]) {
+        refreshControl.endRefreshing()
         chatsList = chats
         tableView.reloadData()
     }
     
     //MARK: API failure callbacks
     func failureChatCallback(error: ServerError) {
-        
+        refreshControl.endRefreshing()
     }
     
     //MARK: UITableViewDelegate and UITableViewDataSource methods
@@ -70,6 +71,7 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedChat = chatsList[indexPath.row]
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         performSegueWithIdentifier("messages", sender: self)
     }
     
@@ -86,9 +88,19 @@ class ChatsViewController: ApplicationViewController, UITableViewDelegate, UITab
     
     func setupUI() {
         setNavigationBar()
+        setupRefreshControl()
         self.navigationController?.navigationBar.barTintColor = Constants.Colors.mainNavigationItemColor
         self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("pull_to_refresh", comment: ""))
+        refreshControl.addTarget(self, action: #selector(ChatsViewController.loadChats), forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func setNavigationBar() {
