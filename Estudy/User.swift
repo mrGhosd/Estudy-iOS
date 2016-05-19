@@ -44,7 +44,7 @@ class User: Mappable {
     
     func fullAvatarUrl() -> String? {
         if let url = avatarUrl {
-            return "\(ApiRequest.sharedInstance.host)\(url)"
+            return url
         }
         else {
             return nil

@@ -45,12 +45,16 @@ class BaseApiRequest: NSObject {
         }
         
         if requestType != Alamofire.Method.GET {
-            request = Alamofire.request(requestType, "\(host)/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers, encoding: .JSON)
+            request = Alamofire.request(requestType, self.defineFullUrl(url), parameters: parameters as? [String : AnyObject], headers: headers, encoding: .JSON)
         }
         else {
-            request = Alamofire.request(requestType, "\(host)/api/v0\(url)", parameters: parameters as? [String : AnyObject], headers: headers)
+            request = Alamofire.request(requestType, self.defineFullUrl(url), parameters: parameters as? [String : AnyObject], headers: headers)
         }
         
         return request.validate()
+    }
+    
+    func defineFullUrl(url: String!) -> String {
+        return "\(host)/api/v0\(url)"
     }
 }

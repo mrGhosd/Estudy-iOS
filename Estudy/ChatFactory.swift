@@ -21,7 +21,7 @@ class ChatFactory: NSObject {
     }
     
     func getCollection(success: ([Chat]) -> Void, error: (ServerError) -> Void) {
-        ApiRequest.sharedInstance.get("/chats", parameters: [:])
+        ChatApiRequest.sharedInstance.get("/chats", parameters: [:])
             .responseArray("chats", completionHandler: {(response: Response<[Chat], NSError>) in
                 switch(response.result) {
                 case .Success(let data):

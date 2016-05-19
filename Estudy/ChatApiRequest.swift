@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 import KeychainSwift
 
 class ChatApiRequest: BaseApiRequest {
-    override var host: String! { get { return "http://localhost:5001" } }
+    override var host: String! { get { return "http://localhost:5002" } }
     
     class var sharedInstance: ChatApiRequest {
         struct Singleton {
@@ -20,5 +20,9 @@ class ChatApiRequest: BaseApiRequest {
         }
         
         return Singleton.instance
+    }
+    
+    override func defineFullUrl(url: String!) -> String {
+        return "\(host)\(url)"
     }
 }

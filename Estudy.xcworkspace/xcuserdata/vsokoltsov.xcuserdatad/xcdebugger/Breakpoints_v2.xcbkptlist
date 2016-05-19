@@ -1543,12 +1543,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485220608.025394"
+                  timestampString = "485369314.88226"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1558,12 +1558,12 @@
                   moduleName = "Estudy"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vsokoltsov/iOS_projects/Estudy/Estudy/MessagesViewController.swift"
-                  timestampString = "485220608.025709"
+                  timestampString = "485369314.882624"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
                   endingLineNumber = "194"
-                  offsetFromSymbolStart = "75">
+                  offsetFromSymbolStart = "82">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2427,6 +2427,22 @@
             startingLineNumber = "222"
             endingLineNumber = "222"
             landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Estudy/User.swift"
+            timestampString = "485369294.967587"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "fullAvatarUrl()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
