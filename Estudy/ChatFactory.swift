@@ -34,6 +34,19 @@ class ChatFactory: NSObject {
         })
     }
     
+    class func get(id: Int, success: (Chat) -> Void, error: (ServerError) -> Void) -> Void {
+        ApiRequest.sharedInstance.get("/chats/\(id)", parameters: [:])
+            .responseObject("chat", completionHandler: { (response: Response<Chat, NSError>) in
+                switch(response.result) {
+                case .Success(let data):
+                    success(data)
+                case .Failure(let errorData):
+                    let errorValue = ServerError(parameters: errorData)
+                    error(errorValue)
+                }
+            })
+    }
+    
     class func search(parameters: NSDictionary, success: ([Chat]) -> Void, error: (ServerError) -> Void) -> Void {
         ApiRequest.sharedInstance.get("/search/chats", parameters: parameters)
             .responseArray("search", completionHandler: { (response: Response<[Chat], NSError>) in
