@@ -33,11 +33,11 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setDefaultUI()
-//        registerKeyboardNotifications()
-//        setSocketData()
-//        setMessageForm();
-//        setNavigationBarData()
+        setDefaultUI()
+        registerKeyboardNotifications()
+        setSocketData()
+        setMessageForm();
+        setNavigationBarData()
         registerCellsForTable()
         loadChat()
         tableView.estimatedRowHeight = 144.0
@@ -105,15 +105,22 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let message = chat.messages[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("chatsCell", forIndexPath: indexPath)
-        cell.textLabel?.text = message.text
-        cell.textLabel?.lineBreakMode = .ByWordWrapping
-        cell.textLabel?.numberOfLines = 0
         
-        cell.layoutIfNeeded()
+        if (message.user.id == AuthService.sharedInstance.currentUser.id) {
+                            return currentUserMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
+                        }
+                        else {
+                            return messageCellInstance(message, indexPath: indexPath) as UITableViewCell
+                        }
+//        let cell = tableView.dequeueReusableCellWithIdentifier("chatsCell", forIndexPath: indexPath)
+//        cell.textLabel?.text = message.text
+//        cell.textLabel?.lineBreakMode = .ByWordWrapping
+//        cell.textLabel?.numberOfLines = 0
+////
+//        cell.layoutIfNeeded()
 //        cell.setDataToMessageData(message)
-        return cell
-//        
+//        return cell
+//
 //        if (hasMultipleUsers()) {
 //            
 //        }
@@ -172,6 +179,11 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     func messageCellInstance(message: Message, indexPath: NSIndexPath) -> MessageCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesCell
         cell.setDataToMessageData(message)
+        cell.messageCellText.lineBreakMode = .ByWordWrapping
+        cell.messageCellText.numberOfLines = 0
+        cell.contentView.setNeedsLayout()
+        cell.contentView.layoutIfNeeded()
+        
         return cell
     }
     
@@ -197,8 +209,8 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "chatsCell")
 //        tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
 //        tableView.registerClass(CommonMessageCell.self, forCellReuseIdentifier: cellIdentifier)
-//        tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-//        tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
+        tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
 //        tableView.registerNib(UINib(nibName: "PersonalMessageCell", bundle: nil), forCellReuseIdentifier: personalCellIdentifier)
 //        tableView.registerNib(UINib(nibName: "CurrentUserPersonalMessageCell", bundle: nil), forCellReuseIdentifier: currentUserPersonalCellIdentifier)
     }

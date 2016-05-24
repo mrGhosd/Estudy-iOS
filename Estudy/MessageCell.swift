@@ -22,7 +22,10 @@ class MessageCell: UITableViewCell {
         messageImage = image
         
         messageText.text = message.text
+        messageText.lineBreakMode = .ByWordWrapping
+        messageText.numberOfLines = 0
         setMessageImage()
+        self.layoutIfNeeded()
     }
     
     func setMessageImage() {
