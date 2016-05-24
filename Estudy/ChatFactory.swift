@@ -35,7 +35,7 @@ class ChatFactory: NSObject {
     }
     
     class func get(id: Int, success: (Chat) -> Void, error: (ServerError) -> Void) -> Void {
-        ApiRequest.sharedInstance.get("/chats/\(id)", parameters: [:])
+        ChatApiRequest.sharedInstance.get("/chats/\(id)", parameters: [:])
             .responseObject("chat", completionHandler: { (response: Response<Chat, NSError>) in
                 switch(response.result) {
                 case .Success(let data):
