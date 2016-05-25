@@ -24,20 +24,12 @@ class MessageCell: UITableViewCell {
         messageText.text = message.text
         messageText.lineBreakMode = .ByWordWrapping
         messageText.numberOfLines = 0
-        setMessageImage()
+        messageText.backgroundColor = UIColor.lightGrayColor()
+        messageText.layer.cornerRadius = 25.0
+        messageText.sizeToFit()
+        Functions.User.avatarImage(messageImage, url: message.user!.fullAvatarUrl())
         self.layoutIfNeeded()
-    }
-    
-    func setMessageImage() {
-        if let avatarUrl = message.user!.fullAvatarUrl() {
-            Alamofire.request(.GET, avatarUrl).responseImage{ response in
-                if let image = response.result.value {
-                    self.messageImage.image = image
-                }
-            }
-        } else {
-            self.messageImage.image = UIImage(named: "empty-user.png")
-        }
+        self.backgroundColor = UIColor.clearColor()
     }
     
     func setPersonalMessageData(messageData: Message, textField: UILabel!) {
