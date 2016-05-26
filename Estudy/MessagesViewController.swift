@@ -42,6 +42,8 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
         loadChat()
         tableView.estimatedRowHeight = 144.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        self.automaticallyAdjustsScrollViewInsets = false
+        scrollDownTableView()
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didRotate:"), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
@@ -82,6 +84,7 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
         self.chat = chat
         self.chat.messages = self.chat.messages.reverse()
         self.tableView.reloadData()
+        scrollDownTableView()
     }
     
     func successCreateMessageCallback(message: Message!) {
@@ -216,17 +219,30 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     }
     
     func scrollDownTableView() {
+        let yourSection = 0;
+        let lastRow = tableView.numberOfRowsInSection(yourSection) - 1
+        var indexPath = NSIndexPath(forItem: lastRow, inSection: yourSection)
         var diff: CGFloat!
-        let indexPath = NSIndexPath(forRow: chat.messages.count, inSection: 0)
+//        let indexPath = NSIndexPath(forItem: chat.messages.count - 1, inSection: 0)
         var cell = tableView.cellForRowAtIndexPath(indexPath)
         if (keyboardIsVisible) {
-            diff = cell!.frame.origin.y - defaultKeyboardHeight - minFormHeight
+            if let existCell = cell {
+                diff = existCell.frame.origin.y - defaultKeyboardHeight - minFormHeight
+            }
         }
         else {
-            diff = cell!.frame.origin.y
+            diff = cell?.frame.origin.y
         }
-        var y = diff
-        tableView.setContentOffset(CGPointMake(0, y ), animated: true)
+        
+        if (cell == nil) {
+            let yourSection = 0;
+            let lastRow = tableView.numberOfRowsInSection(yourSection) - 1
+            var y = NSIndexPath(forItem: lastRow, inSection: yourSection)
+            tableView.scrollToRowAtIndexPath(y, atScrollPosition: .Bottom, animated: true)
+        }
+        else {
+            tableView.setContentOffset(CGPointMake(0, diff), animated: true)
+        }
     }
     
     func hasMultipleUsers() -> Bool {
@@ -284,8 +300,8 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
         if (!keyboardIsVisible) {
             keyboardIsVisible = true
             var height = getKeyboardHeight(notification)
-            messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
             scrollDownTableView()
+            messageFormHeightConstraint.constant = messageFormHeightConstraint.constant + height
         }
     }
     

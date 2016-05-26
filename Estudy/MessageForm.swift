@@ -18,6 +18,7 @@ class MessageForm: UIView, UITextViewDelegate {
         super.awakeFromNib()
         messageFormText.delegate = self
         messageFormText.setContentOffset(CGPointMake(0, 0), animated: false)
+        messageFormText.layer.cornerRadius = 8.0
     }
     
     func textViewDidChange(textView: UITextView) {

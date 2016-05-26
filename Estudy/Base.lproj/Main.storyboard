@@ -353,14 +353,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqe-ft-GKf">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="548" width="600" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="MnW-a5-O3B"/>
                                     <constraint firstAttribute="height" constant="50" id="j7R-I1-fcf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="j7R-I1-fcf"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-R0-q2h">
-                                <rect key="frame" x="0.0" y="64" width="600" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="448"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" id="owt-dY-AGb">
@@ -381,16 +387,30 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Msb-R0-q2h" secondAttribute="trailing" constant="-20" id="3g1-Hc-YFq"/>
+                            <constraint firstItem="xqe-ft-GKf" firstAttribute="top" secondItem="Msb-R0-q2h" secondAttribute="bottom" id="4iM-sM-BEy"/>
+                            <constraint firstItem="Nli-xQ-c4J" firstAttribute="top" secondItem="xqe-ft-GKf" secondAttribute="bottom" id="9Am-p6-cai"/>
+                            <constraint firstItem="xqe-ft-GKf" firstAttribute="top" secondItem="Msb-R0-q2h" secondAttribute="bottom" constant="50" id="9hl-9H-EEc"/>
                             <constraint firstItem="xqe-ft-GKf" firstAttribute="top" secondItem="Msb-R0-q2h" secondAttribute="bottom" id="Dnv-2k-agF"/>
                             <constraint firstItem="Msb-R0-q2h" firstAttribute="top" secondItem="Pir-Aw-iQ2" secondAttribute="bottom" id="Efq-EY-oUb"/>
+                            <constraint firstItem="xqe-ft-GKf" firstAttribute="leading" secondItem="DWX-ap-rnB" secondAttribute="leadingMargin" constant="-20" id="I6W-MN-obx"/>
                             <constraint firstItem="xqe-ft-GKf" firstAttribute="leading" secondItem="DWX-ap-rnB" secondAttribute="leadingMargin" constant="-20" id="M2w-2q-gBY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xqe-ft-GKf" secondAttribute="trailing" constant="-20" id="adn-Aa-Sfr"/>
                             <constraint firstItem="Nli-xQ-c4J" firstAttribute="top" secondItem="xqe-ft-GKf" secondAttribute="bottom" id="sME-od-HGR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xqe-ft-GKf" secondAttribute="trailing" constant="-20" id="yZZ-It-P7S"/>
                             <constraint firstItem="Msb-R0-q2h" firstAttribute="leading" secondItem="DWX-ap-rnB" secondAttribute="leadingMargin" constant="-20" id="zhM-ex-0aI"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9hl-9H-EEc"/>
+                                <exclude reference="Dnv-2k-agF"/>
+                                <exclude reference="M2w-2q-gBY"/>
+                                <exclude reference="adn-Aa-Sfr"/>
+                                <exclude reference="sME-od-HGR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="messageFormHeightConstraint" destination="sME-od-HGR" id="RxZ-ty-7Ev"/>
+                        <outlet property="messageFormHeightConstraint" destination="9Am-p6-cai" id="8oj-Kj-9wu"/>
                         <outlet property="messageFormHeightValue" destination="j7R-I1-fcf" id="1T2-bd-sMH"/>
                         <outlet property="messageFormView" destination="xqe-ft-GKf" id="02W-1X-89u"/>
                         <outlet property="tableView" destination="Msb-R0-q2h" id="vgI-hD-I6X"/>

@@ -13,6 +13,7 @@
 		641229741CEA93900019E12B /* vkontakte_logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 641229731CEA93900019E12B /* vkontakte_logo_1.png */; };
 		641229761CEA93DE0019E12B /* vk-social-network-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 641229751CEA93DE0019E12B /* vk-social-network-logo.png */; };
 		64125BDD1CF6771D00DF2C4E /* ESUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64125BDC1CF6771D00DF2C4E /* ESUILabel.swift */; };
+		64125BDF1CF67BC400DF2C4E /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = 64125BDE1CF67BC400DF2C4E /* send.png */; };
 		641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
 		641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
 		642BBA111BE95F49007EE777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
@@ -105,6 +106,7 @@
 		641229731CEA93900019E12B /* vkontakte_logo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vkontakte_logo_1.png; sourceTree = "<group>"; };
 		641229751CEA93DE0019E12B /* vk-social-network-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-social-network-logo.png"; sourceTree = "<group>"; };
 		64125BDC1CF6771D00DF2C4E /* ESUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESUILabel.swift; sourceTree = "<group>"; };
+		64125BDE1CF67BC400DF2C4E /* send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send.png; sourceTree = "<group>"; };
 		641D34FF1BEA9CD500DD660C /* Estudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Estudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		641D35001BEA9CD600DD660C /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		641D35011BEA9CD600DD660C /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				64125BDE1CF67BC400DF2C4E /* send.png */,
 				641229751CEA93DE0019E12B /* vk-social-network-logo.png */,
 				641229731CEA93900019E12B /* vkontakte_logo_1.png */,
 				641229711CEA923E0019E12B /* vkontakte-logo.png */,
@@ -581,6 +584,7 @@
 				646623501C87B4D100281878 /* PersonalMessageCell.xib in Resources */,
 				642BBA181BE96372007EE777 /* UserListCell.xib in Resources */,
 				646623521C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib in Resources */,
+				64125BDF1CF67BC400DF2C4E /* send.png in Resources */,
 				646623541C87B9DC00281878 /* PersonalNavigationBar.xib in Resources */,
 				64876C561BE92254005D80AA /* LaunchScreen.storyboard in Resources */,
 				64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */,

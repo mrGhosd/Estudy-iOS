@@ -31,8 +31,7 @@ class MessageCell: UITableViewCell {
         messageText.numberOfLines = 0
         messageText.backgroundColor = UIColor(red: 186.0/255.0, green: 199.0/255.0, blue: 204.0/255.0, alpha: 0.4)
         messageText.clipsToBounds = true
-        messageText.layer.cornerRadius = 25.0
-        messageText.sizeToFit()
+//        messageText.sizeToFit()
         Functions.User.avatarImage(messageImage, url: message.user!.fullAvatarUrl())
         self.layoutIfNeeded()
         self.backgroundColor = UIColor.clearColor()
