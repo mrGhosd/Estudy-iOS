@@ -217,7 +217,7 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     
     func scrollDownTableView() {
         var diff: CGFloat!
-        let indexPath = NSIndexPath(forRow: chat.messages.count - 1, inSection: 0)
+        let indexPath = NSIndexPath(forRow: chat.messages.count, inSection: 0)
         var cell = tableView.cellForRowAtIndexPath(indexPath)
         if (keyboardIsVisible) {
             diff = cell!.frame.origin.y - defaultKeyboardHeight - minFormHeight
@@ -265,6 +265,8 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     func setDefaultUI() {
         self.tableView.backgroundColor = Constants.Colors.mainBackgroundColor
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.allowsSelection = false
+//        self.tableView.contentInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     }
 
     func setDefaultMessageFormHeight() {

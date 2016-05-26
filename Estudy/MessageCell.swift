@@ -16,6 +16,11 @@ class MessageCell: UITableViewCell {
     var messageText: UILabel!
     var messageImage: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+    }
+    
     func setMessageData(messageData: Message!, textField: UILabel!, image: UIImageView!) {
         message = messageData
         messageText = textField
@@ -24,7 +29,8 @@ class MessageCell: UITableViewCell {
         messageText.text = message.text
         messageText.lineBreakMode = .ByWordWrapping
         messageText.numberOfLines = 0
-        messageText.backgroundColor = UIColor.lightGrayColor()
+        messageText.backgroundColor = UIColor(red: 186.0/255.0, green: 199.0/255.0, blue: 204.0/255.0, alpha: 0.4)
+        messageText.clipsToBounds = true
         messageText.layer.cornerRadius = 25.0
         messageText.sizeToFit()
         Functions.User.avatarImage(messageImage, url: message.user!.fullAvatarUrl())

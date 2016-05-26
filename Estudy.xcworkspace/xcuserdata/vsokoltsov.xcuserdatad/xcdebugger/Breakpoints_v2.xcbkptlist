@@ -1335,11 +1335,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessageCell.swift"
-            timestampString = "485825270.276316"
+            timestampString = "485914790.198383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "setMessageData(_:textField:image:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2517,11 +2517,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Estudy/MessageCell.swift"
-            timestampString = "485827595.498076"
+            timestampString = "485914790.198383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "setMessageData(_:textField:image:)"
             landmarkType = "5">
          </BreakpointContent>
