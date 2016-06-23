@@ -349,11 +349,11 @@
 				64876C791BE922CA005D80AA /* Images */,
 				64876C4B1BE92254005D80AA /* AppDelegate.swift */,
 				64876C4F1BE92254005D80AA /* Main.storyboard */,
+				643E1FBA1C0B276300BC5A43 /* iPad.storyboard */,
 				64876C521BE92254005D80AA /* Assets.xcassets */,
 				64876C541BE92254005D80AA /* LaunchScreen.storyboard */,
 				64876C571BE92254005D80AA /* Info.plist */,
 				6485548E1BE938F900D940F6 /* MyPlayground.playground */,
-				643E1FBA1C0B276300BC5A43 /* iPad.storyboard */,
 			);
 			path = Estudy;
 			sourceTree = "<group>";
