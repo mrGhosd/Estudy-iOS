@@ -92,4 +92,14 @@ struct Functions {
             return sideBarMenu
         }
     }
+    
+    struct Device {
+        static func isIPad() -> Bool {
+            return  UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad
+        }
+        
+        static func isIphone() -> Bool {
+            return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad
+        }
+    }
 }
