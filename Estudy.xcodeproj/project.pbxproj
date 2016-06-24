@@ -21,6 +21,7 @@
 		642BBA181BE96372007EE777 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
 		642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
+		644730941D1C884500328084 /* IPadSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644730931D1C884500328084 /* IPadSidebarViewController.swift */; };
 		645017B21CD6A09D00B0DB9B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 645017B11CD6A09D00B0DB9B /* cross.png */; };
 		645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
 		645A66301C80F936006FF8D5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
@@ -116,6 +117,7 @@
 		642BBA171BE96372007EE777 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		643E1FBA1C0B276300BC5A43 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		644730931D1C884500328084 /* IPadSidebarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPadSidebarViewController.swift; sourceTree = "<group>"; };
 		645017B11CD6A09D00B0DB9B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		645A662F1C80F936006FF8D5 /* AuthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 				642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */,
 				6466233C1C8792BC00281878 /* MessagesViewController.swift */,
 				64D635431CE7C3F000BD5339 /* ProfileViewController.swift */,
+				644730931D1C884500328084 /* IPadSidebarViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				6493CCC21BEA03F700D36AD0 /* ServerError.swift in Sources */,
 				645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */,
 				648C59171C8BAAA700E3ADF0 /* MessageDelegate.swift in Sources */,
+				644730941D1C884500328084 /* IPadSidebarViewController.swift in Sources */,
 				645A66301C80F936006FF8D5 /* AuthView.swift in Sources */,
 				641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */,
 				64125BDD1CF6771D00DF2C4E /* ESUILabel.swift in Sources */,

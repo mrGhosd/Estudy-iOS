@@ -33,6 +33,6 @@ class UserListCell: UITableViewCell {
     
     func setUserData(user: User){
         self.fullName.text = user.getCorrectName();
-        Functions.User.avatarImage(self.userAvatar, url: user.fullAvatarUrl())
+        Functions.UserF.avatarImage(self.userAvatar, url: user.fullAvatarUrl())
     }
 }

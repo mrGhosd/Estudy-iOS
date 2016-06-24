@@ -35,7 +35,7 @@ struct Functions {
         }
     }
     
-    struct User {
+    struct UserF {
         static func avatarImage(imageView: UIImageView!, url: String?) {
             if let avatarUrl =  url {
                 Alamofire.request(.GET, avatarUrl).responseImage{ response in
@@ -49,6 +49,47 @@ struct Functions {
             } else {
                 imageView.image = UIImage(named: "empty-user.png")
             }
+        }
+    }
+    
+    struct Sidebar {
+        static func initTableVIew(controller: UIViewController!, view: UIView!, tableView: UITableView!) {
+            NSNotificationCenter.defaultCenter().addObserver(controller, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(controller, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "signOut", object: nil)
+            tableView.backgroundColor = UIColor.clearColor()
+            view.backgroundColor = Constants.Colors.sidebarBackground
+        }
+        
+        static func cellConfig(identifier: String!, indexPath: NSIndexPath!, items: [[String: String]]!, tableView: UITableView!) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            let row = items[indexPath.row]
+            cell.textLabel?.text = row["title"] as String!
+            cell.backgroundColor = UIColor.clearColor()
+            cell.textLabel?.textColor = UIColor.whiteColor()
+            cell.textLabel?.font = Constants.Fonts.sidebarItemFont
+            cell.imageView!.image = UIImage(named: row["icon"] as String!)
+            return cell
+        }
+        
+        static func setSidebarItems(currentUser: User!, sidebarMenu: [[String: String]]!, signOutButton: UIButton!) ->  [[String: String]]! {
+            if (currentUser != nil) {
+                sideBarMenu = [
+                    ["icon": "profile_icon", "title": currentUser.getCorrectName()],
+                    ["icon": "messages_icon", "title": "Messages"],
+                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
+                ]
+                signOutButton.hidden = false
+            }
+            else {
+                sideBarMenu = [
+                    ["icon": "sign_in_icon", "title": NSLocalizedString("sidebar_sign_in", comment: "")],
+                    ["icon": "sign_up_icon", "title":  NSLocalizedString("sidebar_sign_up", comment: "")],
+                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
+                ]
+                signOutButton.hidden = true
+            }
+            
+            return sideBarMenu
         }
     }
 }

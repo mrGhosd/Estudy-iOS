@@ -62,7 +62,7 @@ class CommonMessageCell: UITableViewCell {
         self.addSubview(messageUser)
 
         
-        Functions.User.avatarImage(messageUser, url: user.avatarUrl)
+        Functions.UserF.avatarImage(messageUser, url: user.avatarUrl)
         
 //        self.frame = CGRectMake(0, 0, self.frame.size.width, 1000)
         var cellSize = self.frame.size

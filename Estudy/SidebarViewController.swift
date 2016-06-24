@@ -21,10 +21,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "signOut", object: nil)
-        self.tableView.backgroundColor = UIColor.clearColor()
-        self.view.backgroundColor = Constants.Colors.sidebarBackground
+        Functions.Sidebar.initTableVIew(self, view: self.view, tableView: self.tableView)
         setSidebarItems()
         
     }
@@ -40,14 +37,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     //MARK: UITableViewDelegates and UITableViewDataSource methods
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(sidebarCell, forIndexPath: indexPath)
-        let row = sideBarMenu[indexPath.row]
-        cell.textLabel?.text = row["title"] as String!
-        cell.backgroundColor = UIColor.clearColor()
-        cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.font = Constants.Fonts.sidebarItemFont
-        cell.imageView!.image = UIImage(named: row["icon"] as String!)
-        return cell
+        return Functions.Sidebar.cellConfig(sidebarCell, indexPath: indexPath, items: sideBarMenu, tableView: self.tableView)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -117,22 +107,7 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
     //MARK: UI setup methods
     func setSidebarItems() {
         let currentUser = AuthService.sharedInstance.currentUser
-        if (currentUser != nil) {
-            sideBarMenu = [
-                ["icon": "profile_icon", "title": currentUser.getCorrectName()],
-                ["icon": "messages_icon", "title": "Messages"],
-                ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
-            ]
-            signOutButton.hidden = false
-        }
-        else {
-            sideBarMenu = [
-                ["icon": "sign_in_icon", "title": NSLocalizedString("sidebar_sign_in", comment: "")],
-                ["icon": "sign_up_icon", "title":  NSLocalizedString("sidebar_sign_up", comment: "")],
-                ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
-            ]
-            signOutButton.hidden = true
-        }
+        sideBarMenu = Functions.Sidebar.setSidebarItems(currentUser, sidebarMenu: sideBarMenu, signOutButton: self.signOutButton)
     }
     
     
