@@ -83,36 +83,28 @@ class IPadSidebarViewController : UITableViewController {
     }
     
     //MARK: Segue Navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var detail: UIViewController
-//        if let navigationController = segue.destinationViewController as? UINavigationController {
-//            var detailV = splitViewController?.viewControllers.last as! UINavigationController
-//            
-//            detailV.pushViewController(navigationController.topViewController! as UIViewController, animated: true)
-//        } else {
-//            detail = segue.destinationViewController as! UsersController
-//        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-//        let navVC = segue.destinationViewController as! UINavigationController
-//        if segue.identifier == "authorization" {
-//            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
+        let navVC = segue.destinationViewController as! UINavigationController
+        if segue.identifier == "authorization" {
+            let tableVC = navVC.topViewController
 //            tableVC.isAuth = true
-//        }
-//
-//        if (segue.identifier == "registration") {
-//            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
-//            tableVC.isAuth = false
-//        }
-//        
-//        if (segue.identifier == "users") {
-//            _ = navVC.viewControllers.first as! UsersController
-//        }
-//        
-//        if (segue.identifier == "profile") {
-//            let profileView = navVC.viewControllers.first as! ProfileViewController
-//            profileView.user = AuthService.sharedInstance.currentUser
-//        }
-//    }
+        }
+
+        if (segue.identifier == "registration") {
+            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
+            tableVC.isAuth = false
+        }
+        
+        if (segue.identifier == "users") {
+            _ = navVC.viewControllers.first as! UsersController
+        }
+        
+        if (segue.identifier == "profile") {
+            let profileView = navVC.viewControllers.first as! ProfileViewController
+            profileView.user = AuthService.sharedInstance.currentUser
+        }
+    }
     
     //MARK: UI setup methods
     func setSidebarItems() {
