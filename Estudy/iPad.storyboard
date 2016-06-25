@@ -73,67 +73,6 @@
             </objects>
             <point key="canvasLocation" x="-193" y="1561"/>
         </scene>
-        <!--iPad Sidebar View Controller-->
-        <scene sceneID="qFN-LI-RzD">
-            <objects>
-                <viewController id="wjT-JF-98K" customClass="IPadSidebarViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cXx-E6-cyi"/>
-                        <viewControllerLayoutGuide type="bottom" id="36i-y3-42G"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Cb-p2-DP2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-6O-tsM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Xe9-sB-Tg7"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sidebarCell" id="jCf-8D-9Ju">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCf-8D-9Ju" id="XK1-V3-H1F">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="wjT-JF-98K" id="3aa-l8-APS"/>
-                                    <outlet property="delegate" destination="wjT-JF-98K" id="74y-a6-qXZ"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4V-bP-tgD">
-                                <rect key="frame" x="20" y="562" width="70" height="30"/>
-                                <state key="normal" title="Sign out"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="EtL-6O-tsM" secondAttribute="trailing" constant="-20" id="8JH-od-dIb"/>
-                            <constraint firstItem="U4V-bP-tgD" firstAttribute="top" secondItem="EtL-6O-tsM" secondAttribute="bottom" id="CuZ-AS-9jH"/>
-                            <constraint firstItem="EtL-6O-tsM" firstAttribute="top" secondItem="2Cb-p2-DP2" secondAttribute="topMargin" id="O4h-DY-w5H"/>
-                            <constraint firstItem="36i-y3-42G" firstAttribute="top" secondItem="U4V-bP-tgD" secondAttribute="bottom" id="ORo-eZ-U4q"/>
-                            <constraint firstItem="U4V-bP-tgD" firstAttribute="leading" secondItem="2Cb-p2-DP2" secondAttribute="leadingMargin" id="TLq-Jy-MIm"/>
-                            <constraint firstItem="EtL-6O-tsM" firstAttribute="leading" secondItem="2Cb-p2-DP2" secondAttribute="leadingMargin" constant="-20" id="p4G-iV-tB9"/>
-                            <constraint firstItem="U4V-bP-tgD" firstAttribute="top" secondItem="EtL-6O-tsM" secondAttribute="bottom" id="ppU-kV-uKj"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="tI7-ro-abw"/>
-                    <connections>
-                        <outlet property="signOutButton" destination="U4V-bP-tgD" id="RLm-Ys-ZzV"/>
-                        <outlet property="tableView" destination="EtL-6O-tsM" id="HoJ-z1-wqn"/>
-                        <segue destination="SAT-bg-pul" kind="showDetail" identifier="authorization" action="showViewController:sender:" id="jZf-z2-OfY"/>
-                        <segue destination="vWJ-V2-ZjL" kind="showDetail" identifier="users" action="showViewController:sender:" id="iue-Zy-ZQE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="knT-uw-94r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1435" y="1092"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="U4U-MY-0I8">
             <objects>
@@ -183,11 +122,44 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wjT-JF-98K" kind="relationship" relationship="rootViewController" id="EBd-PF-NN4"/>
+                        <segue destination="sKD-dt-26s" kind="relationship" relationship="rootViewController" id="S79-bU-3qm"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="623" y="1092"/>
+        </scene>
+        <!--iPad Sidebar View Controller-->
+        <scene sceneID="qbZ-3f-FtL">
+            <objects>
+                <tableViewController id="sKD-dt-26s" customClass="IPadSidebarViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SbY-R2-nkj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sidebarCell" id="AAQ-iT-ipN" customClass="sidebarCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AAQ-iT-ipN" id="rqS-Dh-K4k">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sKD-dt-26s" id="Oio-t5-tcF"/>
+                            <outlet property="delegate" destination="sKD-dt-26s" id="3O6-0I-Brl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="SnI-68-DV2"/>
+                    <connections>
+                        <segue destination="SAT-bg-pul" kind="showDetail" identifier="authorization" id="9da-VC-BN2"/>
+                        <segue destination="vWJ-V2-ZjL" kind="showDetail" identifier="users" id="Gob-G3-TmE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9k-fh-fK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="1097"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Yu-zX-fhd">
@@ -209,6 +181,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iue-Zy-ZQE"/>
+        <segue reference="Gob-G3-TmE"/>
     </inferredMetricsTieBreakers>
 </document>

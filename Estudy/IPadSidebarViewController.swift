@@ -9,11 +9,10 @@
 import UIKit
 
 
-class IPadSidebarViewController : UIViewController {
+class IPadSidebarViewController : UITableViewController {
     let sidebarCell = "sidebarCell"
     var sideBarMenu: [[String: String]]!
     
-    @IBOutlet var tableView: UITableView!
     @IBOutlet var signOutButton: UIButton!
     //MARK: default UIViewController actions
     
@@ -35,37 +34,40 @@ class IPadSidebarViewController : UIViewController {
     
     //MARK: UITableViewDelegates and UITableViewDataSource methods
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        var cell = tableView.dequeueReusableCellWithIdentifier("sidebarCell", forIndexPath: indexPath) as! UITableViewCell
+//        cell.textLabel!.text = sideBarMenu[indexPath.row]["title"]
+//        return cell
         return Functions.Sidebar.cellConfig(sidebarCell, indexPath: indexPath, items: sideBarMenu, tableView: self.tableView)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sideBarMenu.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        var title = sideBarMenu[indexPath.row]["title"] as String!
-//        let currentUser = AuthService.sharedInstance.currentUser
-//        
-//        switch title {
-//        case NSLocalizedString("sidebar_sign_in", comment: ""):
-//            self.performSegueWithIdentifier("authorization", sender: self)
-//        case NSLocalizedString("sidebar_sign_up", comment: ""):
-//            self.performSegueWithIdentifier("registration", sender: self)
-//        case NSLocalizedString("sidebar_users", comment: ""):
-//            self.performSegueWithIdentifier("users", sender: self)
-//        case currentUser.getCorrectName():
-//            self.performSegueWithIdentifier("profile", sender: self)
-//        case "Messages":
-//            self.performSegueWithIdentifier("chats", sender: self)
-//        default: break
-//        }
-//        
-//        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var title = sideBarMenu[indexPath.row]["title"] as String!
+        let currentUser = AuthService.sharedInstance.currentUser
+        
+        switch title {
+        case NSLocalizedString("sidebar_sign_in", comment: ""):
+            self.performSegueWithIdentifier("authorization", sender: self)
+        case NSLocalizedString("sidebar_sign_up", comment: ""):
+            self.performSegueWithIdentifier("registration", sender: self)
+        case NSLocalizedString("sidebar_users", comment: ""):
+            self.performSegueWithIdentifier("users", sender: self)
+        case currentUser.getCorrectName():
+            self.performSegueWithIdentifier("profile", sender: self)
+        case "Messages":
+            self.performSegueWithIdentifier("chats", sender: self)
+        default: break
+        }
+        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     //MARK: UIViewController actions
@@ -81,13 +83,22 @@ class IPadSidebarViewController : UIViewController {
     }
     
     //MARK: Segue Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var detail: UIViewController
+//        if let navigationController = segue.destinationViewController as? UINavigationController {
+//            var detailV = splitViewController?.viewControllers.last as! UINavigationController
+//            
+//            detailV.pushViewController(navigationController.topViewController! as UIViewController, animated: true)
+//        } else {
+//            detail = segue.destinationViewController as! UsersController
+//        }
+
 //        let navVC = segue.destinationViewController as! UINavigationController
 //        if segue.identifier == "authorization" {
 //            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
 //            tableVC.isAuth = true
 //        }
-//        
+//
 //        if (segue.identifier == "registration") {
 //            let tableVC = navVC.viewControllers.first as! AuthorizationViewController
 //            tableVC.isAuth = false
@@ -101,7 +112,7 @@ class IPadSidebarViewController : UIViewController {
 //            let profileView = navVC.viewControllers.first as! ProfileViewController
 //            profileView.user = AuthService.sharedInstance.currentUser
 //        }
-    }
+//    }
     
     //MARK: UI setup methods
     func setSidebarItems() {

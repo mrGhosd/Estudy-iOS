@@ -78,7 +78,10 @@ struct Functions {
                     ["icon": "messages_icon", "title": "Messages"],
                     ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
                 ]
-                signOutButton.hidden = false
+                if let button = signOutButton {
+                    button.hidden = false
+                }
+                
             }
             else {
                 sideBarMenu = [
@@ -86,7 +89,9 @@ struct Functions {
                     ["icon": "sign_up_icon", "title":  NSLocalizedString("sidebar_sign_up", comment: "")],
                     ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
                 ]
-                signOutButton.hidden = true
+                if let button = signOutButton {
+                    button.hidden = true
+                }
             }
             
             return sideBarMenu

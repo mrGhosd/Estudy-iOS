@@ -22,8 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AuthService.sharedInstance.getCurrentUser()
         if (Functions.Device.isIPad()) {
             let splitViewController = self.window!.rootViewController as! UISplitViewController
-            let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-//            splitViewController.delegate = navigationController.topViewController as! UsersController
+            let leftNavController = splitViewController.viewControllers.first as! UINavigationController
+            let masterViewController = leftNavController.topViewController as! IPadSidebarViewController
+            var vc = splitViewController.viewControllers.last as! UINavigationController
+            let detailViewController = vc.viewControllers.last as! UsersController
         }
         return true
     }
