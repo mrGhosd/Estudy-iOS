@@ -102,7 +102,18 @@
                     <view key="view" contentMode="scaleToFill" id="new-Aj-Yi0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estudy_bg_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="PHN-4K-Yac">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PHN-4K-Yac" firstAttribute="top" secondItem="new-Aj-Yi0" secondAttribute="topMargin" id="1Av-OC-YfL"/>
+                            <constraint firstItem="Hvp-Mk-KhH" firstAttribute="top" secondItem="PHN-4K-Yac" secondAttribute="bottom" id="XvK-Re-S5r"/>
+                            <constraint firstItem="PHN-4K-Yac" firstAttribute="leading" secondItem="new-Aj-Yi0" secondAttribute="leadingMargin" constant="-20" id="hdN-Sd-wDf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PHN-4K-Yac" secondAttribute="trailing" constant="-20" id="uHq-wX-UTY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fmG-Ku-uOl"/>
                 </viewController>
@@ -113,7 +124,6 @@
         <!--Navigation Controller-->
         <scene sceneID="PUa-so-Db4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K8l-sq-8R9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t07-Ub-DJC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KN6-3I-6H9">
@@ -125,6 +135,7 @@
                         <segue destination="sKD-dt-26s" kind="relationship" relationship="rootViewController" id="S79-bU-3qm"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K8l-sq-8R9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="623" y="1092"/>
         </scene>
@@ -155,6 +166,7 @@
                     <connections>
                         <segue destination="SAT-bg-pul" kind="showDetail" identifier="authorization" id="9da-VC-BN2"/>
                         <segue destination="vWJ-V2-ZjL" kind="showDetail" identifier="users" id="Gob-G3-TmE"/>
+                        <segue destination="SAT-bg-pul" kind="showDetail" identifier="registration" id="W43-Qi-QRm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9k-fh-fK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,7 +192,11 @@
             <point key="canvasLocation" x="1435" y="1929"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="estudy_bg_2.png" width="480" height="480"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="W43-Qi-QRm"/>
         <segue reference="Gob-G3-TmE"/>
     </inferredMetricsTieBreakers>
 </document>
