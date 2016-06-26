@@ -21,6 +21,7 @@
 		642BBA181BE96372007EE777 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
 		642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
+		644596A11D208A0500978C55 /* logout_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 644596A01D208A0500978C55 /* logout_red.png */; };
 		644730941D1C884500328084 /* IPadSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644730931D1C884500328084 /* IPadSidebarViewController.swift */; };
 		645017B21CD6A09D00B0DB9B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 645017B11CD6A09D00B0DB9B /* cross.png */; };
 		645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
@@ -117,6 +118,7 @@
 		642BBA171BE96372007EE777 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		643E1FBA1C0B276300BC5A43 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		644596A01D208A0500978C55 /* logout_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_red.png; sourceTree = "<group>"; };
 		644730931D1C884500328084 /* IPadSidebarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPadSidebarViewController.swift; sourceTree = "<group>"; };
 		645017B11CD6A09D00B0DB9B /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				644596A01D208A0500978C55 /* logout_red.png */,
 				64125BDE1CF67BC400DF2C4E /* send.png */,
 				641229751CEA93DE0019E12B /* vk-social-network-logo.png */,
 				641229731CEA93900019E12B /* vkontakte_logo_1.png */,
@@ -596,6 +599,7 @@
 				641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
 				641229741CEA93900019E12B /* vkontakte_logo_1.png in Resources */,
+				644596A11D208A0500978C55 /* logout_red.png in Resources */,
 				64A1B0761CD6522800BD6E23 /* password_icon.png in Resources */,
 				646623441C87A82100281878 /* MessageCell.xib in Resources */,
 				64876C531BE92254005D80AA /* Assets.xcassets in Resources */,

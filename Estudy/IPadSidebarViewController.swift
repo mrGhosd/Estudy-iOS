@@ -13,7 +13,7 @@ class IPadSidebarViewController : UITableViewController {
     let sidebarCell = "sidebarCell"
     var sideBarMenu: [[String: String]]!
     
-    @IBOutlet var signOutButton: UIButton!
+    @IBOutlet var signOutButton: UIBarButtonItem!
     //MARK: default UIViewController actions
     
     override func viewDidLoad() {
@@ -109,7 +109,15 @@ class IPadSidebarViewController : UITableViewController {
     //MARK: UI setup methods
     func setSidebarItems() {
         let currentUser = AuthService.sharedInstance.currentUser
-        sideBarMenu = Functions.Sidebar.setSidebarItems(currentUser, sidebarMenu: sideBarMenu, signOutButton: self.signOutButton)
+        sideBarMenu = Functions.Sidebar.setSidebarItems(currentUser, sidebarMenu: sideBarMenu, signOutButton: nil)
+        if currentUser != nil {
+            self.signOutButton.enabled      = true
+            self.signOutButton.tintColor    = UIColor.redColor()
+        }
+        else {
+            self.signOutButton.enabled      = false
+            self.signOutButton.tintColor    = UIColor.clearColor()
+        }
     }
     
 }
