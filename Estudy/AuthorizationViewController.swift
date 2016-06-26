@@ -133,6 +133,9 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate, 
         regView.emailField.delegate = self
         regView.passwordField.delegate = self
         regView.passwordConfirmationField.delegate = self
+        
+        authView.setWidth(self.view.frame.size.width)
+        regView.setWidth(self.view.frame.size.width)
     }
     
     //MARK: UI actions

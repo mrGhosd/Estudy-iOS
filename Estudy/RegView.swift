@@ -34,6 +34,10 @@ class RegView: UIView {
         delegate.signUp!(emailField.text, password: passwordField.text, passwordConfirmation: passwordConfirmationField.text)
     }
     
+    func setWidth(width: CGFloat!) {
+        self.frame = CGRectMake(0 , 0, width / 3.45, self.frame.height)
+    }
+    
     func setupUIForButton() {
         self.signUpButton.setTitle(NSLocalizedString("reg_button", comment: ""), forState: UIControlState.Normal)
         self.signUpButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!

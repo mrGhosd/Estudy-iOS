@@ -87,12 +87,13 @@ class IPadSidebarViewController : UITableViewController {
 
         let navVC = segue.destinationViewController as! UINavigationController
         if segue.identifier == "authorization" {
-            let tableVC = navVC.topViewController
-//            tableVC.isAuth = true
+            let tableVC = navVC.topViewController as! AuthorizationViewController
+            tableVC.isAuth = true
         }
 
         if (segue.identifier == "registration") {
-            let tableVC = navVC.topViewController
+            let tableVC = navVC.topViewController as! AuthorizationViewController
+            tableVC.isAuth = false
         }
         
         if (segue.identifier == "users") {

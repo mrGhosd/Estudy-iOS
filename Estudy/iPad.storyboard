@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="ZRZ-aX-qsd" id="ouP-OU-S8H"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" id="VgI-cb-ALd">
@@ -91,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="623" y="1889"/>
         </scene>
-        <!--View Controller-->
+        <!--Authorization View Controller-->
         <scene sceneID="zbX-SI-3ua">
             <objects>
-                <viewController id="K9V-G2-Eh8" sceneMemberID="viewController">
+                <viewController id="K9V-G2-Eh8" customClass="AuthorizationViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a6x-fH-lZn"/>
                         <viewControllerLayoutGuide type="bottom" id="Hvp-Mk-KhH"/>
@@ -104,18 +107,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estudy_bg_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="PHN-4K-Yac">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8x-hC-0ND">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMv-Nd-EJs">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4s-x3-S9a">
+                                                <rect key="frame" x="150" y="49" width="300" height="177"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42e-w5-1vN">
+                                                <rect key="frame" x="277" y="234" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x0x-Py-hVC">
+                                                <rect key="frame" x="176" y="8" width="248" height="29"/>
+                                                <segments>
+                                                    <segment title="Authorization"/>
+                                                    <segment title="Registration"/>
+                                                </segments>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="switchViews:" destination="K9V-G2-Eh8" eventType="valueChanged" id="WqW-Yi-uor"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="j4s-x3-S9a" firstAttribute="leading" secondItem="JMv-Nd-EJs" secondAttribute="leading" constant="10" id="9Cj-rD-5LM"/>
+                                            <constraint firstItem="j4s-x3-S9a" firstAttribute="centerX" secondItem="JMv-Nd-EJs" secondAttribute="centerX" id="KAb-19-6B7"/>
+                                            <constraint firstItem="j4s-x3-S9a" firstAttribute="top" secondItem="x0x-Py-hVC" secondAttribute="bottom" constant="8" id="im4-N1-Z51"/>
+                                            <constraint firstAttribute="trailing" secondItem="j4s-x3-S9a" secondAttribute="trailing" constant="10" id="mJA-jH-G7m"/>
+                                            <constraint firstItem="42e-w5-1vN" firstAttribute="centerX" secondItem="JMv-Nd-EJs" secondAttribute="centerX" id="sEY-0e-EJA"/>
+                                            <constraint firstItem="j4s-x3-S9a" firstAttribute="top" secondItem="x0x-Py-hVC" secondAttribute="bottom" constant="8" id="sso-zt-nPG"/>
+                                            <constraint firstItem="x0x-Py-hVC" firstAttribute="centerX" secondItem="JMv-Nd-EJs" secondAttribute="centerX" id="uxc-OV-0cF"/>
+                                            <constraint firstItem="x0x-Py-hVC" firstAttribute="top" secondItem="JMv-Nd-EJs" secondAttribute="top" constant="8" id="wIc-yU-nzA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JMv-Nd-EJs" firstAttribute="leading" secondItem="Z8x-hC-0ND" secondAttribute="leading" id="6hW-El-2aS"/>
+                                    <constraint firstItem="JMv-Nd-EJs" firstAttribute="top" secondItem="Z8x-hC-0ND" secondAttribute="top" id="A3V-k2-jph"/>
+                                    <constraint firstAttribute="bottom" secondItem="JMv-Nd-EJs" secondAttribute="bottom" id="jXp-oB-HFw"/>
+                                    <constraint firstItem="JMv-Nd-EJs" firstAttribute="width" secondItem="Z8x-hC-0ND" secondAttribute="width" id="r0j-uh-m7u"/>
+                                    <constraint firstAttribute="trailing" secondItem="JMv-Nd-EJs" secondAttribute="trailing" id="sFv-E2-PaC"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PHN-4K-Yac" firstAttribute="top" secondItem="new-Aj-Yi0" secondAttribute="topMargin" id="1Av-OC-YfL"/>
-                            <constraint firstItem="Hvp-Mk-KhH" firstAttribute="top" secondItem="PHN-4K-Yac" secondAttribute="bottom" id="XvK-Re-S5r"/>
-                            <constraint firstItem="PHN-4K-Yac" firstAttribute="leading" secondItem="new-Aj-Yi0" secondAttribute="leadingMargin" constant="-20" id="hdN-Sd-wDf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PHN-4K-Yac" secondAttribute="trailing" constant="-20" id="uHq-wX-UTY"/>
+                            <constraint firstItem="PHN-4K-Yac" firstAttribute="leading" secondItem="new-Aj-Yi0" secondAttribute="leadingMargin" constant="-20" id="3t4-if-WMe"/>
+                            <constraint firstItem="Hvp-Mk-KhH" firstAttribute="top" secondItem="Z8x-hC-0ND" secondAttribute="bottom" id="3z1-gQ-4qu"/>
+                            <constraint firstItem="Z8x-hC-0ND" firstAttribute="leading" secondItem="new-Aj-Yi0" secondAttribute="leadingMargin" constant="-20" id="OzP-A9-Z91"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z8x-hC-0ND" secondAttribute="trailing" constant="-20" id="WOy-EX-ZAE"/>
+                            <constraint firstItem="PHN-4K-Yac" firstAttribute="top" secondItem="a6x-fH-lZn" secondAttribute="bottom" id="b2O-5A-SO3"/>
+                            <constraint firstItem="Hvp-Mk-KhH" firstAttribute="top" secondItem="PHN-4K-Yac" secondAttribute="bottom" id="eRb-f2-yfz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PHN-4K-Yac" secondAttribute="trailing" constant="-20" id="gbv-Sq-jnl"/>
+                            <constraint firstItem="Z8x-hC-0ND" firstAttribute="top" secondItem="a6x-fH-lZn" secondAttribute="bottom" id="hML-wM-sWB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fmG-Ku-uOl"/>
+                    <connections>
+                        <outlet property="contentView" destination="j4s-x3-S9a" id="lzr-AZ-jPl"/>
+                        <outlet property="segmentSwitcher" destination="x0x-Py-hVC" id="gxX-34-5yS"/>
+                        <outlet property="vkAuthButton" destination="42e-w5-1vN" id="VE4-uY-UBW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DN-Tv-Gx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

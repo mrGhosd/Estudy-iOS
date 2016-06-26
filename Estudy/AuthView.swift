@@ -29,6 +29,10 @@ class AuthView: UIView {
         delegate.signIn!(emailField.text, password: passwordField.text)
     }
     
+    func setWidth(width: CGFloat!) {
+        self.frame = CGRectMake(0 , 0, width / 3.45, self.frame.height)
+    }
+    
     func setupUIForButton() {
         self.signInButton.setTitle(NSLocalizedString("auth_button", comment: ""), forState: UIControlState.Normal)
         self.signInButton.titleLabel!.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20.0)!
