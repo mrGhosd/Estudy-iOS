@@ -23,6 +23,12 @@ struct Functions {
             field.leftView = UIImageView(image: UIImage(named: image))
             field.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18.0)
         }
+        
+        static func resizeWidth(view: UIView!, width: CGFloat!) {
+            if (Functions.Device.isIPad()) {
+                view.frame = CGRectMake(0 , 0, width / 3.45, view.frame.height)
+            }
+        }
     }
     
     struct progressBar {

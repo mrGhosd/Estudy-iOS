@@ -30,7 +30,7 @@ class AuthView: UIView {
     }
     
     func setWidth(width: CGFloat!) {
-        self.frame = CGRectMake(0 , 0, width / 3.45, self.frame.height)
+        Functions.AuthViews.resizeWidth(self, width: width)
     }
     
     func setupUIForButton() {
