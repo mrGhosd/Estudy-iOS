@@ -17,6 +17,7 @@ pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git'
 
 
 target 'Estudy' do
+    pod 'MBProgressHUD', '~> 0.9.2'
 end
 
 target 'EstudyTests' do

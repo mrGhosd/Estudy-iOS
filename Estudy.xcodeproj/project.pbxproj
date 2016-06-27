@@ -22,6 +22,112 @@
 		642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
 		644596A11D208A0500978C55 /* logout_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 644596A01D208A0500978C55 /* logout_red.png */; };
+		644596A51D20943000978C55 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */; };
+		644596A61D20943100978C55 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */; };
+		644596A71D20943400978C55 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
+		644596A81D20943500978C55 /* ESUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */; };
+		644596A91D20943800978C55 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C274E31CCEC53F00D5C57E /* UIColor.swift */; };
+		644596AA1D20943900978C55 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C274E31CCEC53F00D5C57E /* UIColor.swift */; };
+		644596AB1D20943C00978C55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C0D77D1CD022D20007DC7D /* Constants.swift */; };
+		644596AC1D20943C00978C55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C0D77D1CD022D20007DC7D /* Constants.swift */; };
+		644596AD1D20943F00978C55 /* ESUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64125BDC1CF6771D00DF2C4E /* ESUILabel.swift */; };
+		644596AE1D20944000978C55 /* ESUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64125BDC1CF6771D00DF2C4E /* ESUILabel.swift */; };
+		644596AF1D20944500978C55 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66381C81E85C006FF8D5 /* AuthDelegate.swift */; };
+		644596B01D20944500978C55 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66381C81E85C006FF8D5 /* AuthDelegate.swift */; };
+		644596B11D20944900978C55 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59161C8BAAA700E3ADF0 /* MessageDelegate.swift */; };
+		644596B21D20944900978C55 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59161C8BAAA700E3ADF0 /* MessageDelegate.swift */; };
+		644596B41D20944F00978C55 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
+		644596B51D20944F00978C55 /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C328941C792FC2000F15BC /* UserFactory.swift */; };
+		644596B61D20945200978C55 /* ChatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663E1C824EF3006FF8D5 /* ChatFactory.swift */; };
+		644596B71D20945300978C55 /* ChatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663E1C824EF3006FF8D5 /* ChatFactory.swift */; };
+		644596B81D20945600978C55 /* MessagesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466233E1C879A6000281878 /* MessagesFactory.swift */; };
+		644596B91D20945600978C55 /* MessagesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466233E1C879A6000281878 /* MessagesFactory.swift */; };
+		644596BA1D20945B00978C55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
+		644596BB1D20945B00978C55 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
+		644596BC1D20946500978C55 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCC11BEA03F700D36AD0 /* ServerError.swift */; };
+		644596BD1D20946600978C55 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCC11BEA03F700D36AD0 /* ServerError.swift */; };
+		644596BE1D20946A00978C55 /* BaseApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCBE1BE9835C00D36AD0 /* BaseApiRequest.swift */; };
+		644596BF1D20946A00978C55 /* BaseApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CCBE1BE9835C00D36AD0 /* BaseApiRequest.swift */; };
+		644596C01D20946D00978C55 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460E9B41CEBADEE00DC5DFC /* ApiRequest.swift */; };
+		644596C11D20946E00978C55 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460E9B41CEBADEE00DC5DFC /* ApiRequest.swift */; };
+		644596C21D20947100978C55 /* ChatApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460E9B61CEBB14C00DC5DFC /* ChatApiRequest.swift */; };
+		644596C31D20947100978C55 /* ChatApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460E9B61CEBB14C00DC5DFC /* ChatApiRequest.swift */; };
+		644596C41D20947500978C55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
+		644596C51D20947500978C55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
+		644596C61D20947800978C55 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663A1C81EAE2006FF8D5 /* AuthService.swift */; };
+		644596C71D20947900978C55 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663A1C81EAE2006FF8D5 /* AuthService.swift */; };
+		644596C81D20947B00978C55 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66401C824F66006FF8D5 /* Chat.swift */; };
+		644596C91D20947C00978C55 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66401C824F66006FF8D5 /* Chat.swift */; };
+		644596CA1D20947F00978C55 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66471C825ECE006FF8D5 /* Message.swift */; };
+		644596CB1D20948000978C55 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66471C825ECE006FF8D5 /* Message.swift */; };
+		644596CC1D20948300978C55 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59181C8BC7E400E3ADF0 /* SocketService.swift */; };
+		644596CD1D20948300978C55 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59181C8BC7E400E3ADF0 /* SocketService.swift */; };
+		644596CE1D2095BB00978C55 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */; };
+		644596CF1D2095BC00978C55 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412296D1CEA3E8B0019E12B /* ProfileInfoView.swift */; };
+		644596D01D2095C100978C55 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */; };
+		644596D11D2095C200978C55 /* ProfileInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6412296F1CEA3E9F0019E12B /* ProfileInfoView.xib */; };
+		644596D21D2095C500978C55 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623401C87A7D100281878 /* MessagesCell.swift */; };
+		644596D31D2095C600978C55 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623401C87A7D100281878 /* MessagesCell.swift */; };
+		644596D41D2095C900978C55 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623431C87A82100281878 /* MessageCell.xib */; };
+		644596D51D2095C900978C55 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623431C87A82100281878 /* MessageCell.xib */; };
+		644596D61D2095CD00978C55 /* CurrentUserMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623451C87ABF500281878 /* CurrentUserMessageCell.xib */; };
+		644596D71D2095CD00978C55 /* CurrentUserMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623451C87ABF500281878 /* CurrentUserMessageCell.xib */; };
+		644596D81D2095D200978C55 /* CurrentUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623471C87AF2800281878 /* CurrentUserMessageCell.swift */; };
+		644596D91D2095D300978C55 /* CurrentUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623471C87AF2800281878 /* CurrentUserMessageCell.swift */; };
+		644596DA1D2095D600978C55 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623491C87B12000281878 /* MessageCell.swift */; };
+		644596DB1D2095D600978C55 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623491C87B12000281878 /* MessageCell.swift */; };
+		644596DC1D2095D900978C55 /* PersonalMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466234B1C87B48100281878 /* PersonalMessageCell.swift */; };
+		644596DD1D2095DA00978C55 /* PersonalMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466234B1C87B48100281878 /* PersonalMessageCell.swift */; };
+		644596DE1D2095DC00978C55 /* CurrentUserPersonalMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466234D1C87B4A500281878 /* CurrentUserPersonalMessageCell.swift */; };
+		644596DF1D2095DD00978C55 /* CurrentUserPersonalMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466234D1C87B4A500281878 /* CurrentUserPersonalMessageCell.swift */; };
+		644596E01D2095E000978C55 /* PersonalMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6466234F1C87B4D100281878 /* PersonalMessageCell.xib */; };
+		644596E11D2095E000978C55 /* PersonalMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6466234F1C87B4D100281878 /* PersonalMessageCell.xib */; };
+		644596E21D2095E300978C55 /* CurrentUserPersonalMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623511C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib */; };
+		644596E31D2095E300978C55 /* CurrentUserPersonalMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623511C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib */; };
+		644596E41D2095E600978C55 /* PersonalNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623531C87B9DC00281878 /* PersonalNavigationBar.xib */; };
+		644596E51D2095E700978C55 /* PersonalNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623531C87B9DC00281878 /* PersonalNavigationBar.xib */; };
+		644596E61D2095EA00978C55 /* PersonalNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623551C87B9F300281878 /* PersonalNavigationBar.swift */; };
+		644596E71D2095EB00978C55 /* PersonalNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623551C87B9F300281878 /* PersonalNavigationBar.swift */; };
+		644596E81D2095EE00978C55 /* MessageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59121C8B97CB00E3ADF0 /* MessageForm.swift */; };
+		644596E91D2095EE00978C55 /* MessageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59121C8B97CB00E3ADF0 /* MessageForm.swift */; };
+		644596EA1D2095F200978C55 /* MessageForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648C59141C8B97E400E3ADF0 /* MessageForm.xib */; };
+		644596EB1D2095F200978C55 /* MessageForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648C59141C8B97E400E3ADF0 /* MessageForm.xib */; };
+		644596EC1D2095F500978C55 /* CommonMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC1A971CF123090046F62C /* CommonMessageCell.swift */; };
+		644596ED1D2095F600978C55 /* CommonMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC1A971CF123090046F62C /* CommonMessageCell.swift */; };
+		644596EE1D2095FA00978C55 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66431C8253A4006FF8D5 /* ChatCell.swift */; };
+		644596EF1D2095FB00978C55 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66431C8253A4006FF8D5 /* ChatCell.swift */; };
+		644596F01D2095FE00978C55 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66451C825403006FF8D5 /* ChatCell.xib */; };
+		644596F11D2095FF00978C55 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66451C825403006FF8D5 /* ChatCell.xib */; };
+		644596F21D20960300978C55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
+		644596F31D20960300978C55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
+		644596F41D20960600978C55 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66311C80F940006FF8D5 /* RegView.swift */; };
+		644596F51D20960800978C55 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66311C80F940006FF8D5 /* RegView.swift */; };
+		644596F61D20960B00978C55 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66331C810EE4006FF8D5 /* AuthView.xib */; };
+		644596F71D20960C00978C55 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66331C810EE4006FF8D5 /* AuthView.xib */; };
+		644596F81D20960E00978C55 /* RegView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66351C810EF2006FF8D5 /* RegView.xib */; };
+		644596F91D20960E00978C55 /* RegView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645A66351C810EF2006FF8D5 /* RegView.xib */; };
+		644596FA1D20961200978C55 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA131BE962C3007EE777 /* UserListCell.swift */; };
+		644596FB1D20961300978C55 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA131BE962C3007EE777 /* UserListCell.swift */; };
+		644596FC1D20961600978C55 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
+		644596FD1D20961700978C55 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642BBA171BE96372007EE777 /* UserListCell.xib */; };
+		644596FE1D20961C00978C55 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C7D1BE9230B005D80AA /* UsersController.swift */; };
+		644596FF1D20961D00978C55 /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C7D1BE9230B005D80AA /* UsersController.swift */; };
+		644597001D20962000978C55 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
+		644597011D20962000978C55 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
+		644597021D20962300978C55 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
+		644597031D20962400978C55 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
+		644597041D20962600978C55 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663C1C824D81006FF8D5 /* ChatsViewController.swift */; };
+		644597051D20962700978C55 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A663C1C824D81006FF8D5 /* ChatsViewController.swift */; };
+		644597061D20962900978C55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
+		644597071D20962B00978C55 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */; };
+		644597081D20962E00978C55 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466233C1C8792BC00281878 /* MessagesViewController.swift */; };
+		644597091D20962E00978C55 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6466233C1C8792BC00281878 /* MessagesViewController.swift */; };
+		6445970A1D20963200978C55 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D635431CE7C3F000BD5339 /* ProfileViewController.swift */; };
+		6445970B1D20963300978C55 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D635431CE7C3F000BD5339 /* ProfileViewController.swift */; };
+		6445970C1D20963600978C55 /* IPadSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644730931D1C884500328084 /* IPadSidebarViewController.swift */; };
+		6445970D1D20963700978C55 /* IPadSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644730931D1C884500328084 /* IPadSidebarViewController.swift */; };
+		6445970E1D20963A00978C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C4B1BE92254005D80AA /* AppDelegate.swift */; };
+		6445970F1D20963B00978C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C4B1BE92254005D80AA /* AppDelegate.swift */; };
 		644730941D1C884500328084 /* IPadSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644730931D1C884500328084 /* IPadSidebarViewController.swift */; };
 		645017B21CD6A09D00B0DB9B /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 645017B11CD6A09D00B0DB9B /* cross.png */; };
 		645A662D1C80F921006FF8D5 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662C1C80F921006FF8D5 /* AuthorizationViewController.swift */; };
@@ -56,7 +162,6 @@
 		64876C511BE92254005D80AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C4F1BE92254005D80AA /* Main.storyboard */; };
 		64876C531BE92254005D80AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64876C521BE92254005D80AA /* Assets.xcassets */; };
 		64876C561BE92254005D80AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C541BE92254005D80AA /* LaunchScreen.storyboard */; };
-		64876C611BE92254005D80AA /* EstudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C601BE92254005D80AA /* EstudyTests.swift */; };
 		64876C6C1BE92254005D80AA /* EstudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C6B1BE92254005D80AA /* EstudyUITests.swift */; };
 		64876C7E1BE9230B005D80AA /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C7D1BE9230B005D80AA /* UsersController.swift */; };
 		648C59131C8B97CB00E3ADF0 /* MessageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648C59121C8B97CB00E3ADF0 /* MessageForm.swift */; };
@@ -179,6 +284,7 @@
 		64C328961C793410000F15BC /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		64C328981C793419000F15BC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		64D635431CE7C3F000BD5339 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		64D70F461D21725E00F90C9F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		64D99AF61C8649B3008EF3A2 /* ESUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESUIWindow.swift; sourceTree = "<group>"; };
 		64D9EAF61CD2DEFC00235743 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64D9EAF81CD2DF1500235743 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -242,6 +348,7 @@
 				641D35001BEA9CD600DD660C /* SWRevealViewController.h */,
 				641D35011BEA9CD600DD660C /* SWRevealViewController.m */,
 				641D34FF1BEA9CD500DD660C /* Estudy-Bridging-Header.h */,
+				64D70F461D21725E00F90C9F /* Bridge-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -619,6 +726,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644596D61D2095CD00978C55 /* CurrentUserMessageCell.xib in Resources */,
+				644596E01D2095E000978C55 /* PersonalMessageCell.xib in Resources */,
+				644596D01D2095C100978C55 /* ProfileInfoView.xib in Resources */,
+				644596FC1D20961600978C55 /* UserListCell.xib in Resources */,
+				644596E41D2095E600978C55 /* PersonalNavigationBar.xib in Resources */,
+				644596E21D2095E300978C55 /* CurrentUserPersonalMessageCell.xib in Resources */,
+				644596F81D20960E00978C55 /* RegView.xib in Resources */,
+				644596F01D2095FE00978C55 /* ChatCell.xib in Resources */,
+				644596D41D2095C900978C55 /* MessageCell.xib in Resources */,
+				644596EA1D2095F200978C55 /* MessageForm.xib in Resources */,
+				644596F61D20960B00978C55 /* AuthView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +744,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644596D71D2095CD00978C55 /* CurrentUserMessageCell.xib in Resources */,
+				644596E11D2095E000978C55 /* PersonalMessageCell.xib in Resources */,
+				644596D11D2095C200978C55 /* ProfileInfoView.xib in Resources */,
+				644596FD1D20961700978C55 /* UserListCell.xib in Resources */,
+				644596E51D2095E700978C55 /* PersonalNavigationBar.xib in Resources */,
+				644596E31D2095E300978C55 /* CurrentUserPersonalMessageCell.xib in Resources */,
+				644596F91D20960E00978C55 /* RegView.xib in Resources */,
+				644596F11D2095FF00978C55 /* ChatCell.xib in Resources */,
+				644596D51D2095C900978C55 /* MessageCell.xib in Resources */,
+				644596EB1D2095F200978C55 /* MessageForm.xib in Resources */,
+				644596F71D20960C00978C55 /* AuthView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +862,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64876C611BE92254005D80AA /* EstudyTests.swift in Sources */,
+				644597031D20962400978C55 /* AuthorizationViewController.swift in Sources */,
+				644596CC1D20948300978C55 /* SocketService.swift in Sources */,
+				644596F41D20960600978C55 /* RegView.swift in Sources */,
+				644596A51D20943000978C55 /* CommonFunctions.swift in Sources */,
+				644596B11D20944900978C55 /* MessageDelegate.swift in Sources */,
+				644596A91D20943800978C55 /* UIColor.swift in Sources */,
+				644596B41D20944F00978C55 /* UserFactory.swift in Sources */,
+				644596D81D2095D200978C55 /* CurrentUserMessageCell.swift in Sources */,
+				644596C41D20947500978C55 /* User.swift in Sources */,
+				644596FE1D20961C00978C55 /* UsersController.swift in Sources */,
+				644596E61D2095EA00978C55 /* PersonalNavigationBar.swift in Sources */,
+				644596AF1D20944500978C55 /* AuthDelegate.swift in Sources */,
+				644596D21D2095C500978C55 /* MessagesCell.swift in Sources */,
+				644596EC1D2095F500978C55 /* CommonMessageCell.swift in Sources */,
+				644596BC1D20946500978C55 /* ServerError.swift in Sources */,
+				644597081D20962E00978C55 /* MessagesViewController.swift in Sources */,
+				644597041D20962600978C55 /* ChatsViewController.swift in Sources */,
+				644596DC1D2095D900978C55 /* PersonalMessageCell.swift in Sources */,
+				6445970E1D20963A00978C55 /* AppDelegate.swift in Sources */,
+				644596CA1D20947F00978C55 /* Message.swift in Sources */,
+				644596A71D20943400978C55 /* ESUIWindow.swift in Sources */,
+				644596AB1D20943C00978C55 /* Constants.swift in Sources */,
+				644596B61D20945200978C55 /* ChatFactory.swift in Sources */,
+				6445970A1D20963200978C55 /* ProfileViewController.swift in Sources */,
+				644596FA1D20961200978C55 /* UserListCell.swift in Sources */,
+				644597001D20962000978C55 /* SidebarViewController.swift in Sources */,
+				644596F21D20960300978C55 /* AuthView.swift in Sources */,
+				644596CE1D2095BB00978C55 /* ProfileInfoView.swift in Sources */,
+				644596E81D2095EE00978C55 /* MessageForm.swift in Sources */,
+				644596C21D20947100978C55 /* ChatApiRequest.swift in Sources */,
+				6445970C1D20963600978C55 /* IPadSidebarViewController.swift in Sources */,
+				644596BA1D20945B00978C55 /* SWRevealViewController.m in Sources */,
+				644596DA1D2095D600978C55 /* MessageCell.swift in Sources */,
+				644597061D20962900978C55 /* ApplicationViewController.swift in Sources */,
+				644596B81D20945600978C55 /* MessagesFactory.swift in Sources */,
+				644596EE1D2095FA00978C55 /* ChatCell.swift in Sources */,
+				644596DE1D2095DC00978C55 /* CurrentUserPersonalMessageCell.swift in Sources */,
+				644596C81D20947B00978C55 /* Chat.swift in Sources */,
+				644596BE1D20946A00978C55 /* BaseApiRequest.swift in Sources */,
+				644596C61D20947800978C55 /* AuthService.swift in Sources */,
+				644596C01D20946D00978C55 /* ApiRequest.swift in Sources */,
+				644596AD1D20943F00978C55 /* ESUILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +911,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644596B71D20945300978C55 /* ChatFactory.swift in Sources */,
+				644596B91D20945600978C55 /* MessagesFactory.swift in Sources */,
+				644597071D20962B00978C55 /* ApplicationViewController.swift in Sources */,
+				644596C91D20947C00978C55 /* Chat.swift in Sources */,
+				644596C31D20947100978C55 /* ChatApiRequest.swift in Sources */,
+				644596C71D20947900978C55 /* AuthService.swift in Sources */,
+				644596E91D2095EE00978C55 /* MessageForm.swift in Sources */,
+				644596DD1D2095DA00978C55 /* PersonalMessageCell.swift in Sources */,
+				644597011D20962000978C55 /* SidebarViewController.swift in Sources */,
+				644596B21D20944900978C55 /* MessageDelegate.swift in Sources */,
+				644596ED1D2095F600978C55 /* CommonMessageCell.swift in Sources */,
+				644596BF1D20946A00978C55 /* BaseApiRequest.swift in Sources */,
+				644596AC1D20943C00978C55 /* Constants.swift in Sources */,
+				644596A61D20943100978C55 /* CommonFunctions.swift in Sources */,
+				644596DF1D2095DD00978C55 /* CurrentUserPersonalMessageCell.swift in Sources */,
+				644596C51D20947500978C55 /* User.swift in Sources */,
+				644596AA1D20943900978C55 /* UIColor.swift in Sources */,
+				644596DB1D2095D600978C55 /* MessageCell.swift in Sources */,
+				644596FF1D20961D00978C55 /* UsersController.swift in Sources */,
+				644596B51D20944F00978C55 /* UserFactory.swift in Sources */,
+				644596F51D20960800978C55 /* RegView.swift in Sources */,
+				644596C11D20946E00978C55 /* ApiRequest.swift in Sources */,
+				644596A81D20943500978C55 /* ESUIWindow.swift in Sources */,
+				644596D91D2095D300978C55 /* CurrentUserMessageCell.swift in Sources */,
+				644596EF1D2095FB00978C55 /* ChatCell.swift in Sources */,
+				644596CF1D2095BC00978C55 /* ProfileInfoView.swift in Sources */,
+				644596F31D20960300978C55 /* AuthView.swift in Sources */,
+				644597021D20962300978C55 /* AuthorizationViewController.swift in Sources */,
+				644596CD1D20948300978C55 /* SocketService.swift in Sources */,
+				644596AE1D20944000978C55 /* ESUILabel.swift in Sources */,
+				644597091D20962E00978C55 /* MessagesViewController.swift in Sources */,
+				6445970F1D20963B00978C55 /* AppDelegate.swift in Sources */,
+				644596BD1D20946600978C55 /* ServerError.swift in Sources */,
+				644596B01D20944500978C55 /* AuthDelegate.swift in Sources */,
+				644596E71D2095EB00978C55 /* PersonalNavigationBar.swift in Sources */,
+				644596D31D2095C600978C55 /* MessagesCell.swift in Sources */,
+				6445970D1D20963700978C55 /* IPadSidebarViewController.swift in Sources */,
+				644596CB1D20948000978C55 /* Message.swift in Sources */,
+				6445970B1D20963300978C55 /* ProfileViewController.swift in Sources */,
 				64876C6C1BE92254005D80AA /* EstudyUITests.swift in Sources */,
+				644596FB1D20961300978C55 /* UserListCell.swift in Sources */,
+				644597051D20962700978C55 /* ChatsViewController.swift in Sources */,
+				644596BB1D20945B00978C55 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,7 +1099,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vsokoltsov.Estudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Estudy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Bridge-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -907,7 +1119,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vsokoltsov.Estudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Estudy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Bridge-Header.h";
 			};
 			name = Release;
 		};
@@ -919,6 +1131,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vsokoltsov.EstudyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Bridge-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Estudy.app/Estudy";
 			};
 			name = Debug;
@@ -931,6 +1144,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vsokoltsov.EstudyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Estudy/Bridge-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Estudy.app/Estudy";
 			};
 			name = Release;
