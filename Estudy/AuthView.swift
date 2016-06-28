@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class AuthView: UIView {
+public class AuthView: UIView {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var signInButton: UIButton!
@@ -18,7 +18,14 @@ class AuthView: UIView {
     
     var delegate: Authorization!
     
-    override func awakeFromNib() {
+    class func init1(nibName: String!) -> AuthView {
+        let bundle = NSBundle(forClass: self)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        return view as! AuthView
+    }
+    
+    override public func awakeFromNib() {
         super.awakeFromNib()
         Functions.AuthViews.customizeTextField(emailField, placeholder: NSLocalizedString("email_field", comment: ""), image: "email_icon")
         Functions.AuthViews.customizeTextField(passwordField, placeholder: NSLocalizedString("password_field", comment: ""), image: "password_icon")
@@ -57,5 +64,14 @@ class AuthView: UIView {
             self.passwordErrors.text = passwordError
             self.passwordErrors.hidden = false
         }
+    }
+    
+    func loadViewFromNib(nibName: String!) -> UIView {
+        
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        
+        return view
     }
 }

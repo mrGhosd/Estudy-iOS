@@ -166,7 +166,7 @@
         <!--Authorization View Controller-->
         <scene sceneID="sww-bF-60n">
             <objects>
-                <viewController id="iOH-qD-Y3Y" customClass="AuthorizationViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorizationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iOH-qD-Y3Y" customClass="AuthorizationViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gt9-bz-OE5"/>
                         <viewControllerLayoutGuide type="bottom" id="sDS-Mt-1k0"/>

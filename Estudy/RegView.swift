@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class RegView: UIView {
+public class RegView: UIView {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var emailError: UILabel!
     
@@ -22,7 +22,15 @@ class RegView: UIView {
     @IBOutlet var signUpButton: UIButton!
     var delegate: Authorization!
     
-    override func awakeFromNib() {
+    class func init1(nibName: String!) -> RegView {
+        let bundle = NSBundle(forClass: self)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        
+        return view as! RegView
+    }
+    
+    public override func awakeFromNib() {
         super.awakeFromNib()
         Functions.AuthViews.customizeTextField(emailField, placeholder: NSLocalizedString("email_field", comment: ""), image: "email_icon")
         Functions.AuthViews.customizeTextField(passwordField, placeholder: NSLocalizedString("password_field", comment: ""), image: "password_icon")

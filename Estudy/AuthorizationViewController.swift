@@ -11,7 +11,7 @@ import Foundation
 import MBProgressHUD
 import SwiftyVK
 
-class AuthorizationViewController: UIViewController, Authorization, VKDelegate, UITextFieldDelegate {
+public class AuthorizationViewController: UIViewController, Authorization, VKDelegate, UITextFieldDelegate {
     @IBOutlet var segmentSwitcher: UISegmentedControl!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var contentView: UIView!
@@ -22,14 +22,19 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate, 
     
     @IBOutlet var scrollView: UIScrollView!
     
-    //MARK: Default UIViewController events
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override public func loadView() {
+         super.loadView()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)
         VK.start(appID: "5455068", delegate: self)
         self.setupSWRevealViewController()
         self.setupUI()
+    }
+    
+    //MARK: Default UIViewController events
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+
     }
     
     deinit {
@@ -43,7 +48,7 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate, 
     }
     
     //MARK: segue navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier == "authorized") {
             let navVC = segue.destinationViewController as! UINavigationController
@@ -101,10 +106,12 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate, 
     }
     
     func setupUI() {
-        authView = NSBundle.mainBundle().loadNibNamed("AuthView", owner: self, options: nil).first as! AuthView
+        
+        authView = AuthView.init1("AuthView") as! AuthView
+//        NSBundle.mainBundle().loadNibNamed("AuthView", owner: self, options: nil).first as! AuthView
         authView.delegate = self
         contentView.addSubview(authView)
-        regView = NSBundle.mainBundle().loadNibNamed("RegView", owner: self, options: nil).first as! RegView
+        regView = RegView.init1("RegView") as! RegView
         regView.delegate = self
         contentView.addSubview(regView)
         
@@ -169,38 +176,38 @@ class AuthorizationViewController: UIViewController, Authorization, VKDelegate, 
     
     //MARK: VK SDK delegate methods
     
-    func vkWillAutorize() -> [VK.Scope] {
+    public func vkWillAutorize() -> [VK.Scope] {
         //Called when SwiftyVK need autorization permissions.
         return [VK.Scope.email]//an array of application permissions
     }
     
-    func vkDidAutorize(parameters: Dictionary<String, String>) {
+    public func vkDidAutorize(parameters: Dictionary<String, String>) {
         AuthService.sharedInstance.signInViaVK(parameters["email"]!, error: self.failureVkSignInCallback)
         //Called when the user is log in.
         //Here you can start to send requests to the API.
     }
 
-    func vkDidUnautorize() {
+    public func vkDidUnautorize() {
         //Called when user is log out.
     }
 
-    func vkAutorizationFailed(error: VK.Error) {
+    public func vkAutorizationFailed(error: VK.Error) {
         //Called when SwiftyVK could not authorize. To let the application know that something went wrong.
     }
 
-    func vkTokenPath() -> (useUserDefaults: Bool, alternativePath: String) {
+    public func vkTokenPath() -> (useUserDefaults: Bool, alternativePath: String) {
         //Called when SwiftyVK need know where a token is located.
         return (false, "path")//bool value that indicates whether save token to NSUserDefaults or not, and alternative save path.
     }
 
-    func vkWillPresentView() -> UIViewController {
+    public func vkWillPresentView() -> UIViewController {
     //Only for iOS!
     //Called when need to display a view from SwiftyVK.
         return self.navigationController!.topViewController!
     }
     
     //MARK: UITextFieldDelegate methods
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField {
         case authView.emailField:
             authView.passwordField.becomeFirstResponder()
