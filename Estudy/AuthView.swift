@@ -67,7 +67,6 @@ public class AuthView: UIView {
     }
     
     func loadViewFromNib(nibName: String!) -> UIView {
-        
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView

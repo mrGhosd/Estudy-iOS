@@ -2914,11 +2914,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EstudyTests/AuthorizationViewControllerTest.swift"
-            timestampString = "488838282.088051"
+            timestampString = "488934231.787338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "testShowingRegViewIfIsRegSelected()"
             landmarkType = "5">
             <Locations>
@@ -3057,11 +3057,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EstudyTests/AuthorizationViewControllerTest.swift"
-            timestampString = "488838282.088051"
+            timestampString = "488934231.787338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "AuthorizationViewControllerTest"
             landmarkType = "3">
          </BreakpointContent>
@@ -3073,12 +3073,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EstudyTests/AuthorizationViewControllerTest.swift"
-            timestampString = "488838282.088051"
+            timestampString = "488934231.787338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "testShowingRegViewIfIsRegSelected()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstudyTests/AuthorizationViewControllerTest.swift"
+            timestampString = "488934231.787338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "testSegmentSwitcherExist()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

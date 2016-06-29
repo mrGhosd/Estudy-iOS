@@ -16,6 +16,7 @@
 		64125BDF1CF67BC400DF2C4E /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = 64125BDE1CF67BC400DF2C4E /* send.png */; };
 		641CC56C1D230A0200E23140 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CC56B1D230A0200E23140 /* UIView.swift */; };
 		641CC56D1D230AA100E23140 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A662F1C80F936006FF8D5 /* AuthView.swift */; };
+		641CC56F1D231E7D00E23140 /* estudy_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F5091E1CD4265600F7CABE /* estudy_bg_2.png */; };
 		641D35021BEA9CD600DD660C /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D35011BEA9CD600DD660C /* SWRevealViewController.m */; };
 		641D35041BEA9D4400DD660C /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641D35031BEA9D4400DD660C /* SidebarViewController.swift */; };
 		642BBA111BE95F49007EE777 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BBA101BE95F49007EE777 /* User.swift */; };
@@ -642,6 +643,7 @@
 				644596D41D2095C900978C55 /* MessageCell.xib in Resources */,
 				644596EA1D2095F200978C55 /* MessageForm.xib in Resources */,
 				644596F61D20960B00978C55 /* AuthView.xib in Resources */,
+				641CC56F1D231E7D00E23140 /* estudy_bg_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

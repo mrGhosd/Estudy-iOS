@@ -25,13 +25,26 @@ class AuthorizationViewControllerTest: XCTestCase {
     func testShowingAuthViewIfIsAuthSelected() {
         defineStoryboardWithParams(true)
         XCTAssert(viewController.segmentSwitcher.selectedSegmentIndex == 0, "Auth view is chosen")
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testShowingRegViewIfIsRegSelected() {
         defineStoryboardWithParams(false)
         XCTAssert(viewController.segmentSwitcher.selectedSegmentIndex == 1, "Reg view is chosen")
+    }
+    
+    func testSegmentSwitcherExist() {
+        defineStoryboardWithParams(true)
+        XCTAssertNotNil(viewController.segmentSwitcher)
+    }
+    
+    func testContentViewExist() {
+        defineStoryboardWithParams(true)
+        XCTAssertNotNil(viewController.contentView)
+    }
+    
+    func testVkAuthButtonExist() {
+        defineStoryboardWithParams(true)
+        XCTAssertNotNil(viewController.vkAuthButton)
     }
     
     func defineStoryboardWithParams(isAuth: Bool!) {
