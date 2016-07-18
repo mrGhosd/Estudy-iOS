@@ -61,10 +61,6 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
         self.tableView.layoutIfNeeded()
         self.tableView.reloadData()
     }
-//    {
-//    [super viewDidAppear:animated];
-//    [self.tableView reloadData];
-//    }
     
     //MARK: API Requests
     func createMessage(text: String!) {
@@ -115,26 +111,6 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
                         else {
                             return messageCellInstance(message, indexPath: indexPath) as UITableViewCell
                         }
-//        let cell = tableView.dequeueReusableCellWithIdentifier("chatsCell", forIndexPath: indexPath)
-//        cell.textLabel?.text = message.text
-//        cell.textLabel?.lineBreakMode = .ByWordWrapping
-//        cell.textLabel?.numberOfLines = 0
-////
-//        cell.layoutIfNeeded()
-//        cell.setDataToMessageData(message)
-//        return cell
-//
-//        if (hasMultipleUsers()) {
-//            
-//        }
-//        else {
-//            if (message.user.id == AuthService.sharedInstance.currentUser.id) {
-//                return currentUserPersonalMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
-//            }
-//            else {
-//                return personalMessageCellInstance(message, indexPath: indexPath) as UITableViewCell
-//            }
-//        }
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -143,35 +119,6 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        var message = chat.messages[indexPath.row]
-//        var messageText = message.text as NSString
-//        var size = messageText.sizeWithAttributes(["NSFontAttributeName": UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19.0)!])
-//        return size.width
-//    }
-//
-    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-//    
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        var message = chat.messages[indexPath.row]
-//        var messageText = message.text as NSString
-//        var arr = message.text.componentsSeparatedByString(" ")
-//        arr.map { substring -> String in
-//            return "\(substring)\n"
-//        }
-//        let modifiedText: NSString! = arr.joinWithSeparator("")
-//        var size = messageText.sizeWithAttributes(["NSFontAttributeName": UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19.0)!])
-//        var diffsize = messageText.boundingRectWithSize(CGSizeMake(300, CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: ["NSFontAttributeName": UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19.0)!], context: nil)
-//        return diffsize.height
-//    }
     
     func currentUserMessageCellInstance(message: Message, indexPath: NSIndexPath) -> CurrentUserMessageCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(currentUserCellIdentifier, forIndexPath: indexPath) as! CurrentUserMessageCell
@@ -210,13 +157,8 @@ class MessagesViewController: ApplicationViewController, UITableViewDelegate, UI
     
     func registerCellsForTable() {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "chatsCell")
-//        tableView.setContentOffset(CGPoint(x: CGFloat(0), y: CGFloat.max), animated: true)
-//        tableView.registerClass(CommonMessageCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.registerNib(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)
-//        tableView.registerNib(UINib(nibName: "PersonalMessageCell", bundle: nil), forCellReuseIdentifier: personalCellIdentifier)
-//        tableView.registerNib(UINib(nibName: "CurrentUserPersonalMessageCell", bundle: nil), forCellReuseIdentifier: currentUserPersonalCellIdentifier)
-    }
+        tableView.registerNib(UINib(nibName: "CurrentUserMessageCell", bundle: nil), forCellReuseIdentifier: currentUserCellIdentifier)    }
     
     func scrollDownTableView() {
         let yourSection = 0;

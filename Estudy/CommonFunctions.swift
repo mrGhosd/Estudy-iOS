@@ -58,6 +58,20 @@ struct Functions {
         }
     }
     
+    struct Courses {
+        static func avatarImage(imageView: UIImageView!, url: String?) {
+            if let imageUrl =  url {
+                Alamofire.request(.GET, imageUrl).responseImage{ response in
+                    if let image = response.result.value {
+                        imageView.image = image
+                    }
+                }
+            } else {
+                imageView.image = UIImage(named: "empty-course.png")
+            }
+        }
+    }
+    
     struct Sidebar {
         static func initTableVIew(controller: UIViewController!, view: UIView!, tableView: UITableView!) {
             NSNotificationCenter.defaultCenter().addObserver(controller, selector: #selector(ApplicationViewController.currentUserReceived(_:)), name: "currentUser", object: nil)

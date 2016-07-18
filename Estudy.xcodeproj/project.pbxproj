@@ -27,9 +27,12 @@
 		64391AFB1D21A64900E22FA7 /* RegView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A66311C80F940006FF8D5 /* RegView.swift */; };
 		64391AFD1D21A72000E22FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C4F1BE92254005D80AA /* Main.storyboard */; };
 		64391AFF1D21A72600E22FA7 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
-		643D1DF01D3D890B00D97599 /* course.png in Resources */ = {isa = PBXBuildFile; fileRef = 643D1DEF1D3D890B00D97599 /* course.png */; };
+		643D1DF01D3D890B00D97599 /* empty-course.png in Resources */ = {isa = PBXBuildFile; fileRef = 643D1DEF1D3D890B00D97599 /* empty-course.png */; };
 		643D1DF21D3D89E800D97599 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D1DF11D3D89E800D97599 /* CoursesViewController.swift */; };
-		643D1DF61D3D8D7200D97599 /* online-course.svg in Resources */ = {isa = PBXBuildFile; fileRef = 643D1DF51D3D8D7200D97599 /* online-course.svg */; };
+		643D1DF91D3D8F1700D97599 /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D1DF81D3D8F1700D97599 /* CourseViewCell.swift */; };
+		643D1DFB1D3D8FA000D97599 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D1DFA1D3D8FA000D97599 /* Course.swift */; };
+		643D1DFD1D3D903E00D97599 /* CourseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643D1DFC1D3D903E00D97599 /* CourseFactory.swift */; };
+		643D1DFF1D3D916500D97599 /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643D1DFE1D3D916500D97599 /* CourseViewCell.xib */; };
 		643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643E1FBA1C0B276300BC5A43 /* iPad.storyboard */; };
 		644596A11D208A0500978C55 /* logout_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 644596A01D208A0500978C55 /* logout_red.png */; };
 		644596A51D20943000978C55 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B0711CD64FB000BD6E23 /* CommonFunctions.swift */; };
@@ -173,9 +176,12 @@
 		642BBA171BE96372007EE777 /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		642E63C81C8398CC0083CA55 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 		64391AF71D219EE900E22FA7 /* AuthorizationViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewControllerTest.swift; sourceTree = "<group>"; };
-		643D1DEF1D3D890B00D97599 /* course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = course.png; sourceTree = "<group>"; };
+		643D1DEF1D3D890B00D97599 /* empty-course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty-course.png"; sourceTree = "<group>"; };
 		643D1DF11D3D89E800D97599 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
-		643D1DF51D3D8D7200D97599 /* online-course.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "online-course.svg"; sourceTree = "<group>"; };
+		643D1DF81D3D8F1700D97599 /* CourseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
+		643D1DFA1D3D8FA000D97599 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		643D1DFC1D3D903E00D97599 /* CourseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseFactory.swift; sourceTree = "<group>"; };
+		643D1DFE1D3D916500D97599 /* CourseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		643E1FBA1C0B276300BC5A43 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		644596A01D208A0500978C55 /* logout_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_red.png; sourceTree = "<group>"; };
 		644730931D1C884500328084 /* IPadSidebarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPadSidebarViewController.swift; sourceTree = "<group>"; };
@@ -308,6 +314,15 @@
 			name = users;
 			sourceTree = "<group>";
 		};
+		643D1DF71D3D8F0600D97599 /* courses */ = {
+			isa = PBXGroup;
+			children = (
+				643D1DF81D3D8F1700D97599 /* CourseViewCell.swift */,
+				643D1DFE1D3D916500D97599 /* CourseViewCell.xib */,
+			);
+			name = courses;
+			sourceTree = "<group>";
+		};
 		645A662E1C80F926006FF8D5 /* authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,8 +443,7 @@
 		64876C791BE922CA005D80AA /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				643D1DF51D3D8D7200D97599 /* online-course.svg */,
-				643D1DEF1D3D890B00D97599 /* course.png */,
+				643D1DEF1D3D890B00D97599 /* empty-course.png */,
 				644596A01D208A0500978C55 /* logout_red.png */,
 				64125BDE1CF67BC400DF2C4E /* send.png */,
 				641229751CEA93DE0019E12B /* vk-social-network-logo.png */,
@@ -464,6 +478,7 @@
 		64876C7B1BE922DB005D80AA /* views */ = {
 			isa = PBXGroup;
 			children = (
+				643D1DF71D3D8F0600D97599 /* courses */,
 				6412296C1CEA3E720019E12B /* profile */,
 				646623421C87A80A00281878 /* messages */,
 				645A66421C825385006FF8D5 /* chats */,
@@ -481,6 +496,7 @@
 				645A66401C824F66006FF8D5 /* Chat.swift */,
 				645A66471C825ECE006FF8D5 /* Message.swift */,
 				648C59181C8BC7E400E3ADF0 /* SocketService.swift */,
+				643D1DFA1D3D8FA000D97599 /* Course.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -499,6 +515,7 @@
 				64C328941C792FC2000F15BC /* UserFactory.swift */,
 				645A663E1C824EF3006FF8D5 /* ChatFactory.swift */,
 				6466233E1C879A6000281878 /* MessagesFactory.swift */,
+				643D1DFC1D3D903E00D97599 /* CourseFactory.swift */,
 			);
 			name = factories;
 			sourceTree = "<group>";
@@ -615,14 +632,14 @@
 				64A1B0781CD6528200BD6E23 /* email_icon.png in Resources */,
 				646623501C87B4D100281878 /* PersonalMessageCell.xib in Resources */,
 				642BBA181BE96372007EE777 /* UserListCell.xib in Resources */,
-				643D1DF61D3D8D7200D97599 /* online-course.svg in Resources */,
+				643D1DFF1D3D916500D97599 /* CourseViewCell.xib in Resources */,
 				646623521C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib in Resources */,
 				64125BDF1CF67BC400DF2C4E /* send.png in Resources */,
 				646623541C87B9DC00281878 /* PersonalNavigationBar.xib in Resources */,
 				64876C561BE92254005D80AA /* LaunchScreen.storyboard in Resources */,
 				64F5091F1CD4265600F7CABE /* estudy_bg_2.png in Resources */,
 				645A66341C810EE4006FF8D5 /* AuthView.xib in Resources */,
-				643D1DF01D3D890B00D97599 /* course.png in Resources */,
+				643D1DF01D3D890B00D97599 /* empty-course.png in Resources */,
 				64F5091D1CD41E7700F7CABE /* menu-32.png in Resources */,
 				641229701CEA3E9F0019E12B /* ProfileInfoView.xib in Resources */,
 				643E1FBB1C0B276300BC5A43 /* iPad.storyboard in Resources */,
@@ -733,6 +750,7 @@
 				648C59131C8B97CB00E3ADF0 /* MessageForm.swift in Sources */,
 				64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */,
 				643D1DF21D3D89E800D97599 /* CoursesViewController.swift in Sources */,
+				643D1DF91D3D8F1700D97599 /* CourseViewCell.swift in Sources */,
 				6466234E1C87B4A500281878 /* CurrentUserPersonalMessageCell.swift in Sources */,
 				648C59191C8BC7E400E3ADF0 /* SocketService.swift in Sources */,
 				645A66391C81E85C006FF8D5 /* AuthDelegate.swift in Sources */,
@@ -740,6 +758,7 @@
 				646623561C87B9F300281878 /* PersonalNavigationBar.swift in Sources */,
 				642E63C91C8398CC0083CA55 /* ApplicationViewController.swift in Sources */,
 				645A663F1C824EF3006FF8D5 /* ChatFactory.swift in Sources */,
+				643D1DFB1D3D8FA000D97599 /* Course.swift in Sources */,
 				64876C7E1BE9230B005D80AA /* UsersController.swift in Sources */,
 				645A66481C825ECE006FF8D5 /* Message.swift in Sources */,
 				64C328951C792FC2000F15BC /* UserFactory.swift in Sources */,
@@ -762,6 +781,7 @@
 				64125BDD1CF6771D00DF2C4E /* ESUILabel.swift in Sources */,
 				6466233D1C8792BC00281878 /* MessagesViewController.swift in Sources */,
 				64C274E41CCEC53F00D5C57E /* UIColor.swift in Sources */,
+				643D1DFD1D3D903E00D97599 /* CourseFactory.swift in Sources */,
 				645A663B1C81EAE2006FF8D5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
