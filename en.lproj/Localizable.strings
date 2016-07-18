@@ -13,6 +13,7 @@
 "sidebar_sign_in" = "Sign in";
 "sidebar_sign_up" = "Sign up";
 "sidebar_users" = "Users";
+"sidebar_courses" = "Courses";
 
 /*USERS LIST*/
 "users_search" = "Search";

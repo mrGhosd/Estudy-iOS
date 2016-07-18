@@ -59,6 +59,8 @@ class SidebarViewController: ApplicationViewController, UITableViewDataSource, U
                 self.performSegueWithIdentifier("registration", sender: self)
             case NSLocalizedString("sidebar_users", comment: ""):
                 self.performSegueWithIdentifier("users", sender: self)
+            case NSLocalizedString("sidebar_courses", comment: ""):
+                self.performSegueWithIdentifier("courses", sender: self)
             case currentUser.getCorrectName():
                 self.performSegueWithIdentifier("profile", sender: self)
             case "Messages":

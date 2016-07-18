@@ -82,7 +82,8 @@ struct Functions {
                 sideBarMenu = [
                     ["icon": "profile_icon", "title": currentUser.getCorrectName()],
                     ["icon": "messages_icon", "title": "Messages"],
-                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
+                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")],
+                    ["icon": "course_icon", "title": NSLocalizedString("sidebar_courses", comment: "")]
                 ]
                 if let button = signOutButton {
                     button.hidden = false
@@ -93,7 +94,8 @@ struct Functions {
                 sideBarMenu = [
                     ["icon": "sign_in_icon", "title": NSLocalizedString("sidebar_sign_in", comment: "")],
                     ["icon": "sign_up_icon", "title":  NSLocalizedString("sidebar_sign_up", comment: "")],
-                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")]
+                    ["icon": "users_icon", "title": NSLocalizedString("sidebar_users", comment: "")],
+                    ["icon": "course_icon", "title": NSLocalizedString("sidebar_courses", comment: "")]
                 ]
                 if let button = signOutButton {
                     button.hidden = true
