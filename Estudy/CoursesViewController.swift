@@ -61,7 +61,7 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         self.tableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
             let tableView = scrollView as! UITableView
             self.pageNumber += 1
-//            self.loadMoreUsersList()
+            self.loadMoreCourses()
             tableView.finishInfiniteScroll()
         }
     }
@@ -69,12 +69,14 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
     //MARK: API requests
     
     func loadCoursesList() {
+        self.showProgress()
         CourseFactory.getCollection([:], success: successCoursesLoading, error: failedCourseLoading)
     }
     
-    func loadMoreUsersList() {
+    func loadMoreCourses() {
         self.showProgress()
-//        UserFactory.getCollection(["page": pageNumber], success: successLoadMoreUsersCallback, error: errorUsersCallback)
+        self.showProgress()
+        CourseFactory.getCollection(["page": pageNumber], success: successLoadMoreCoursesCallback, error: failedCourseLoading)
     }
     
     func searchCourses(query: String!) {
@@ -87,12 +89,14 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
     
     func successCoursesLoading(courses: [Course]) {
         self.refreshControl.endRefreshing()
+        self.hideProgress()
         serverResponse = courses
         tableView.reloadData()
     }
     
     func failedCourseLoading(error: ServerError!) {
         self.refreshControl.endRefreshing()
+        self.hideProgress()
     }
     
     func successLoadMoreCoursesCallback(objects: [Course]) {
