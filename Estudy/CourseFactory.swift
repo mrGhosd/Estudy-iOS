@@ -31,4 +31,17 @@ class CourseFactory: NSObject {
                 }
             })
     }
+    
+    class func search(parameters: NSDictionary, success: ([Course]) -> Void, error: (ServerError) -> Void) -> Void {
+        ApiRequest.sharedInstance.get("/search", parameters: parameters)
+            .responseArray("search", completionHandler: { (response: Response<[Course], NSError>) in
+                switch(response.result) {
+                case .Success(let data):
+                    success(data)
+                case .Failure(let errorData):
+                    let errorValue = ServerError(parameters: errorData)
+                    error(errorValue)
+                }
+            })
+    }
 }

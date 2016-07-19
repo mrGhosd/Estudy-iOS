@@ -10,23 +10,27 @@ import Foundation
 
 let courseCellIdentifier = "courseCell"
 
-class CoursesViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate {
+class CoursesViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sidebarButton: UIBarButtonItem!
+    @IBOutlet var searchBar: UISearchBar!
     var pageNumber = 1
     var refreshControl: UIRefreshControl!
-    
+    var searchActive = false
+    var searchedData:[Course] = []
     var serverResponse:[Course] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
+        self.searchBar.placeholder = NSLocalizedString("users_search", comment: "")
         tableView.estimatedRowHeight = 1300
         tableView.rowHeight = UITableViewAutomaticDimension
         setSidebarButton()
         setUIForView()
         setupUIRefreshController()
         loadCoursesList()
+        
     }
     
     //MARK: Set navigation for viewController
@@ -68,6 +72,19 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         CourseFactory.getCollection([:], success: successCoursesLoading, error: failedCourseLoading)
     }
     
+    func loadMoreUsersList() {
+        self.showProgress()
+//        UserFactory.getCollection(["page": pageNumber], success: successLoadMoreUsersCallback, error: errorUsersCallback)
+    }
+    
+    func searchCourses(query: String!) {
+        let parameters = ["object": "course", "query": query]
+        CourseFactory.search(parameters, success: successSearchCoursesCallback, error: failedCourseLoading)
+    }
+    
+    
+    // API request callbacks
+    
     func successCoursesLoading(courses: [Course]) {
         self.refreshControl.endRefreshing()
         serverResponse = courses
@@ -78,6 +95,17 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         self.refreshControl.endRefreshing()
     }
     
+    func successLoadMoreCoursesCallback(objects: [Course]) {
+        self.hideProgress()
+        serverResponse += objects
+        self.tableView.reloadData()
+    }
+    
+    func successSearchCoursesCallback(objects: [Course]) {
+        searchedData = objects
+        self.tableView.reloadData()
+    }
+    
     //MARK: UITableViewDelegate and UITableViewDataSource methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,6 +113,9 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return searchedData.count
+        }
         return serverResponse.count
     }
     
@@ -100,10 +131,6 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         return UITableViewAutomaticDimension
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 73
-//    }
-    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
     }
@@ -112,9 +139,51 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         let cell = tableView.dequeueReusableCellWithIdentifier(courseCellIdentifier, forIndexPath: indexPath) as! CourseViewCell
         let row = indexPath.row
         let course: Course!
-        course = serverResponse[row]
+        if(searchActive) {
+            course = searchedData[row]
+        }
+        else {
+            course = serverResponse[row]
+        }
         cell.setCourseDataData(course)
         return cell as UITableViewCell
+    }
+    
+    //MARK: UISearchBarDelegate methods
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+        self.searchBar.showsCancelButton = true
+        self.searchBar.endEditing(true)
+        self.searchBar.showsCancelButton = false
+        self.searchBar.text = nil
+        self.tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchCourses(searchText)
+    }
+    
+    //MARK: MBProgressHUD actions
+    
+    func showProgress() {
+        Functions.progressBar.showProgressBar(self.view)
+    }
+    
+    func hideProgress() {
+        Functions.progressBar.hideProgressBar(self.view)
     }
 
 }
