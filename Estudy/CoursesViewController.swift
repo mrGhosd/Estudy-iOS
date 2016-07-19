@@ -24,7 +24,7 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
         self.searchBar.placeholder = NSLocalizedString("users_search", comment: "")
-        tableView.estimatedRowHeight = 1300
+        tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         setSidebarButton()
         setUIForView()

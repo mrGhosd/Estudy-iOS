@@ -62,6 +62,8 @@ class IPadSidebarViewController : UITableViewController {
             self.performSegueWithIdentifier("users", sender: self)
         case currentUser.getCorrectName():
             self.performSegueWithIdentifier("profile", sender: self)
+        case NSLocalizedString("sidebar_courses", comment: ""):
+            self.performSegueWithIdentifier("courses", sender: self)
         case "Messages":
             self.performSegueWithIdentifier("chats", sender: self)
         default: break
@@ -103,6 +105,10 @@ class IPadSidebarViewController : UITableViewController {
         if (segue.identifier == "profile") {
             let profileView = navVC.viewControllers.first as! ProfileViewController
             profileView.user = AuthService.sharedInstance.currentUser
+        }
+        
+        if (segue.identifier == "courses") {
+            _ = navVC.viewControllers.first as! CoursesViewController
         }
     }
     
