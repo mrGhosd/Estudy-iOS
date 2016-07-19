@@ -145,8 +145,13 @@
                             <constraint firstItem="w66-DJ-VQv" firstAttribute="leading" secondItem="tv0-0u-bcd" secondAttribute="leadingMargin" constant="-20" id="fGS-44-ekV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tBq-c7-GGd"/>
+                    <navigationItem key="navigationItem" id="tBq-c7-GGd">
+                        <barButtonItem key="leftBarButtonItem" image="menu-32.png" id="fsc-mH-9Od">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="sidebarButton" destination="fsc-mH-9Od" id="NXM-gx-uKP"/>
                         <outlet property="tableView" destination="w66-DJ-VQv" id="Qsc-1J-dBw"/>
                     </connections>
                 </viewController>
