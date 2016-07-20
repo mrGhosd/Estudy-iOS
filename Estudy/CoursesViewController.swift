@@ -164,6 +164,7 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         let detailVC = storyboard?.instantiateViewControllerWithIdentifier("CoursePreview") as! CoursePreviewViewController
         let course = serverResponse[indexPath!.row]
         detailVC.course = course
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
         previewingContext.sourceRect = cell!.frame
         
         return detailVC

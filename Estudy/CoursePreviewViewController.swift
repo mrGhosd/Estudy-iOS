@@ -14,4 +14,17 @@ class CoursePreviewViewController: UIViewController {
     override func viewDidLoad() {
         
     }
+    
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        
+        let likeAction = UIPreviewAction(title: "Like", style: .Default) { (action, viewController) -> Void in
+            print("You liked the photo")
+        }
+        
+        let deleteAction = UIPreviewAction(title: "Delete", style: .Destructive) { (action, viewController) -> Void in
+            print("You deleted the photo")
+        }
+        
+        return [likeAction, deleteAction]
+    }
 }
