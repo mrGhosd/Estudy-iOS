@@ -28,6 +28,35 @@
             </objects>
             <point key="canvasLocation" x="-362" y="320"/>
         </scene>
+        <!--Course Preview View Controller-->
+        <scene sceneID="0uy-y8-WHB">
+            <objects>
+                <viewController storyboardIdentifier="CoursePreview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yN0-kK-MqU" customClass="CoursePreviewViewController" customModule="Estudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MCO-pE-mxA"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7R-Wj-MvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j4X-rz-RlI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YDz-fw-Aof">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YDz-fw-Aof" firstAttribute="top" secondItem="j4X-rz-RlI" secondAttribute="topMargin" id="Di4-sI-DwY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YDz-fw-Aof" secondAttribute="trailing" constant="-20" id="EUy-YE-hZa"/>
+                            <constraint firstItem="b7R-Wj-MvB" firstAttribute="top" secondItem="YDz-fw-Aof" secondAttribute="bottom" id="gXo-jN-cCL"/>
+                            <constraint firstItem="YDz-fw-Aof" firstAttribute="leading" secondItem="j4X-rz-RlI" secondAttribute="leadingMargin" constant="-20" id="r7d-Qb-gGH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdZ-Hb-1Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="468"/>
+        </scene>
         <!--Users Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

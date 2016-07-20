@@ -10,7 +10,7 @@ import Foundation
 
 let courseCellIdentifier = "courseCell"
 
-class CoursesViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class CoursesViewController: ApplicationViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIViewControllerPreviewingDelegate {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var sidebarButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar!
@@ -24,6 +24,9 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
         self.searchBar.placeholder = NSLocalizedString("users_search", comment: "")
+        if traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: view)
+        }
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         setSidebarButton()
@@ -151,6 +154,26 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
         }
         cell.setCourseDataData(course)
         return cell as UITableViewCell
+    }
+    
+    //MARK: UIViewControllerPreviewDelegate methods
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        let indexPath = tableView.indexPathForRowAtPoint(location)
+        let cell = tableView.cellForRowAtIndexPath(indexPath!)
+        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("CoursePreview") as! CoursePreviewViewController
+        let course = serverResponse[indexPath!.row]
+        detailVC.course = course
+        previewingContext.sourceRect = cell!.frame
+        
+        return detailVC
+        
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        
+        showViewController(viewControllerToCommit, sender: self)
+        
     }
     
     //MARK: UISearchBarDelegate methods

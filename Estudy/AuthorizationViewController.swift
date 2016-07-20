@@ -51,8 +51,14 @@ public class AuthorizationViewController: UIViewController, Authorization, VKDel
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if (segue.identifier == "authorized") {
-            let navVC = segue.destinationViewController as! UINavigationController
-            let profileView = navVC.topViewController as! ProfileViewController
+            var profileView: ProfileViewController!
+            if let navVC = segue.destinationViewController as? UINavigationController {
+                profileView = navVC.topViewController as! ProfileViewController
+            }
+            else {
+                profileView = segue.destinationViewController as! ProfileViewController
+            }
+    
             let currentUser = AuthService.sharedInstance.currentUser
             profileView.user = currentUser
         }

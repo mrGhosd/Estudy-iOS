@@ -7,7 +7,7 @@
 //
 
 class ApiRequest: BaseApiRequest {
-    override var host: String! { get { return "http://localhost:3000" } }
+    override var host: String! { get { return "http://1c74a217.ngrok.io" } }
     
     class var sharedInstance: ApiRequest {
         struct Singleton {

@@ -116,6 +116,7 @@
 		646623521C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623511C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib */; };
 		646623541C87B9DC00281878 /* PersonalNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646623531C87B9DC00281878 /* PersonalNavigationBar.xib */; };
 		646623561C87B9F300281878 /* PersonalNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646623551C87B9F300281878 /* PersonalNavigationBar.swift */; };
+		646EEC121D3FED7100C4F70F /* CoursePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646EEC111D3FED7100C4F70F /* CoursePreviewViewController.swift */; };
 		64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64876C4B1BE92254005D80AA /* AppDelegate.swift */; };
 		64876C511BE92254005D80AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64876C4F1BE92254005D80AA /* Main.storyboard */; };
 		64876C531BE92254005D80AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64876C521BE92254005D80AA /* Assets.xcassets */; };
@@ -214,6 +215,7 @@
 		646623511C87B4DF00281878 /* CurrentUserPersonalMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrentUserPersonalMessageCell.xib; sourceTree = "<group>"; };
 		646623531C87B9DC00281878 /* PersonalNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalNavigationBar.xib; sourceTree = "<group>"; };
 		646623551C87B9F300281878 /* PersonalNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalNavigationBar.swift; sourceTree = "<group>"; };
+		646EEC111D3FED7100C4F70F /* CoursePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePreviewViewController.swift; sourceTree = "<group>"; };
 		6485548E1BE938F900D940F6 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		64876C481BE92254005D80AA /* Estudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64876C4B1BE92254005D80AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 				64D635431CE7C3F000BD5339 /* ProfileViewController.swift */,
 				644730931D1C884500328084 /* IPadSidebarViewController.swift */,
 				643D1DF11D3D89E800D97599 /* CoursesViewController.swift */,
+				646EEC111D3FED7100C4F70F /* CoursePreviewViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				646623481C87AF2800281878 /* CurrentUserMessageCell.swift in Sources */,
 				64EC1A981CF123090046F62C /* CommonMessageCell.swift in Sources */,
 				64D635441CE7C3F000BD5339 /* ProfileViewController.swift in Sources */,
+				646EEC121D3FED7100C4F70F /* CoursePreviewViewController.swift in Sources */,
 				645A66411C824F66006FF8D5 /* Chat.swift in Sources */,
 				648C59131C8B97CB00E3ADF0 /* MessageForm.swift in Sources */,
 				64876C4C1BE92254005D80AA /* AppDelegate.swift in Sources */,
