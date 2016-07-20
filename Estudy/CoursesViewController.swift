@@ -158,13 +158,21 @@ class CoursesViewController: ApplicationViewController, UITableViewDataSource, U
     
     //MARK: UIViewControllerPreviewDelegate methods
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        var contentHeight = 300.0
         
         let indexPath = tableView.indexPathForRowAtPoint(location)
         let cell = tableView.cellForRowAtIndexPath(indexPath!)
         let detailVC = storyboard?.instantiateViewControllerWithIdentifier("CoursePreview") as! CoursePreviewViewController
         let course = serverResponse[indexPath!.row]
+        
+        var text = course.shortDescription as! NSString
+        var size = text.boundingRectWithSize(CGSizeMake(200, 0), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: ["NSFontAttributeName": UIFont.systemFontOfSize(16.0)], context: nil)
+        if size.height > 50 {
+            contentHeight = contentHeight + Double(size.height)
+        }
         detailVC.course = course
-        detailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: Double(contentHeight))
+        
         previewingContext.sourceRect = cell!.frame
         
         return detailVC

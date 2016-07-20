@@ -9,10 +9,16 @@ import UIKit
 import Foundation
 
 class CoursePreviewViewController: UIViewController {
+    @IBOutlet var courseImage: UIImageView!
+    @IBOutlet var courseTitle: UILabel!
+    @IBOutlet var courseShortDescription: UILabel!
     var course: Course!
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        Functions.Courses.avatarImage(courseImage, url: course.fullImageUrl())
+        courseTitle.text = course.title
+        courseShortDescription.text = course.shortDescription
     }
     
     override func previewActionItems() -> [UIPreviewActionItem] {
