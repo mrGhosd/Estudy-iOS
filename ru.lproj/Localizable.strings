@@ -29,3 +29,6 @@
 "email_field" = "Электронная почта";
 "password_field" = "Пароль";
 "password_confirmation_field" = "Подтверждение пароля";
+
+/*COURSES*/
+"course_difficult" = "Сложность";

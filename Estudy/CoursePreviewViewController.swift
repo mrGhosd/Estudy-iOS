@@ -11,12 +11,19 @@ import Foundation
 class CoursePreviewViewController: UIViewController {
     @IBOutlet var courseImage: UIImageView!
     @IBOutlet var courseTitle: UILabel!
+    @IBOutlet var difficultLabel: UILabel!
     @IBOutlet var courseShortDescription: UILabel!
+    @IBOutlet var ratingControl: RatingControl!
+    
+    
+    
     var course: Course!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Functions.Courses.avatarImage(courseImage, url: course.fullImageUrl())
+        difficultLabel.text = NSLocalizedString("course_difficult", comment: "")
+        ratingControl.setRating(course.getCourseDifficultNumber())
         courseTitle.text = course.title
         courseShortDescription.text = course.shortDescription
     }

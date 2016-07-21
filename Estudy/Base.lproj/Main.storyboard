@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-Cv-HoJ">
-                                <rect key="frame" x="225" y="20" width="125" height="125"/>
+                                <rect key="frame" x="238" y="20" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="4l9-Mx-mHk"/>
                                     <constraint firstAttribute="width" constant="125" id="mUd-tg-zyH"/>
@@ -62,6 +62,27 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-v6-pMP">
+                                <rect key="frame" x="480" y="20" width="100" height="52"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C79-19-55r" customClass="RatingControl" customModule="Estudy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="35" width="100" height="25"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZR-a7-W1y">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="C79-19-55r" secondAttribute="bottom" id="3Ic-E5-hxj"/>
+                                    <constraint firstItem="AZR-a7-W1y" firstAttribute="top" secondItem="XQv-v6-pMP" secondAttribute="top" id="D4C-dt-gDe"/>
+                                    <constraint firstItem="AZR-a7-W1y" firstAttribute="leading" secondItem="XQv-v6-pMP" secondAttribute="leading" id="UTh-tG-fZW"/>
+                                    <constraint firstItem="C79-19-55r" firstAttribute="centerX" secondItem="XQv-v6-pMP" secondAttribute="centerX" id="ooy-OA-9lb"/>
+                                    <constraint firstItem="C79-19-55r" firstAttribute="top" secondItem="AZR-a7-W1y" secondAttribute="bottom" id="rTW-4I-lCL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -69,6 +90,8 @@
                             <constraint firstItem="dU5-iU-XMJ" firstAttribute="centerX" secondItem="j4X-rz-RlI" secondAttribute="centerX" id="6Ru-Tp-qiS"/>
                             <constraint firstItem="YDz-fw-Aof" firstAttribute="top" secondItem="j4X-rz-RlI" secondAttribute="topMargin" id="Di4-sI-DwY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YDz-fw-Aof" secondAttribute="trailing" constant="-20" id="EUy-YE-hZa"/>
+                            <constraint firstItem="XQv-v6-pMP" firstAttribute="trailing" secondItem="j4X-rz-RlI" secondAttribute="trailingMargin" constant="10" id="Hcc-Yp-GyQ"/>
+                            <constraint firstItem="XQv-v6-pMP" firstAttribute="top" secondItem="MCO-pE-mxA" secondAttribute="bottom" constant="10" id="RxJ-7Q-TsY"/>
                             <constraint firstItem="f9W-Cv-HoJ" firstAttribute="centerX" secondItem="j4X-rz-RlI" secondAttribute="centerX" id="YOX-gp-Bc5"/>
                             <constraint firstItem="f9W-Cv-HoJ" firstAttribute="top" secondItem="MCO-pE-mxA" secondAttribute="bottom" constant="15" id="dJv-1B-XmR"/>
                             <constraint firstItem="b7R-Wj-MvB" firstAttribute="top" secondItem="OT9-KK-JZe" secondAttribute="bottom" constant="10" id="ezd-4K-lY7"/>
@@ -85,6 +108,8 @@
                         <outlet property="courseImage" destination="f9W-Cv-HoJ" id="sJC-7P-S7x"/>
                         <outlet property="courseShortDescription" destination="OT9-KK-JZe" id="Hlv-nV-zG4"/>
                         <outlet property="courseTitle" destination="dU5-iU-XMJ" id="uAU-6X-Yty"/>
+                        <outlet property="difficultLabel" destination="AZR-a7-W1y" id="C7d-nm-5jF"/>
+                        <outlet property="ratingControl" destination="C79-19-55r" id="7ld-1L-elS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdZ-Hb-1Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -30,3 +30,6 @@
 "email_field" = "Email";
 "password_field" = "Password";
 "password_confirmation_field" = "Password confirmation";
+
+/*COURSES*/
+"course_difficult" = "Level";

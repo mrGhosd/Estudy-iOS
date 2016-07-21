@@ -14,9 +14,25 @@ class Course: Mappable {
     var title: String!
     var shortDescription: String!
     var imageUrl: String? = nil
+    var difficult: String!
     
     required init?(_ map: Map) {
         
+    }
+    
+    func getCourseDifficultNumber() -> Int {
+        var number: Int!
+        switch difficult {
+            case "easy":
+                number = 1
+            case "medium":
+                number = 2
+            case "hard":
+                number = 3
+            default:
+                number = 1
+        }
+        return number
     }
     
     func mapping(map: Map) {
@@ -24,6 +40,7 @@ class Course: Mappable {
         title <- map["title"]
         shortDescription <- map["short_description"]
         imageUrl <- map["image.url"]
+        difficult <- map["difficult"]
     }
     
     func fullImageUrl() -> String? {
